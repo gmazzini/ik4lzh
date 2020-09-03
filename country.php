@@ -1,5 +1,8 @@
 <?php
 
+// version 1 by IK4LZH
+// look for country in cty.dat file
+
 function mypar($str,$start,$len){
   $aux=substr($str,$start-1,$len);
   $mypos=strpos($aux,":");
