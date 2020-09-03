@@ -68,6 +68,9 @@ while(!feof($hh)){
       }
       $zz[$j]["prefix"]=$v;
       $zz[$j]["prelen"]=strlen($v);
+      $to5=strpos($v,"/");
+      if($to5!==false)$zz[$j]["slash"]=$to5;
+      else $zz[$j]["slash"]=-1;
       $zz[$j]["base"]=$call;
       $zz[$j]["cqzone"]=(int)$cqzone;
       $zz[$j]["ituzone"]=(int)$ituzone;
@@ -102,9 +105,21 @@ function findcall($a){
   $call=strtoupper($a);
   for($q=strlen($call);$q>0;$q--){
     for($i=$ppp[$q];$i<$j;$i++){
-      $vv=min($q,$zz[$i]["prelen"]);
-      if(substr($call,0,$vv)==substr($zz[$i]["prefix"],0,$vv)){
-        return $zz[$i];
+      $to6=$zz[$i]["prelen"];
+      $vv=min($q,$to6);
+      $to5=$zz[$i]["slash"];
+      if($to5==-1){
+        if(substr($call,0,$vv)==substr($zz[$i]["prefix"],0,$vv)){
+          return $zz[$i];
+        }
+        // to be checked
+        else {
+          if(!(substr($call,0,$to5)==substr($zz[$i]["prefix"],0,$to5)))break;
+          for($t=$to5;$t<$to6;$t++)if(!is_numeric($call[$t]))break;
+          if($call[$t]==$zz[$i]["prefix"][$to5+1]){
+            return $zz[$i];
+          }
+        }
       }
     }
   }
