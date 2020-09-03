@@ -97,19 +97,22 @@ for($i=0;$i<$j;$i++){
   }
 }
 
-echo "<pre>";
-$call=strtoupper($_POST['call']);
-for($q=strlen($call);$q>0;$q--){
-  for($i=$ppp[$q];$i<$j;$i++){
-    $vv=min($q,$zz[$i]["prelen"]);
-    if(substr($call,0,$vv)==substr($zz[$i]["prefix"],0,$vv)){
-      echo "$i ";
-      print_r($zz[$i]);
-      echo "\n";
-      break 2;
+function findcall($a){
+  $call=strtoupper($a);
+  for($q=strlen($call);$q>0;$q--){
+    for($i=$ppp[$q];$i<$j;$i++){
+      $vv=min($q,$zz[$i]["prelen"]);
+      if(substr($call,0,$vv)==substr($zz[$i]["prefix"],0,$vv)){
+        return $zz[$i];
+      }
     }
   }
 }
+
+echo "<pre>";
+$call=$_POST['call'];
+$mydata=findcall($call);
+print_r($mydata);
 echo "</pre>";
 
 ?>
