@@ -1,7 +1,7 @@
 <?php
 
-// version 1
-// computer the CQWWDIGI score from cabrillo file
+// version 1 by IK4LZH
+// compute the CQWWDIGI score from cabrillo file
 
 for($i1=0;$i1<18;$i1++){
   for($j1=0;$j1<18;$j1++){
