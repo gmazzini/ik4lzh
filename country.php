@@ -98,6 +98,7 @@ for($i=0;$i<$j;$i++){
 }
 
 function findcall($a){
+  global $ppp,$zz,$j;
   $call=strtoupper($a);
   for($q=strlen($call);$q>0;$q--){
     for($i=$ppp[$q];$i<$j;$i++){
