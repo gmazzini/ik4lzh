@@ -1,6 +1,6 @@
 <?php
 
-// version 1 by IK4LZH
+// version 2 by IK4LZH
 // look for country in cty.dat file
 
 function mypar($str,$start,$len){
