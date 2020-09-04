@@ -98,7 +98,7 @@ for($i=0;$i<$j;$i++){
     $post=strtoupper(substr($qq,$ll+1));
     $myt[$pre.$post]=$i;
     for($w1=48;$w1<58;$w1++)$myt[$pre.chr($w1).$post]=$i;
-    for($w1=48;$w1<58;$w1++)for($w2=48;$w2<58;$w2++)$myt[$pre.chr($w1).chr($w2)$
+    for($w1=48;$w1<58;$w1++)for($w2=48;$w2<58;$w2++)$myt[$pre.chr($w1).chr($w2).$post]=$i;
   }
   else $myt[$qq]=$i;
 }
