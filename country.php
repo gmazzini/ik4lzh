@@ -67,68 +67,60 @@ while(!feof($hh)){
         $v=substr($v,0,$to1).substr($v,$to2+1);
       }
       $zz[$j]["prefix"]=$v;
-      $zz[$j]["prelen"]=strlen($v);
-      $to5=strpos($v,"/");
-      if($to5!==false)$zz[$j]["slash"]=$to5;
-      else $zz[$j]["slash"]=-1;
       $zz[$j]["base"]=$call;
       $zz[$j]["cqzone"]=(int)$cqzone;
       $zz[$j]["ituzone"]=(int)$ituzone;
       $zz[$j]["cont"]=$cont;
       $zz[$j]["name"]=$name;
       $j++;
-    }
-  }
-}
-fclose($hh);
-
-// think to like 3D2/c
-
-usort($zz, function($a, $b){
-  $la=strlen($a["prefix"]);
-  $lb=strlen($b["prefix"]);
-  if($la<>$lb)return $lb-$la;
-  return strcmp($a["prefix"],$b["prefix"]);
-});
-
-$mm=$zz[0]["prelen"];
-$ppp[$mm]=0;
-for($i=0;$i<$j;$i++){
-  if($zz[$i]["prelen"]<$mm){
-    $mm=$zz[$i]["prelen"];
-    $ppp[$mm]=$i;
-  }
-}
-
-function findcall($a){
-  global $ppp,$zz,$j;
-  $call=strtoupper($a);
-  for($q=strlen($call);$q>0;$q--){
-    for($i=$ppp[$q];$i<$j;$i++){
-      $to6=$zz[$i]["prelen"];
-      $vv=min($q,$to6);
-      $to5=$zz[$i]["slash"];
-      if($to5==-1){
-        if(substr($call,0,$vv)==substr($zz[$i]["prefix"],0,$vv)){
-          return $zz[$i];
-        }
-        // to be checked
-        else {
-          if(!(substr($call,0,$to5)==substr($zz[$i]["prefix"],0,$to5)))break;
-          for($t=$to5;$t<$to6;$t++)if(!is_numeric($call[$t]))break;
-          if($call[$t]==$zz[$i]["prefix"][$to5+1]){
-            return $zz[$i];
-          }
-        }
+      $lp=strpos($call,"/");
+      if($lp!==false){
+        $aux=$call;
+        $aux[$lp]="|";
+        $zz[$j]["prefix"]=$aux;
+        $zz[$j]["base"]=$call;
+        $zz[$j]["cqzone"]=(int)$cqzone;
+        $zz[$j]["ituzone"]=(int)$ituzone;
+        $zz[$j]["cont"]=$cont;
+        $zz[$j]["name"]=$name;
+        $j++;
       }
     }
   }
+} 
+fclose($hh);
+
+for($i=0;$i<$j;$i++){
+  $qq=$zz[$i]["prefix"];
+  $ll=strpos($qq,"|");
+  if($ll!==false){
+    $pre=substr($qq,0,$ll);
+    $post=strtoupper(substr($qq,$ll+1));
+    $myt[$pre.$post]=$i;
+    for($w1=48;$w1<58;$w1++)$myt[$pre.chr($w1).$post]=$i;
+    for($w1=48;$w1<58;$w1++)for($w2=48;$w2<58;$w2++)$myt[$pre.chr($w1).chr($w2)$
+  }
+  else $myt[$qq]=$i;
+}
+function findcall($a){
+  global $myt;
+  $call=strtoupper($a);
+  $lc=strlen($call);
+  $s=-1;
+  for($q=1;$q<=$lc;$q++){
+    if(isset($myt[substr($call,0,$q)]))$s=$myt[substr($call,0,$q)];
+  }
+  return $s;
 }
 
 echo "<pre>";
+// $call=$argv[1];
 $call=$_POST['call'];
-$mydata=findcall($call);
-print_r($mydata);
+$mys=findcall($call);
+print_r($zz[$mys]);
 echo "</pre>";
+
+
+                                                         
 
 ?>
