@@ -168,7 +168,7 @@ for($i=0;$i<16;$i++){
 }
 $myname=implode($qq);
 
-echo "... $myname ...<pre>";
+echo "<pre>... $myname ...";
 print_r($qq);
 
 $handle=fopen("/home/www/ik4lzh.mazzini.org/tmp/$myname","w");
