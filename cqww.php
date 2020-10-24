@@ -168,7 +168,8 @@ for($i=0;$i<16;$i++){
 }
 $myname=implode($qq);
 
-echo "... $myname ...";
+echo "... $myname ...<pre>";
+print_r($qq);
 
 $handle=fopen("/home/www/ik4lzh.mazzini.org/tmp/$myname","w");
 $valqso=0;
