@@ -162,14 +162,14 @@ for($i=0;$i<16;$i++){
     $nn=rand(48,122);
     if($nn>=58&&$nn<=64)continue;
     if($nn>=91&&$nn<=96)continue;
-    $qq[$i]=chr($nn);
+    $qqq[$i]=chr($nn);
     break;
   }
 }
-$myname=implode($qq);
+$myname=implode($qqq);
 
 echo "<pre>... $myname ...";
-print_r($qq);
+print_r($qqq);
 
 $handle=fopen("/home/www/ik4lzh.mazzini.org/tmp/$myname","w");
 $valqso=0;
