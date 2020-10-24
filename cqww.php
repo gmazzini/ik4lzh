@@ -122,9 +122,9 @@ while(!feof($hh)){
   $parts=preg_split('/\s+/',$line);
   if($base){
     $base=0;
-    $mys=findcall($parts[5]);
-    $mycountryB=$zz[$mys]["base"];
-    $mycB=$zz[$mys]["cont"];
+    $mycall=findcall($parts[5]);
+    $mycountryB=$zz[$mycall]["base"];
+    $mycB=$zz[$mycall]["cont"];
     $myfirstday=(int)substr($parts[3],8,2);
   }
   $freq=substr($parts[1],0,strlen($parts[1])-3);
@@ -168,9 +168,6 @@ for($i=0;$i<16;$i++){
 }
 $myname=implode($qqq);
 
-echo "<pre>... $myname ...";
-print_r($qqq);
-
 $handle=fopen("/home/www/ik4lzh.mazzini.org/tmp/$myname","w");
 $valqso=0;
 $valmul=0;
@@ -184,6 +181,6 @@ for($i=0;$i<2880;$i++){
 }
 fclose($handle);
 
-echo "<a href='tmp/$myname' download>File</a>";
+echo "<a href='tmp/$myname' download='$mycall'>Download Breakdown</a>";
 
 ?>
