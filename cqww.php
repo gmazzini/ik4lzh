@@ -157,7 +157,7 @@ echo "QSOPOINTS:$valqso MULTIPLIER:$valmul SCORE:$tot\n";
 
 list($usec,$sec)=explode(' ',microtime());
 srand($sec+$usec*1000000);
-for($i=0;$i<;$i++){
+for($i=0;$i<16;$i++){
   for(;;){
     $nn=rand(48,122);
     if($nn>=58&&$nn<=64)continue;
