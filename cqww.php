@@ -166,8 +166,11 @@ for($i=0;$i<16;$i++){
     break;
   }
 }
-$tmpname=implode($qq);
-$handle=fopen("/home/www/ik4lzh.mazzini.org/tmp/$tmpname","w");
+$myname=implode($qq);
+
+echo "... $myname ...";
+
+$handle=fopen("/home/www/ik4lzh.mazzini.org/tmp/$myname","w");
 $valqso=0;
 $valmul=0;
 for($i=0;$i<2880;$i++){
@@ -180,6 +183,6 @@ for($i=0;$i<2880;$i++){
 }
 fclose($handle);
 
-echo "<a href='tmp/$tmpname' download>File</a>";
+echo "<a href='tmp/$myname' download>File</a>";
 
 ?>
