@@ -169,4 +169,6 @@ for($i=0;$i<2880;$i++){
 }
 fclose($handle);
 
+echo "<a href='$tmpfname' download>File</a>";
+
 ?>
