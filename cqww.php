@@ -155,12 +155,8 @@ $valmul=array_sum($mul);
 $tot=$valqso*$valmul;
 echo "QSOPOINTS:$valqso MULTIPLIER:$valmul SCORE:$tot\n";
 
-$tmpfname = tempnam("/home/www/ik4lzh.mazzini.org/tmp", "FOO");
-$handle = fopen($tmpfname, "w");
-fwrite($handle, "writing to tempfile");
-fclose($handle);
-
-echo "<pre>";
+$tmpfname=tempnam("/home/www/ik4lzh.mazzini.org/tmp","FOO");
+$handle=fopen($tmpfname,"w");
 $valqso=0;
 $valmul=0;
 for($i=0;$i<2880;$i++){
@@ -169,8 +165,8 @@ for($i=0;$i<2880;$i++){
     $valmul=$valmulT[$i];
     $valcc=$valqso*$valmul;
   }
-  echo "$i,$valqso,$valmul,$valcc\n";
+  fwrite($handle,"$i,$valqso,$valmul,$valcc\n");
 }
-echo "</pre>";
+fclose($handle);
 
 ?>
