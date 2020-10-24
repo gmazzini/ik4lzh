@@ -122,9 +122,10 @@ while(!feof($hh)){
   $parts=preg_split('/\s+/',$line);
   if($base){
     $base=0;
-    $mycall=findcall($parts[5]);
-    $mycountryB=$zz[$mycall]["base"];
-    $mycB=$zz[$mycall]["cont"];
+    $mycall=$parts[5];
+    $mys=findcall($mycall);
+    $mycountryB=$zz[$mys]["base"];
+    $mycB=$zz[$mys]["cont"];
     $myfirstday=(int)substr($parts[3],8,2);
   }
   $freq=substr($parts[1],0,strlen($parts[1])-3);
