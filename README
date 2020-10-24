@@ -2,3 +2,4 @@ IK4LZH repository
 all file can be tested and used directly on http://ik4lzh.mazzini.org
 >> cqwwdigi.php compute the CQWWDIGI score from cabrillo file
 >> country.php look for country in cty.dat file
+>> password.php generate a password
