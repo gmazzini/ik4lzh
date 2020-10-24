@@ -1,6 +1,7 @@
 <?php
 
 // version 1 by IK4LZH
+// compute the CQWW scopre from cabrillo file
 
 function mypar($str,$start,$len){
   $aux=substr($str,$start-1,$len);
@@ -114,7 +115,7 @@ function findcall($a){
 
 $oldmyd=0;
 $base=1;
-$hh=fopen("ur3gu_2017.cbr","r");
+$hh=fopen($_FILES['cbrfile']['tmp_name'],"r");
 while(!feof($hh)){
   $line=fgets($hh);
   if(substr($line,0,4)!="QSO:")continue;
@@ -149,6 +150,7 @@ while(!feof($hh)){
 }
 fclose($hh);
 
+echo "<pre>";
 $valqso=0;
 $valmul=0;
 for($i=0;$i<2880;$i++){
@@ -159,6 +161,6 @@ for($i=0;$i<2880;$i++){
   }
   echo "$i,$valqso,$valmul,$valcc\n";
 }
-
+echo "</pre>";
 
 ?>
