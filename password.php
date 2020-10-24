@@ -24,7 +24,4 @@ for($i=0;$i<$ns;$i++){
 echo implode($qq);
 echo "</pre>";
 
-
-                                                         
-
 ?>
