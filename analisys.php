@@ -1,7 +1,6 @@
 <?php
 
-// version 2 by IK4LZH
-// look for country in cty.dat file
+// version 1 by IK4LZH
 
 function mypar($str,$start,$len){
   $aux=substr($str,$start-1,$len);
