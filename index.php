@@ -1,4 +1,4 @@
-<h1>Really simple immediate service by IK4LZH</h1>
+<h1>Simple immediate service by IK4LZH</h1>
 
 <form action="cqwwdigi.php" method="post" enctype="multipart/form-data">
 <pre>CQWWDIGI Score computation from cabrillo <input type="file" name="cbrfile"><input type="submit" name="submit" value="Upload"></pre>
