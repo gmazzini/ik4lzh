@@ -155,8 +155,19 @@ $valmul=array_sum($mul);
 $tot=$valqso*$valmul;
 echo "QSOPOINTS:$valqso MULTIPLIER:$valmul SCORE:$tot\n";
 
-$tmpfname=tempnam("/home/www/ik4lzh.mazzini.org/tmp","FOO");
-$handle=fopen($tmpfname,"w");
+list($usec,$sec)=explode(' ',microtime());
+srand($sec+$usec*1000000);
+for($i=0;$i<;$i++){
+  for(;;){
+    $nn=rand(48,122);
+    if($nn>=58&&$nn<=64)continue;
+    if($nn>=91&&$nn<=96)continue;
+    $qq[$i]=chr($nn);
+    break;
+  }
+}
+$tmpname=implode($qq);
+$handle=fopen("/home/www/ik4lzh.mazzini.org/tmp/$tmpname","w");
 $valqso=0;
 $valmul=0;
 for($i=0;$i<2880;$i++){
@@ -169,6 +180,6 @@ for($i=0;$i<2880;$i++){
 }
 fclose($handle);
 
-echo "<a href='$tmpfname' download>File</a>";
+echo "<a href='tmp/$tmpname' download>File</a>";
 
 ?>
