@@ -150,6 +150,11 @@ while(!feof($hh)){
 }
 fclose($hh);
 
+$valqso=array_sum($qso);
+$valmul=array_sum($mul);
+$tot=$valqso*$valmul;
+echo "QSO:$valqso MUL:$valmul SCORE:$tot\n";
+
 echo "<pre>";
 $valqso=0;
 $valmul=0;
