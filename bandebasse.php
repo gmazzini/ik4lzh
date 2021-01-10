@@ -1,8 +1,11 @@
 <?php
 
 // version 1 by IK4LZH
+// sciore for bandebasse
+
 $bb=array(1=>160,3=>80,7=>40);
-$hh=fopen("bandebasse.cbr","r");
+$hh=fopen($_FILES['cbrfile']['tmp_name'],"r");
+//.$hh=fopen("bandebasse.cbr","r");
 
 while(!feof($hh)){
   $line=fgets($hh);
@@ -47,8 +50,6 @@ while(!feof($hh)){
       else $mult_m[$myid]++;
     }
   }
-
-   
 }
 fclose($hh);
 
