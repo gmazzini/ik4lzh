@@ -1,4 +1,4 @@
-<h1>computations from IK4LZH</h1>
+<h1>Online Services from IK4LZH</h1>
 
 <form action="cqwwdigi.php" method="post" enctype="multipart/form-data">
 <pre>CQWWDIGI Score from cabrillo <input type="file" name="cbrfile"><input type="submit" name="submit" value="Upload"></pre>
