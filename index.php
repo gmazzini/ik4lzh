@@ -8,6 +8,10 @@
 <pre>CQWW Score computation from cabrillo <input type="file" name="cbrfile"><input type="submit" name="submit" value="Upload"></pre>
 </form>
 
+<form action="bandebasse.php" method="post" enctype="multipart/form-data">
+<pre>Bande Basse computation from cabrillo <input type="file" name="cbrfile"><input type="submit" name="submit" value="Upload"></pre>
+</form>
+
 <form action="country.php" method="post" enctype="multipart/form-data">
 <pre>Country identificaton (callsign) <input type="text" name="call"> <input type="submit" name="submit" value="Submit"></pre>
 </form>
