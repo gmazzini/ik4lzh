@@ -10,13 +10,13 @@ while(!feof($hh)){
   $parts=preg_split('/\s+/',$line);
   $freq=substr($parts[1],0,strlen($parts[1])-3);
   
-  $call=$parts[7];
+  $call=$parts[8];
   $freq=substr($parts[1],0,1);
   $mode=$parts[2];
-  $prov=substr($parts[9],0,2);
-  if(strlen($parts[9])>2)$mdxc=(int)substr($parts[9],2);
+  $prov=$parts[10];
+  if(isset($parts[11]))$mdxc=(int)$parts[11];
   else $mdxc=0;
-
+  
   $myid=$bb[$freq]."-".$mode;
   $c_call=$call."-".$myid;
   if(!isset($w_call[$c_call])){
