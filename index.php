@@ -1,15 +1,15 @@
-<h1>Simple immediate service by IK4LZH</h1>
+<h1>computations from IK4LZH</h1>
 
 <form action="cqwwdigi.php" method="post" enctype="multipart/form-data">
-<pre>CQWWDIGI Score computation from cabrillo <input type="file" name="cbrfile"><input type="submit" name="submit" value="Upload"></pre>
+<pre>CQWWDIGI Score from cabrillo <input type="file" name="cbrfile"><input type="submit" name="submit" value="Upload"></pre>
 </form>
 
 <form action="cqww.php" method="post" enctype="multipart/form-data">
-<pre>CQWW Score computation from cabrillo <input type="file" name="cbrfile"><input type="submit" name="submit" value="Upload"></pre>
+<pre>CQWW Score from cabrillo <input type="file" name="cbrfile"><input type="submit" name="submit" value="Upload"></pre>
 </form>
 
 <form action="bandebasse.php" method="post" enctype="multipart/form-data">
-<pre>Bande Basse computation from cabrillo <input type="file" name="cbrfile"><input type="submit" name="submit" value="Upload"></pre>
+<pre>BandeBasse Score from cabrillo <input type="file" name="cbrfile"><input type="submit" name="submit" value="Upload"></pre>
 </form>
 
 <form action="country.php" method="post" enctype="multipart/form-data">
