@@ -9,7 +9,7 @@
 </form>
 
 <form action="bandebasse.php" method="post" enctype="multipart/form-data">
-<pre>BandeBasse Score from cabrillo <input type="file" name="cbrfile"><input type="submit" name="submit" value="Upload"></pre>
+<pre>BANDEBASSE Score from cabrillo <input type="file" name="cbrfile"><input type="submit" name="submit" value="Upload"></pre>
 </form>
 
 <form action="country.php" method="post" enctype="multipart/form-data">
