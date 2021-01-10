@@ -1,7 +1,7 @@
 <?php
 
 // version 1 by IK4LZH
-// sciore for bandebasse
+// score for bandebasse
 
 $bb=array(1=>160,3=>80,7=>40);
 $hh=fopen($_FILES['cbrfile']['tmp_name'],"r");
@@ -55,6 +55,7 @@ fclose($hh);
 
 $keys=array_keys($qso);
 sort($keys);
+echo "<pre>";
 echo "\tQSO\tPOINT\tM_PROV\tM_MDXC\n";
 $vqso=0; $vpoint=0; $vmult_p=0; $vmult_m=0;
 foreach ($keys as &$k) {
@@ -67,5 +68,5 @@ foreach ($keys as &$k) {
 echo "TOTAL\t$vqso\t$vpoint\t$vmult_p\t$vmult_m\n";
 $tot=$vpoint*($vmult_p+$vmult_m);
 echo "SCORE: $tot\n";
-
+echo "</pre>";
 ?>
