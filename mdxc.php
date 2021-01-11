@@ -10,9 +10,10 @@ for($i=0;$i<1000;$i+=30){
       $myid=(int)substr($qq[0],$qq1+1);
       $qq2=strrpos($qq[3],">");
       $mycall=substr($qq[3],$qq2+1);
-      if($myid>0&&strlen($mycall)>2)echo "$myid,$mycall\n";
+      if($myid>0&&strlen($mycall)>2)$mylist["$mycall"]=$myid;
     }
   }
 }
+file_put_contents("/home/www/ik4lzh.mazzini.org/mdxl.list",var_export($mylist,true));
 
 ?>
