@@ -6,7 +6,7 @@
 echo "<pre>";
 $bb=array(1=>160,3=>80,7=>40);
 eval("$mymdxc=".file_get_contents("/home/www/ik4lzh.mazzini.org/mdxc.list").";");
-echo $mymdxc["IK4LZH"]."\n";
+// echo $mymdxc["IK4LZH"]."\n";
 
 $hh=fopen($_FILES['cbrfile']['tmp_name'],"r");
 
