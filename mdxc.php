@@ -14,6 +14,6 @@ for($i=0;$i<1000;$i+=30){
     }
   }
 }
-file_put_contents("/home/www/ik4lzh.mazzini.org/mdxl.list",var_export($mylist,true));
+file_put_contents("/home/www/ik4lzh.mazzini.org/mdxc.list",var_export($mylist,true));
 
 ?>
