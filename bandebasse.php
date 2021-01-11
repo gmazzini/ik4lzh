@@ -1,11 +1,12 @@
 <?php
 
-// version 1 by IK4LZH
+// v2 by IK4LZH
 // score for bandebasse
 
+echo "<pre>";
 $bb=array(1=>160,3=>80,7=>40);
+eval("$mymdxc=".file_get_contents("/home/www/ik4lzh.mazzini.org/mdxc.list").";");
 $hh=fopen($_FILES['cbrfile']['tmp_name'],"r");
-//.$hh=fopen("bandebasse.cbr","r");
 
 while(!feof($hh)){
   $line=fgets($hh);
@@ -16,9 +17,16 @@ while(!feof($hh)){
   $call=$parts[8];
   $freq=substr($parts[1],0,1);
   $mode=$parts[2];
+  $data=$parts[3];
+  $time=$parts[4];
   $prov=$parts[10];
   if(isset($parts[11]))$mdxc=(int)$parts[11];
   else $mdxc=0;
+  if(isset($mymdxc[$call]))$cmdxc=$mymdxc[$call];
+  else $cmdxc=0;
+  if($mdxc=0 && $cmdxc>0)echo "$call-$data-$time MDXC not specified\n";
+  if($mdxc>0 && $cmdxc=0)echo "$call-$data-$time MDXC not more existing\n";
+  if($mdxc!=$cmdxc)echo "$call-$data-$time MDXC wrong\n";
   
   $myid=$bb[$freq]."-".$mode;
   $c_call=$call."-".$myid;
@@ -55,7 +63,7 @@ fclose($hh);
 
 $keys=array_keys($qso);
 sort($keys);
-echo "<pre>";
+
 echo "\tQSO\tPOINT\tM_PROV\tM_MDXC\n";
 $vqso=0; $vpoint=0; $vmult_p=0; $vmult_m=0;
 foreach ($keys as &$k) {
