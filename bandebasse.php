@@ -24,7 +24,11 @@ while(!feof($hh)){
   $prov=$parts[10];
   if(isset($parts[11]))$mdxc=(int)$parts[11];
   else $mdxc=0;
-  if(isset($mymdxc[$call]))$cmdxc=$mymdxc[$call];
+  
+  $ff=strpos($call,"/");
+  if($ff===false)$scall=$call;
+  else $scall=substr($call,0,$ff);
+  if(isset($mymdxc[$scall]))$cmdxc=$mymdxc[$scall];
   else $cmdxc=0;
   if($mdxc==0 && $cmdxc>0)echo "$call-$data-$time MDXC not specified\n";
   else if($mdxc>0 && $cmdxc==0)echo "$call-$data-$time MDXC not more existing\n";
