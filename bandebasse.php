@@ -26,9 +26,9 @@ while(!feof($hh)){
   else $mdxc=0;
   if(isset($mymdxc[$call]))$cmdxc=$mymdxc[$call];
   else $cmdxc=0;
-  if($mdxc=0 && $cmdxc>0)echo "$call-$data-$time MDXC not specified\n";
-  if($mdxc>0 && $cmdxc=0)echo "$call-$data-$time MDXC not more existing\n";
-  if($mdxc!=$cmdxc)echo "$call-$data-$time MDXC wrong\n";
+  if($mdxc==0 && $cmdxc>0)echo "$call-$data-$time MDXC not specified\n";
+  else if($mdxc>0 && $cmdxc==0)echo "$call-$data-$time MDXC not more existing\n";
+  else if($mdxc!=$cmdxc)echo "$call-$data-$time MDXC wrong\n";
   
   $myid=$bb[$freq]."-".$mode;
   $c_call=$call."-".$myid;
