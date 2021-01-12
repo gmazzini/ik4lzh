@@ -8,20 +8,21 @@ $bb=array(1=>160,3=>80,7=>40);
 eval("\$mymdxc=".file_get_contents("/home/www/ik4lzh.mazzini.org/mdxc.list").";");
 
 $hh=fopen($_FILES['cbrfile']['tmp_name'],"r");
-
+$member=0;
 while(!feof($hh)){
   $line=fgets($hh);
+  if(substr($line,0,23)!="CATEGORY-MEMBER: MEMBER")$member=1;
   if(substr($line,0,4)!="QSO:")continue;
   $parts=preg_split('/\s+/',$line);
   $freq=substr($parts[1],0,strlen($parts[1])-3);
   
-  $call=$parts[8];
+  $call=$parts[8+$member];
   $freq=substr($parts[1],0,1);
   $mode=$parts[2];
   $data=$parts[3];
   $time=$parts[4];
-  $prov=$parts[10];
-  if(isset($parts[11]))$mdxc=(int)$parts[11];
+  $prov=$parts[10+$member];
+  if(isset($parts[11+$member]))$mdxc=(int)$parts[11];
   else $mdxc=0;
   
   $ff=strpos($call,"/");
