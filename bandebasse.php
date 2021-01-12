@@ -1,6 +1,6 @@
 <?php
 
-// v2 by IK4LZH
+// v3 by IK4LZH
 // score for bandebasse
 
 echo "<pre>";
@@ -22,7 +22,7 @@ while(!feof($hh)){
   $data=$parts[3];
   $time=$parts[4];
   $prov=$parts[10+$member];
-  if(isset($parts[11+$member]))$mdxc=(int)$parts[11];
+  if(isset($parts[11+$member]))$mdxc=(int)$parts[11+$member];
   else $mdxc=0;
   
   $ff=strpos($call,"/");
