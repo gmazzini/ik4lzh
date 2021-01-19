@@ -31,11 +31,17 @@ while(!feof($hh)){
   if(!isset($mult[$myid]))$mult[$myid]=1;
   $myid=$band."!".(int)$parts[10];
   if(!isset($mult[$myid]))$mult[$myid]=1;
-  
+  if(!isset($myband[$band]))$myband[$band]=1;
 }
 fclose($hh);
 
 echo "<pre>";
+$ea=array_keys($myband);
+foreach($ea as $ee) {
+    echo($ee)."\n";
+}
+
+
 echo "QSO: ".array_sum($qso)."\n";
 echo "POINT: ".array_sum($point)."\n";
 echo "MULT: ".array_sum($mult)."\n";
