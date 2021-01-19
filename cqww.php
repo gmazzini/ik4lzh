@@ -35,7 +35,8 @@ while(!feof($hh)){
 }
 fclose($hh);
 
-echo "<pre>";
+echo "<pre>\n";
+echo "BAND\tQSO\tPOINT\tMULT\n";
 $ea=array_keys($myband);
 foreach($ea as $ee){
   echo $ee."\t";
@@ -43,7 +44,6 @@ foreach($ea as $ee){
   echo mysum($point,"-",$ee)."\t";
   echo mysum($mult,"-",$ee)."\n";
 }
-
 
 
 echo "QSO: ".array_sum($qso)."\n";
