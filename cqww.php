@@ -38,16 +38,12 @@ fclose($hh);
 echo "<pre>\n";
 echo "BAND\tQSO\tPOINT\tMULT\n";
 $ea=array_keys($myband);
+sort($ea);
 foreach($ea as $ee){
   echo $ee."\t";
   echo mysum($qso,"-",$ee)."\t";
   echo mysum($point,"-",$ee)."\t";
   echo mysum($mult,"-",$ee)."\n";
 }
-
-
-echo "QSO: ".array_sum($qso)."\n";
-echo "POINT: ".array_sum($point)."\n";
-echo "MULT: ".array_sum($mult)."\n";
 echo "SCORE: ".array_sum($point)*array_sum($mult)."\n";
 ?>
