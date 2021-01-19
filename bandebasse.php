@@ -34,7 +34,7 @@ while(!feof($hh)){
 fclose($hh);
 
 echo "<pre>\n";
-echo "BAND\tQSOs\tPOINTs\tM_CYs\tM_CQs\n";
+echo "BAND\tQSOs\tPOINTs\tM_PROVs\tM_MDXCs\n";
 $ea=array_keys($myrep);
 sort($ea);
 foreach($ea as $ee){
