@@ -4,6 +4,15 @@
 
 $bb=array(1=>160,3=>80,5=>60,7=>40,10=>30,14=>20,18=>17,21=>15,24=>12,28=>10,29=>10);
 
+function mysum($arr,$sep,$mykey){
+  $sum=0;
+  foreach($arr as $kk => $vv){
+    $a1=strpos($kk,$sep);
+    if(substr($kk,0,$a1)==$mykey)$sum+=$vv;
+  }
+  return $sum;
+}
+
 function mysep($in){
   $out[1]=substr($in,5,5);
   $out[2]=substr($in,11,2);
