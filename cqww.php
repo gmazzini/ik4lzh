@@ -36,14 +36,15 @@ while(!feof($hh)){
 fclose($hh);
 
 echo "<pre>\n";
-echo "BAND\tQSOs\tPOINTs\tMULTs\n";
+echo "BAND\tQSOs\tPOINTs\tM_CYs\tM_CQs\n";
 $ea=array_keys($myband);
 sort($ea);
 foreach($ea as $ee){
   echo $ee."\t";
   echo mysum($qso,"-",$ee)."\t";
   echo mysum($point,"-",$ee)."\t";
-  echo mysum($mult,"-",$ee)."\n";
+  echo mysum($mult,"-",$ee)."\t";
+  echo mysum($mult,"!",$ee)."\n";
 }
 echo $mycall." SCORE: ".array_sum($point)*array_sum($mult)."\n";
 ?>
