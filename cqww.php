@@ -36,7 +36,7 @@ while(!feof($hh)){
 fclose($hh);
 
 echo "<pre>\n";
-echo "BAND\tQSO\tPOINT\tMULT\n";
+echo "BAND\tQSOs\tPOINTs\tMULTs\n";
 $ea=array_keys($myband);
 sort($ea);
 foreach($ea as $ee){
