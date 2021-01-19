@@ -28,13 +28,14 @@ while(!feof($hh)){
   
   $myid=$band."!".(int)$parts[10];
   if(!isset($mult[$myid]))$mult[$myid]=1;
-  if(!isset($myband[$band]))$myband[$band]=1;
+  $myid=$band."-".$parts[2];
+  if(!isset($myrep[$myid]))$myrep[$myid]=1;
 }
 fclose($hh);
 
 echo "<pre>\n";
 echo "BAND\tQSOs\tPOINTs\tM_CYs\tM_CQs\n";
-$ea=array_keys($myband);
+$ea=array_keys($myrep);
 sort($ea);
 foreach($ea as $ee){
   echo $ee."\t";
