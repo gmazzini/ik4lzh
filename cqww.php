@@ -34,9 +34,10 @@ while(!feof($hh)){
 }
 fclose($hh);
 
-echo array_sum($qso)." qso\n";
-echo array_sum($point)." point\n";
-echo array_sum($mult)." mult\n";
-echo array_sum($point)*array_sum($mult)." score\n";
+echo "<pre>";
+echo "QSO: ".array_sum($qso)."\n";
+echo "POINT: ".array_sum($point)."\n";
+echo "MULT: ".array_sum($mult)."\n";
+echo "SCORE: ".array_sum($point)*array_sum($mult)."\n";
 
 ?>
