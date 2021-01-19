@@ -36,7 +36,7 @@ while(!feof($hh)){
 fclose($hh);
 
 echo "<pre>";
-$ea=sort(array_keys($myband));
+$ea=array_keys($myband);
 foreach($ea as $ee){
   $vqso=0;
   foreach($qso as $kk => $vv){
