@@ -37,7 +37,7 @@ while(!feof($hh)){
 fclose($hh);
 
 echo "<pre>\n";
-echo "BAND\tQSOSSBs\tQSOCQs\tPNTSSBs\tPNTCWs\tM_CYs\tM_PRs\n";
+echo "BAND\tQSOSSBs\tQSOCWs\tPNTSSBs\tPNTCWs\tM_CYs\tM_PRs\n";
 $ea=array_keys($myrep);
 natsort($ea);
 $z1=$z2=$z3=$z4=$z5=$z6=0;
