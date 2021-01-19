@@ -21,7 +21,7 @@ while(!feof($hh)){
   $mys=findcall($parts[8]);
   $myid=$band."-".$parts[8];
   if(!isset($qso[$myid]))$qso[$myid]=1;
-  if($myc!=$mycB)$pp=3;
+  if($mys["cont"]!=$mycB)$pp=3;
   else if($mys["cont"]=="NA" && $mycB=="NA" && $mys["base"]!=$mycountryB)$pp=2;
   else if($mys["cont"]==$mycB && $mys["base"]!=$mycountryB)$pp=1;
   else $pp=0;
