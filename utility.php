@@ -1,7 +1,20 @@
 <?php
 
-// version 3 by IK4LZH
-// look for country in cty.dat file
+// v3 by IK4LZH 20210119
+
+function mysep($in){
+  $out[1]=substr($in,5,5);
+  $out[2]=substr($in,11,2);
+  $out[3]=substr($in,14,10);
+  $out[4]=substr($in,25,4);
+  $out[5]=substr($in,30,13);
+  $out[6]=substr($in,44,3);
+  $out[7]=substr($in,48,6);
+  $out[8]=substr($in,55,13);
+  $out[9]=substr($in,69,3);
+  $out[10]=substr($in,73,6);
+  return $out;
+}
 
 function mypar($str,$start,$len){
   $aux=substr($str,$start-1,$len);
