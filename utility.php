@@ -14,16 +14,16 @@ function mysum($arr,$sep,$mykey){
 }
 
 function mysep($in){
-  $out[1]=substr($in,5,5);
-  $out[2]=substr($in,11,2);
-  $out[3]=substr($in,14,10);
-  $out[4]=substr($in,25,4);
-  $out[5]=substr($in,30,13);
-  $out[6]=substr($in,44,3);
-  $out[7]=substr($in,48,6);
-  $out[8]=substr($in,55,13);
-  $out[9]=substr($in,69,3);
-  $out[10]=substr($in,73,6);
+  $out[1]=trim(substr($in,5,5));
+  $out[2]=trim(substr($in,11,2));
+  $out[3]=trim(substr($in,14,10));
+  $out[4]=trim(substr($in,25,4));
+  $out[5]=trim(substr($in,30,13));
+  $out[6]=trim(substr($in,44,3));
+  $out[7]=trim(substr($in,48,6));
+  $out[8]=trim(substr($in,55,13));
+  $out[9]=trim(substr($in,69,3));
+  $out[10]=trim(substr($in,73,6));
   return $out;
 }
 
