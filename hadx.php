@@ -24,16 +24,15 @@ while(!feof($hh)){
   else $pp=2;
   if(!isset($point[$myid]))$point[$myid]=$pp;
    
-  $myid=$band."-".$mys["base"];
   if($mys["base"]!="HA"){
+    $myid=$band."-".$mys["base"];
     if(!isset($mult[$myid]))$mult[$myid]=1;
   }
   else {
     $myid=$band."!".$parts[10];
     if(!isset($mult[$myid]))$mult[$myid]=1;
   }
-  $myid=$band."-".$parts[2];
-  if(!isset($myrep[$myid]))$myrep[$myid]=1;
+  if(!isset($myrep[$band]))$myrep[$band]=1;
 }
 fclose($hh);
 
