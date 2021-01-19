@@ -11,7 +11,6 @@ while(!feof($hh)){
   $line=fgets($hh);
   if(substr($line,0,4)!="QSO:")continue;
   $parts=mysep($line);
-//  $parts=preg_split('/\s+/',$line);
   if($base){
     $base=0;
     $mycall=$parts[5];
