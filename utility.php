@@ -1,12 +1,23 @@
 <?php
 
-// version 2 by IK4LZH
+// version 3 by IK4LZH
 // look for country in cty.dat file
 
 function mypar($str,$start,$len){
   $aux=substr($str,$start-1,$len);
   $mypos=strpos($aux,":");
   return trim(substr($aux,0,$mypos));
+}
+
+function findcall($a){
+  global $myt,$zz;
+  $call=strtoupper($a);
+  $lc=strlen($call);
+  $s=-1;
+  for($q=1;$q<=$lc;$q++){
+    if(isset($myt[substr($call,0,$q)]))$s=$myt[substr($call,0,$q)];
+  }
+  return $zz[$s];
 }
 
 $j=0;
@@ -101,17 +112,6 @@ for($i=0;$i<$j;$i++){
     for($w1=48;$w1<58;$w1++)for($w2=48;$w2<58;$w2++)$myt[$pre.chr($w1).chr($w2).$post]=$i;
   }
   else $myt[$qq]=$i;
-}
-
-function findcall($a){
-  global $myt,$zz;
-  $call=strtoupper($a);
-  $lc=strlen($call);
-  $s=-1;
-  for($q=1;$q<=$lc;$q++){
-    if(isset($myt[substr($call,0,$q)]))$s=$myt[substr($call,0,$q)];
-  }
-  return $zz[$s];
 }
 
 ?>
