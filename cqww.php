@@ -47,6 +47,7 @@ $valqso=array_sum($qso);
 $valmul=array_sum($mul);
 $tot=$valqso*$valmul;
 echo "QSOPOINTS:$valqso MULTIPLIER:$valmul SCORE:$tot\n";
+exit(1);
 
 list($usec,$sec)=explode(' ',microtime());
 srand($sec+$usec*1000000);
