@@ -1,5 +1,5 @@
 <?php
-// v1 by IK4LZH, usage: cd /$HOME/Documents/MLDX_Logs/macloggerdx; php hadx.php
+// v1 TO BE MODIFYED by IK4LZH, usage: cd /$HOME/Documents/MLDX_Logs/macloggerdx; php hadx.php
 $mycontest="hadx 2020";
 $mycall="IK4LZH";
 
