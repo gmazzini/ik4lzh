@@ -1,7 +1,5 @@
 <?php
-
-// version 1.1 by IK4LZH
-// compute the CQWW scopre from cabrillo file
+// v1.1 by IK4LZH 20210119
 
 include("utility.php");
 
