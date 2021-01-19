@@ -44,5 +44,5 @@ foreach($ea as $ee){
   echo mysum($mult,"-",$ee)."\t";
   echo mysum($mult,"!",$ee)."\n";
 }
-echo $mycall." SCORE: ".array_sum($point)*array_sum($mult)."\n";
+echo $parts[5]." SCORE: ".array_sum($point)*array_sum($mult)."\n";
 ?>
