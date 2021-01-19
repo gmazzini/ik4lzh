@@ -25,7 +25,7 @@ function mysep($in,$vers){
       $out[7]=trim(substr($in,48,6));
       $out[8]=trim(substr($in,55,13));
       $out[9]=trim(substr($in,69,3));
-      $out[10]=substr($in,73,6);
+      $out[10]=trim(substr($in,73,6));
       break;
     case 1:
       $out[1]=trim(substr($in,5,5));
