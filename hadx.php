@@ -1,39 +1,54 @@
 <?php
-// v1 TO BE MODIFYED by IK4LZH, usage: cd /$HOME/Documents/MLDX_Logs/macloggerdx; php hadx.php
-$mycontest="hadx 2020";
-$mycall="IK4LZH";
+// v1 by IK4LZH 20210119
 
-include("country.php");
-$mys=findcall($mycall);
-$mycont=$mys["cont"];
-$db=new SQLite3("../MacLoggerDX.sql");
-$mm=array("USB"=>"PH","LSB"=>"PH","CW"=>"CW","FT8"=>"DG","MFSK"=>"DG");
-
-$res = $db->query("SELECT call,band_tx,mode,srx FROM qso_table_v007 where contest_id='$mycontest'");
-while ($row = $res->fetchArray()) {
+include("utility.php");
+$base=1;
+if(isset($_FILES['cbrfile']['tmp_name']))$hh=fopen($_FILES['cbrfile']['tmp_name'],"r");
+else $hh=fopen("php://stdin","r");
+while(!feof($hh)){
+  $line=fgets($hh);
+  if(substr($line,0,4)!="QSO:")continue;
+  $parts=mysep($line,0);
+  if($base){
+    $base=0;
+    $mys=findcall($parts[5]);
+    $mycont=$mys["cont"];
+  }
   
-  $mys=findcall($row["call"]);
-   
-  $myid=$row["band_tx"]."-".$mm[$row["mode"]]."-".$row["call"];
-  if(!isset($qso[$myid]))$qso[$myid]=1;
+  $band=$bb[floor($parts[1]/1000)];
+  $mys=findcall($parts[8]);
+  $myid=$band."-".$parts[2]."-".$parts[8];
+  if(!isset($qso[$myid]))$qso[$myid]=1;  
   if($mys["base"]=="HA")$pp=10;
   else if($mys["cont"]!=$mycont)$pp=5;
   else $pp=2;
   if(!isset($point[$myid]))$point[$myid]=$pp;
- 
-  $myid=$row["band_tx"]."-".$mys["base"];
+   
+  $myid=$band."-".$mys["base"];
   if($mys["base"]!="HA"){
     if(!isset($mult[$myid]))$mult[$myid]=1;
   }
-  if($mys["base"]=="HA" && isset($row["srx"])){
-    $myid=$row["band_tx"]."--".$row["srx"];
+  else {
+    $myid=$band."!".$parts[10];
     if(!isset($mult[$myid]))$mult[$myid]=1;
   }
+  $myid=$band."-".$parts[2];
+  if(!isset($myrep[$myid]))$myrep[$myid]=1;
 }
+fclose($hh);
 
-echo array_sum($qso)." qso\n";
-echo array_sum($point)." point\n";
-echo array_sum($mult)." mult\n";
-echo array_sum($point)*array_sum($mult)." score\n";
-
+echo "<pre>\n";
+echo "BAND\tQSOs\tPOINTs\tM_CYs\tM_PRs\n";
+$ea=array_keys($myrep);
+natsort($ea);
+$z1=$z2=$z3=$z4=0;
+foreach($ea as $ee){
+  echo $ee."\t";
+  $xx=mysum($qso,"-",$ee); $z1+=$xx; echo $xx."\t";
+  $xx=mysum($point,"-",$ee); $z2+=$xx; echo $xx."\t";
+  $xx=mysum($mult,"-",$ee); $z3+=$xx; echo $xx."\t";
+  $xx=mysum($mult,"!",$ee); $z4+=$xx; echo $xx."\n";
+}
+echo "TOTAL\t$z1\t$z2\t$z3\t$z4\n";
+echo $parts[5]." SCORE: ".array_sum($point)*array_sum($mult)."\n";
 ?>
