@@ -21,6 +21,7 @@ while(!feof($hh)){
   $myid=$band."-".$parts[2]."-".substr($parts[10],0,2);
   if(!isset($mult[$myid]))$mult[$myid]=1;
   $mdxc=(int)substr($parts[10],3);
+  echo "$parts[10]\n";
   if($mdxc>0){
     echo "$mdxc\n";
     $myid=$band."-".$parts[2]."!".$mdxc;
