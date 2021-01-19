@@ -1,5 +1,5 @@
 <?php
-// v1.1 by IK4LZH 20210119
+// v1.2 by IK4LZH 20210119
 
 include("utility.php");
 $base=1;
