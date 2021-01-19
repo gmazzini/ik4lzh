@@ -18,9 +18,6 @@ while(!feof($hh)){
   }
   
   $band=$bb[(int)($parts[1]/1000)];
-  
-  echo $band."\n";
-  
   $mys=findcall($parts[8]);
   $myid=$band."-".$parts[8];
   if(!isset($qso[$myid]))$qso[$myid]=1;
@@ -32,6 +29,9 @@ while(!feof($hh)){
  
   $myid=$band."-".$mys["base"];
   if(!isset($mult[$myid]))$mult[$myid]=1;
+  $myid=$band."!".(int)$parts[10];
+  if(!isset($mult[$myid]))$mult[$myid]=1;
+  
 }
 fclose($hh);
 
