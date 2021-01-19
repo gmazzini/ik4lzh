@@ -38,12 +38,10 @@ fclose($hh);
 echo "<pre>";
 $ea=array_keys($myband);
 foreach($ea as $ee){
-  $vqso=0;
-  foreach($qso as $kk => $vv){
-    $a1=strpos($kk,"-");
-    if(substr($kk,0,$a1)==$ee)$vqso+=$vv;
-  }
-  echo "$ee $vqso\n";
+  echo $ee."\t";
+  echo mysum($qso,"-",$ee)."\t";
+  echo mysum($point,"-",$ee)."\t";
+  echo mysum($mult,"-",$ee)."\n";
 }
 
 
