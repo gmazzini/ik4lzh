@@ -1,5 +1,5 @@
 <?php
-// v3 by IK4LZH
+// v4 by IK4LZH 20210119
 include("utility.php");
 
 if(isset($_FILES['cbrfile']['tmp_name']))$hh=fopen($_FILES['cbrfile']['tmp_name'],"r");
