@@ -34,7 +34,7 @@ fclose($hh);
 echo "<pre>\n";
 echo "BAND\tQSOs\tPOINTs\tM_PROVs\tM_MDXCs\n";
 $ea=array_keys($myrep);
-sort($ea);
+natsort($ea);
 foreach($ea as $ee){
   echo $ee."\t";
   echo mysum($qso,"-",$ee)."\t";
