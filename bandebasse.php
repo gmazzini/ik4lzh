@@ -41,7 +41,7 @@ foreach($ea as $ee){
   $xx=mysum($qso,"-",$ee); $z1+=$xx; echo $xx."\t";
   $xx=mysum($point,"-",$ee); $z2+=$xx; echo $xx."\t";
   $xx=mysum($mult,"-",$ee); $z3+=$xx; echo $xx."\t";
-  $xx=mysum($qso,"!",$ee); $z4+=$xx; echo $xx."\n";
+  $xx=mysum($mult,"!",$ee); $z4+=$xx; echo $xx."\n";
 }
 echo "TOTAL\t$z1\t$z2\t$z3\t$z4\n";
 echo $parts[5]." SCORE: ".array_sum($point)*array_sum($mult)."\n";
