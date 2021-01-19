@@ -26,8 +26,6 @@ while(!feof($hh)){
     if(!isset($mult[$myid]))$mult[$myid]=1;  
   }
   
-  $myid=$band."!".(int)$parts[10];
-  if(!isset($mult[$myid]))$mult[$myid]=1;
   $myid=$band."-".$parts[2];
   if(!isset($myrep[$myid]))$myrep[$myid]=1;
 }
