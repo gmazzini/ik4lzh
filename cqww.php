@@ -13,17 +13,17 @@ while(!feof($hh)){
     $base=0;
     $mycall=$parts[5];
     $mys=findcall($mycall);
-    $mycountryB=$mys["base"];
-    $mycB=$mys["cont"];
+    $mybase=$mys["base"];
+    $mycont=$mys["cont"];
   }
   
   $band=$bb[(int)$parts[1]/1000];
   $mys=findcall($parts[8]);
   $myid=$band."-".$parts[8];
   if(!isset($qso[$myid]))$qso[$myid]=1;
-  if($mys["cont"]!=$mycB)$pp=3;
-  else if($mys["cont"]=="NA" && $mycB=="NA" && $mys["base"]!=$mycountryB)$pp=2;
-  else if($mys["cont"]==$mycB && $mys["base"]!=$mycountryB)$pp=1;
+  if($mys["cont"]!=$mycont)$pp=3;
+  else if($mys["cont"]=="NA" && $mycont=="NA" && $mys["base"]!=$mybase)$pp=2;
+  else if($mys["cont"]==$mycont && $mys["base"]!=$mybase)$pp=1;
   else $pp=0;
   if(!isset($point[$myid]))$point[$myid]=$pp;
  
