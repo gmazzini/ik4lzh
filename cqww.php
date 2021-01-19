@@ -17,9 +17,6 @@ while(!feof($hh)){
     $mycont=$mys["cont"];
   }
   
-  
-  if(floor($parts[1]/1000)==29)echo $line;
-  
   $band=$bb[floor($parts[1]/1000)];
   $mys=findcall($parts[8]);
   $myid=$band."-".$parts[8];
