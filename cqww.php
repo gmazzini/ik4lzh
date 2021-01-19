@@ -7,7 +7,8 @@ include("utility.php");
 
 $oldmyd=0;
 $base=1;
-$hh=fopen($_FILES['cbrfile']['tmp_name'],"r");
+if(isset($_FILES['cbrfile']['tmp_name']))$hh=fopen($_FILES['cbrfile']['tmp_name'],"r");
+else $hh=fopen("php://stdin","r");
 while(!feof($hh)){
   $line=fgets($hh);
   if(substr($line,0,4)!="QSO:")continue;
