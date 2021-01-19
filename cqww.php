@@ -2,7 +2,6 @@
 // v1.1 by IK4LZH 20210119
 
 include("utility.php");
-
 $base=1;
 if(isset($_FILES['cbrfile']['tmp_name']))$hh=fopen($_FILES['cbrfile']['tmp_name'],"r");
 else $hh=fopen("php://stdin","r");
@@ -38,5 +37,4 @@ echo "QSO: ".array_sum($qso)."\n";
 echo "POINT: ".array_sum($point)."\n";
 echo "MULT: ".array_sum($mult)."\n";
 echo "SCORE: ".array_sum($point)*array_sum($mult)."\n";
-
 ?>
