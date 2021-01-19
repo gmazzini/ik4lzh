@@ -24,7 +24,7 @@ while(!feof($hh)){
 fclose($hh);
 
 echo "<pre>\n";
-echo "BAND\tQSOs\tPOINTs\tMULT\n";
+echo "BAND\tQSOs\tPOINTs\tMULTs\n";
 $ea=array_keys($myband);
 sort($ea);
 foreach($ea as $ee){
@@ -34,5 +34,4 @@ foreach($ea as $ee){
   echo mysum($mult,"-",$ee)."\n";
 }
 echo $parts[5]." SCORE: ".array_sum($point)*array_sum($mult)."\n";
-
 ?>
