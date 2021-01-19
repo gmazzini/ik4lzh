@@ -11,8 +11,7 @@ while(!feof($hh)){
   $parts=mysep($line,0);
   if($base){
     $base=0;
-    $mycall=$parts[5];
-    $mys=findcall($mycall);
+    $mys=findcall($parts[5]);
     $mybase=$mys["base"];
     $mycont=$mys["cont"];
   }
