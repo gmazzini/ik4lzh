@@ -75,8 +75,4 @@ foreach($myd as $dd){
   if(isset($amult[$dd]))$z3+=$amult[$dd];
   echo $dd.",".$z1.",".$z2.",".$z3."\n";
 }
-
-
-echo array_sum($aqso)." ".array_sum($apoint)." ".array_sum($amult)."\n";
-
 ?>
