@@ -8,7 +8,7 @@ else $hh=fopen("php://stdin","r");
 while(!feof($hh)){
   $line=fgets($hh);
   if(substr($line,0,4)!="QSO:")continue;
-  $parts=mysep($line,0);
+  $parts=mysep($line,10);
   if($base){
     $base=0;
     $mys=findcall($parts[5]);
