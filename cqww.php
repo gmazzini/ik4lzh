@@ -66,7 +66,7 @@ foreach($ea as $ee){
 echo "TOTAL\t$z1\t$z2\t$z3\t$z4\n";
 echo $parts[5]." SCORE: ".array_sum($point)*array_sum($mult)."\n";
 
-$myd=array_unique(array_key($aqso));
+$myd=array_unique(array_keys($aqso));
 sort($myd);
 print_r($myd);
 
