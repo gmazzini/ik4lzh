@@ -29,12 +29,24 @@ while(!feof($hh)){
   else if($mys["cont"]=="NA" && $mycont=="NA" && $mys["base"]!=$mybase)$pp=2;
   else if($mys["cont"]==$mycont && $mys["base"]!=$mybase)$pp=1;
   else $pp=0;
-  if(!isset($point[$myid]))$point[$myid]=$pp;
+  if(!isset($point[$myid])){
+    $point[$myid]=$pp;
+    if(!isset($apoint[$mytt]))$apoint[$mytt]=$pp;
+    else $apoint[$mytt]+=$pp;
+  }
  
   $myid=$band."-".$mys["base"];
-  if(!isset($mult[$myid]))$mult[$myid]=1;
+  if(!isset($mult[$myid])){
+    $mult[$myid]=1;
+    if(!isset($amult[$mytt]))$amult[$mytt]=1;
+    else $amult[$mytt]++;
+  }
   $myid=$band."!".(int)$parts[10];
-  if(!isset($mult[$myid]))$mult[$myid]=1;
+  if(!isset($mult[$myid])){
+    $mult[$myid]=1;
+    if(!isset($amult[$mytt]))$amult[$mytt]=1;
+    else $amult[$mytt]++;
+  }
   if(!isset($myrep[$band]))$myrep[$band]=1;
 }
 fclose($hh);
@@ -54,6 +66,6 @@ foreach($ea as $ee){
 echo "TOTAL\t$z1\t$z2\t$z3\t$z4\n";
 echo $parts[5]." SCORE: ".array_sum($point)*array_sum($mult)."\n";
 
-print_r($aqso);
+echo array_sum($aqso)." ".array_sum($apoint)." ".array_sum($amult)."\n";
 
 ?>
