@@ -39,6 +39,9 @@ function mysep($in,$vers){
       $out[9]="";
       $out[10]=trim(substr($in,67,8));
       break;
+    case 10:
+      $out=preg_split('/\s+/',$in);
+      break;
   }
   return $out;
 }
