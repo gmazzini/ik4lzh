@@ -16,10 +16,15 @@ while(!feof($hh)){
     $mycont=$mys["cont"];
   }
   
+  $mytt=$parts[3].":".$parts[4];
   $band=$bb[floor($parts[1]/1000)];
   $mys=findcall($parts[8]);
   $myid=$band."-".$parts[8];
-  if(!isset($qso[$myid]))$qso[$myid]=1;
+  if(!isset($qso[$myid])){
+    $qso[$myid]=1;
+    if(!isset($aqso[$mytt]))$aqso[$mytt]=1;
+    else $aqso[$mytt]++;
+  }
   if($mys["cont"]!=$mycont)$pp=3;
   else if($mys["cont"]=="NA" && $mycont=="NA" && $mys["base"]!=$mybase)$pp=2;
   else if($mys["cont"]==$mycont && $mys["base"]!=$mybase)$pp=1;
@@ -48,4 +53,7 @@ foreach($ea as $ee){
 }
 echo "TOTAL\t$z1\t$z2\t$z3\t$z4\n";
 echo $parts[5]." SCORE: ".array_sum($point)*array_sum($mult)."\n";
+
+print_r($aqso);
+
 ?>
