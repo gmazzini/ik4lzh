@@ -7,13 +7,13 @@ else $hh=fopen("php://stdin","r");
 while(!feof($hh)){
   $line=fgets($hh);
   if(substr($line,0,4)!="QSO:")continue;
-  $parts=mysep($line,1);
+  $parts=mysep($line,10);
   
   $band=$bb[floor($parts[1]/1000)];
-  $myid=$band."-".$parts[8];
+  $myid=$band."-".$parts[7];
   if(!isset($qso[$myid]))$qso[$myid]=1;
-  $mygrid=substr($parts[7],0,2);
-  $yourgrid=substr($parts[10],0,2);
+  $mygrid=substr($parts[6],0,2);
+  $yourgrid=substr($parts[8],0,2);
   $pp=1+floor($dist[$mygrid.$yourgrid]);
   if(!isset($point[$myid]))$point[$myid]=$pp;
  
