@@ -1,9 +1,6 @@
 <?php
+// v2 by IK4LZH 20210120
 
-// version 1 by IK4LZH
-
-echo "<pre>";
-// $passlen=$argv[1];
 $passlen=$_POST['passlen'];
 list($usec,$sec)=explode(' ',microtime());
 srand($sec+$usec*1000000);
@@ -16,12 +13,7 @@ for($i=0;$i<$passlen;$i++){
     break;
   }
 }
-$ns=rand(1,$passlen/3);
-for($i=0;$i<$ns;$i++){
-  $nn=rand(1,$passlen-2);
-  $qq[$nn]=".";
-}
+echo "<pre>";
 echo implode($qq);
 echo "</pre>";
-
 ?>
