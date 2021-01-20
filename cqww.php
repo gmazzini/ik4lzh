@@ -68,7 +68,14 @@ echo $parts[5]." SCORE: ".array_sum($point)*array_sum($mult)."\n";
 
 $myd=array_unique(array_keys($aqso));
 sort($myd);
-print_r($myd);
+$z1=$z2=$z3=0;
+foreach($myd as $dd){
+  $z1+=$aqso[$dd];
+  $z2+=$apoint[$dd];
+  $z3+=$amult[$dd];
+  echo $dd.",".$z1.",".$z2.",".$z3."\n";
+}
+
 
 echo array_sum($aqso)." ".array_sum($apoint)." ".array_sum($amult)."\n";
 
