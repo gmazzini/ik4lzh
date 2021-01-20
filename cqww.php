@@ -71,8 +71,8 @@ sort($myd);
 $z1=$z2=$z3=0;
 foreach($myd as $dd){
   $z1+=$aqso[$dd];
-  $z2+=$apoint[$dd];
-  $z3+=$amult[$dd];
+  if(isset($apoint[$dd]))$z2+=$apoint[$dd];
+  if(isset($amult[$dd]))$z3+=$amult[$dd];
   echo $dd.",".$z1.",".$z2.",".$z3."\n";
 }
 
