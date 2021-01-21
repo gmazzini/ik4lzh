@@ -20,6 +20,10 @@
 <pre>BANDEBASSE Score from cabrillo <input type="file" name="cbrfile"><input type="submit" name="submit" value="Upload"></pre>
 </form>
 
+<form action="4080.php" method="post" enctype="multipart/form-data">
+<pre>4080 Score from cabrillo <input type="file" name="cbrfile"><input type="submit" name="submit" value="Upload"></pre>
+</form>
+
 <form action="country.php" method="post" enctype="multipart/form-data">
 <pre>Country identificaton (callsign) <input type="text" name="call"> <input type="submit" name="submit" value="Submit"></pre>
 </form>
