@@ -30,7 +30,7 @@ while(!feof($hh)){
     else $pp=6;
   }
   else if($mys["cont"]=="NA" && $mycont=="NA"){
-    if($band>=20)$pp=2;
+    if(((int)$band)>=20)$pp=2;
     else $pp=4;
   }
   else if($mys["base"]!=$mybase){
