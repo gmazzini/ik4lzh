@@ -48,6 +48,8 @@ while(!feof($hh)){
   $myid=substr($parts[8],0,$i+1);        
   if(!isset($mult[$myid])){
     $mult[$myid]=1;
+    $myid=$band."-".$myid;
+    if(!isset($vmult[$myid]))$vmult[$myid]=1;
     if(!isset($amult[$mytt]))$amult[$mytt]=1;
     else $amult[$mytt]++;
   }
@@ -64,7 +66,7 @@ foreach($ea as $ee){
   echo $ee."\t";
   $xx=mysum($qso,"-",$ee); $z1+=$xx; echo $xx."\t";
   $xx=mysum($point,"-",$ee); $z2+=$xx; echo $xx."\t";
-  $xx=mysum($mult,"-",$ee); $z3+=$xx; echo $xx."\n";
+  $xx=mysum($vmult,"-",$ee); $z3+=$xx; echo $xx."\n";
 }
 echo "TOTAL\t$z1\t$z2\t$z3\n";
 echo "\n".$parts[5]." SCORE: ".array_sum($point)*array_sum($mult)."\n\n";
