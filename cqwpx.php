@@ -44,7 +44,8 @@ while(!feof($hh)){
     else $apoint[$mytt]+=$pp;
   }
   
-  $myid=$part[8];
+  preg_match("{[0-9]([^0-9]*)$}",$parts[8],$matches);
+  $myid=substr($parts[8],0,strlen($parts[8])-strlen($matches[0]))+1;
   if(!isset($mult[$myid])){
     $mult[$myid]=1;
     if(!isset($amult[$mytt]))$amult[$mytt]=1;
