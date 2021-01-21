@@ -1,5 +1,5 @@
 <?php
-// v2 by IK4LZH 20210120
+// v3 by IK4LZH 20210121
 
 include("utility.php");
 $base=1;
@@ -37,6 +37,8 @@ while(!feof($hh)){
     $myid=$band."-".$mys["base"];
     if(!isset($mult[$myid])){
       $mult[$myid]=1;
+      $myid=$band."-".$parts[2]."-".$mys["base"];
+      if(!isset($vmult[$myid]))$vmult[$myid]=1;
       if(!isset($amult[$mytt]))$amult[$mytt]=1;
       else $amult[$mytt]++;
     }
@@ -45,6 +47,8 @@ while(!feof($hh)){
     $myid=$band."!".$parts[10];
     if(!isset($mult[$myid])){
       $mult[$myid]=1;
+      $myid=$band."-".$parts[2]."!".$parts[10];
+      if(!isset($vmult[$myid]))$vmult[$myid]=1;
       if(!isset($amult[$mytt]))$amult[$mytt]=1;
       else $amult[$mytt]++;
     }
@@ -54,20 +58,18 @@ while(!feof($hh)){
 fclose($hh);
 
 echo "<pre>\n";
-echo "BAND\tQSOSSBs\tQSOCWs\tPNTSSBs\tPNTCWs\tM_CYs\tM_PRs\n";
+echo "BAND\tQSOs\tPOINTs\tM_CYs\tM_PRs\n";
 $ea=array_keys($myrep);
 natsort($ea);
-$z1=$z2=$z3=$z4=$z5=$z6=0;
+$z1=$z2=$z3=$z4=0;
 foreach($ea as $ee){
   echo $ee."\t";
-  $xx=mysum($qso,"-",$ee."-PH"); $z1+=$xx; echo $xx."\t";
-  $xx=mysum($qso,"-",$ee."-CW"); $z2+=$xx; echo $xx."\t";
-  $xx=mysum($point,"-",$ee."-PH"); $z3+=$xx; echo $xx."\t";
-  $xx=mysum($point,"-",$ee."-CW"); $z4+=$xx; echo $xx."\t";
-  $xx=mysum($mult,"-",$ee); $z5+=$xx; echo $xx."\t";
-  $xx=mysum($mult,"!",$ee); $z6+=$xx; echo $xx."\n";
+  $xx=mysum($qso,"-",$ee); $z1+=$xx; echo $xx."\t";
+  $xx=mysum($point,"-",$ee); $z2+=$xx; echo $xx."\t";
+  $xx=mysum($vmult,"-",$ee); $z3+=$xx; echo $xx."\t";
+  $xx=mysum($vmult,"!",$ee); $z4+=$xx; echo $xx."\n";
 }
-echo "TOTAL\t$z1\t$z2\t$z3\t$z4\t$z5\t$z6\n";
+echo "TOTAL\t$z1\t$z2\t$z3\t$z4\n";
 echo "\n".$parts[5]." SCORE: ".array_sum($point)*array_sum($mult)."\n\n";
 
 $myd=array_unique(array_keys($aqso));
