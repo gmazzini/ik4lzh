@@ -1,19 +1,23 @@
 <h1>Online Services by IK4LZH</h1>
 
-<form action="cqwwdigi.php" method="post" enctype="multipart/form-data">
-<pre>CQWWDIGI Score from cabrillo <input type="file" name="cbrfile"><input type="submit" name="submit" value="Upload"></pre>
-</form>
-
 <form action="cqww.php" method="post" enctype="multipart/form-data">
 <pre>CQWW Score from cabrillo <input type="file" name="cbrfile"><input type="submit" name="submit" value="Upload"></pre>
 </form>
 
-<form action="bandebasse.php" method="post" enctype="multipart/form-data">
-<pre>BANDEBASSE Score from cabrillo <input type="file" name="cbrfile"><input type="submit" name="submit" value="Upload"></pre>
+<form action="cqwpx.php" method="post" enctype="multipart/form-data">
+<pre>CQWPX Score from cabrillo <input type="file" name="cbrfile"><input type="submit" name="submit" value="Upload"></pre>
+</form>
+
+<form action="cqwwdigi.php" method="post" enctype="multipart/form-data">
+<pre>CQWWDIGI Score from cabrillo <input type="file" name="cbrfile"><input type="submit" name="submit" value="Upload"></pre>
 </form>
 
 <form action="hadx.php" method="post" enctype="multipart/form-data">
 <pre>HADX Score from cabrillo <input type="file" name="cbrfile"><input type="submit" name="submit" value="Upload"></pre>
+</form>
+
+<form action="bandebasse.php" method="post" enctype="multipart/form-data">
+<pre>BANDEBASSE Score from cabrillo <input type="file" name="cbrfile"><input type="submit" name="submit" value="Upload"></pre>
 </form>
 
 <form action="country.php" method="post" enctype="multipart/form-data">
