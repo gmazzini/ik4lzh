@@ -26,7 +26,7 @@ while(!feof($hh)){
     else $aqso[$mytt]++;
   }  
   if($mys["cont"]!=$mycont){
-    if(((int)$band>=20)$pp=3;
+    if(((int)$band)>=20)$pp=3;
     else $pp=6;
   }
   else if($mys["cont"]=="NA" && $mycont=="NA"){
