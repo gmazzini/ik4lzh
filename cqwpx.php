@@ -33,7 +33,7 @@ while(!feof($hh)){
     if($band>=20)$pp=2;
     else $pp=4;
   }
-  else if($mys[base]!=$mybase){
+  else if($mys["base"]!=$mybase){
     if($band>=20)$pp=1;
     else $pp=2;
   }
