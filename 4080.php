@@ -7,7 +7,7 @@ else $hh=fopen("php://stdin","r");
 while(!feof($hh)){
   $line=fgets($hh);
   if(substr($line,0,4)!="QSO:")continue;
-  $parts=mysep($line,0);
+  $parts=mysep($line,10);
   
   $mytt=$parts[3].":".$parts[4];
   $band=$bb[floor($parts[1]/1000)];
