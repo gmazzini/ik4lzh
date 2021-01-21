@@ -26,15 +26,15 @@ while(!feof($hh)){
     else $aqso[$mytt]++;
   }  
   if($mys["cont"]!=$mycont){
-    if(((int)$band)>=20)$pp=3;
+    if($band<=20)$pp=3;
     else $pp=6;
   }
   else if($mys["cont"]=="NA" && $mycont=="NA"){
-    if($band>=20)$pp=2;
+    if($band<=20)$pp=2;
     else $pp=4;
   }
   else if($mys["base"]!=$mybase){
-    if($band>=20)$pp=1;
+    if($band<=20)$pp=1;
     else $pp=2;
   }
   else $pp=1;
