@@ -4,6 +4,7 @@ all file can be tested and used directly on http://ik4lzh.mazzini.org
 >> cqwpx.php      CQWPX SSB or CW score from cabrillo file
 >> cqwwdigi.php   CQWWDIGI score from cabrillo file
 >> hadx.php       HADX score from cabrillo file
->> bandebasse.php BANDEBASSE score from cabrillo file 
->> country.php look for country in cty.dat file
->> password.php generate a password
+>> bandebasse.php BANDEBASSE score from cabrillo file
+>> 4080.php       4080 score from cabrillo file 
+>> country.php    look for country in cty.dat file
+>> password.php   generate a password
