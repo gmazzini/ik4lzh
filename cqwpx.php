@@ -44,7 +44,7 @@ while(!feof($hh)){
     else $apoint[$mytt]+=$pp;
   }
   
-  preg_match("#\d\D+$#",$parts[8],$matches,PREG_OFFSET_CAPTURE));
+  preg_match("#\d\D+$#",$parts[8],$matches,PREG_OFFSET_CAPTURE);
   $myid=substr($parts[8],0,$matches[0][1]+1);
   if(!isset($mult[$myid])){
     $mult[$myid]=1;
