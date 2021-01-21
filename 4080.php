@@ -1,5 +1,5 @@
 <?php
-// v5 by IK4LZH 20210120
+// v1 by IK4LZH 20210121
 include("utility.php");
 
 if(isset($_FILES['cbrfile']['tmp_name']))$hh=fopen($_FILES['cbrfile']['tmp_name'],"r");
@@ -18,9 +18,9 @@ while(!feof($hh)){
     else $aqso[$mytt]++;
   }
   if($parts[2]=="PH")$pp=1;
-  else if($parts[2]=="CW")$pp=2;
-  $aux=substr($parts[8],0,2);
-  if($aux=="IQ"||$aux=="IY")$pp=10;
+  else if($parts[2]=="RY" || $parts[2]=="DG")$pp=2;
+  else if($parts[2]=="CW")$pp=3;
+  else $pp=0;
   if(!isset($point[$myid])){
     $point[$myid]=$pp;
     if(!isset($apoint[$mytt]))$apoint[$mytt]=$pp;
@@ -33,15 +33,6 @@ while(!feof($hh)){
     if(!isset($amult[$mytt]))$amult[$mytt]=1;
     else $amult[$mytt]++;
   }
-  $mdxc=(int)substr($parts[10],3);
-  if($mdxc>0){
-    $myid=$band."-".$parts[2]."!".$mdxc;
-    if(!isset($mult[$myid])){
-      $mult[$myid]=1;
-      if(!isset($amult[$mytt]))$amult[$mytt]=1;
-      else $amult[$mytt]++;
-    }
-  }
   
   $myid=$band."-".$parts[2];
   if(!isset($myrep[$myid]))$myrep[$myid]=1;
@@ -49,18 +40,17 @@ while(!feof($hh)){
 fclose($hh);
 
 echo "<pre>\n";
-echo "BAND\tQSOs\tPOINTs\tM_PROVs\tM_MDXCs\n";
+echo "BAND\tQSOs\tPOINTs\tM_PROVs\n";
 $ea=array_keys($myrep);
 natsort($ea);
-$z1=$z2=$z3=$z4=0;
+$z1=$z2=$z3=0;
 foreach($ea as $ee){
   echo $ee."\t";
   $xx=mysum($qso,"-",$ee); $z1+=$xx; echo $xx."\t";
   $xx=mysum($point,"-",$ee); $z2+=$xx; echo $xx."\t";
-  $xx=mysum($mult,"-",$ee); $z3+=$xx; echo $xx."\t";
-  $xx=mysum($mult,"!",$ee); $z4+=$xx; echo $xx."\n";
+  $xx=mysum($mult,"-",$ee); $z3+=$xx; echo $xx."\n";
 }
-echo "TOTAL\t$z1\t$z2\t$z3\t$z4\n";
+echo "TOTAL\t$z1\t$z2\t$z3\n";
 echo "\n".$parts[5]." SCORE: ".array_sum($point)*array_sum($mult)."\n\n";
 
 $myd=array_unique(array_keys($aqso));
