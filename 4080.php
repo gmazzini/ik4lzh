@@ -11,15 +11,18 @@ while(!feof($hh)){
   
   $mytt=$parts[3].":".$parts[4];
   $band=$bb[floor($parts[1]/1000)];
-  $myid=$band."-".$parts[2]."-".$parts[8];
+  $mode=$parts[2];
+  if($mode=="DG")$mode="RY";
+  
+  $myid=$band."-".$mode."-".$parts[8];
   if(!isset($qso[$myid])){
     $qso[$myid]=1;
     if(!isset($aqso[$mytt]))$aqso[$mytt]=1;
     else $aqso[$mytt]++;
   }
-  if($parts[2]=="PH")$pp=1;
-  else if($parts[2]=="RY" || $parts[2]=="DG")$pp=2;
-  else if($parts[2]=="CW")$pp=3;
+  if($mode=="PH")$pp=1;
+  else if($mode=="RY")$pp=2;
+  else if($mode=="CW")$pp=3;
   else $pp=0;
   if(!isset($point[$myid])){
     $point[$myid]=$pp;
@@ -27,14 +30,14 @@ while(!feof($hh)){
     else $apoint[$mytt]+=$pp;
   }
  
-  $myid=$band."-".$parts[2]."-".substr($parts[10],0,2);
+  $myid=$band."-".$mode."-".substr($parts[10],0,2);
   if(!isset($mult[$myid])){
     $mult[$myid]=1;
     if(!isset($amult[$mytt]))$amult[$mytt]=1;
     else $amult[$mytt]++;
   }
   
-  $myid=$band."-".$parts[2];
+  $myid=$band."-".$mode;
   if(!isset($myrep[$myid]))$myrep[$myid]=1;
 }
 fclose($hh);
