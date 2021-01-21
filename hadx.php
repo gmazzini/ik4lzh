@@ -53,7 +53,8 @@ while(!feof($hh)){
       else $amult[$mytt]++;
     }
   }
-  if(!isset($myrep[$band]))$myrep[$band]=1;
+  $myid=$band."-".$parts[2];
+  if(!isset($myrep[$myid]))$myrep[$myid]=1;
 }
 fclose($hh);
 
