@@ -1,5 +1,5 @@
 <?php
-// v5 by IK4LZH 20210120
+// v6 by IK4LZH 20210122
 include("utility.php");
 
 if(isset($_FILES['cbrfile']['tmp_name']))$hh=fopen($_FILES['cbrfile']['tmp_name'],"r");
@@ -72,4 +72,5 @@ foreach($myd as $dd){
   if(isset($amult[$dd]))$z3+=$amult[$dd];
   echo $dd.",".$z1.",".$z2.",".$z3."\n";
 }
+file_put_contents("/home/www/ik4lzh.mazzini.org/log.txt",date("Y-m-d H:i:s").",bandebasse,".$parts[5].",".$parts[3].",".$z1.",".$z2.",".$z3."\n", FILE_APPEND | LOCK_EX);
 ?>
