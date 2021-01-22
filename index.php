@@ -3,6 +3,7 @@
 <form action="cqww.php" method="post" enctype="multipart/form-data"> 
 CQWW Score from cabrillo <input type="file" name="cbrfile" id="cqww">
 <label for="cqww">No file chosen</label>
+ciao
 <input type="submit" name="submit" value="Upload">
 </form>
 
