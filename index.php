@@ -1,9 +1,8 @@
 <h1>Online Services by IK4LZH</h1>
 
 <form action="cqww.php" method="post" enctype="multipart/form-data"> 
-CQWW Score from cabrillo <input type="file" name="cbrfile" id="cqww">
+CQWW Score from cabrillo <input type="file" name="cbrfile" id="cqww" hidden>
 <label for="cqww">No file chosen</label>
-ciao
 <input type="submit" name="submit" value="Upload">
 </form>
 
