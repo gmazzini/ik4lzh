@@ -10,30 +10,34 @@
 <input type="submit" name="submit" value="Upload">
 </form>
 
-
 <form action="cqwwdigi.php" method="post" enctype="multipart/form-data">
-<pre>CQWWDIGI Score from cabrillo <input type="file" name="cbrfile"><input type="submit" name="submit" value="Upload"></pre>
+3. CQWWDIGI Score from cabrillo <input type="file" name="cbrfile">
+<input type="submit" name="submit" value="Upload">
 </form>
 
 <form action="hadx.php" method="post" enctype="multipart/form-data">
-<pre>HADX Score from cabrillo <input type="file" name="cbrfile"><input type="submit" name="submit" value="Upload"></pre>
+4. HADX Score from cabrillo <input type="file" name="cbrfile">
+<input type="submit" name="submit" value="Upload">
 </form>
 
 <form action="bandebasse.php" method="post" enctype="multipart/form-data">
-<pre>BANDEBASSE Score from cabrillo <input type="file" name="cbrfile"><input type="submit" name="submit" value="Upload"></pre>
+5. BANDEBASSE Score from cabrillo <input type="file" name="cbrfile">
+<input type="submit" name="submit" value="Upload">
 </form>
 
 <form action="4080.php" method="post" enctype="multipart/form-data">
-<pre>4080 Score from cabrillo <input type="file" name="cbrfile"><input type="submit" name="submit" value="Upload"></pre>
+6. 4080 Score from cabrillo <input type="file" name="cbrfile">
+<input type="submit" name="submit" value="Upload">
 </form>
 
+<hr>
+
 <form action="country.php" method="post" enctype="multipart/form-data">
-<pre>Country identificaton (callsign) <input type="text" name="call"> <input type="submit" name="submit" value="Submit"></pre>
+A. Country identificaton (callsign) <input type="text" name="call">
+<input type="submit" name="submit" value="Submit">
 </form>
 
 <form action="password.php" method="post" enctype="multipart/form-data">
-<pre>Password Generator (len) <input type="text" name="passlen"><input type="submit" name="submit" value="Submit">
-</pre>
+B. Password Generator (len) <input type="text" name="passlen">
+<input type="submit" name="submit" value="Submit">
 </form>
-
-</pre>
