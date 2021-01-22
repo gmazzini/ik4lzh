@@ -1,3 +1,18 @@
+<head>
+<style>
+cqww{
+  display: inline-block;
+  background-color: indigo;
+  color: white;
+  padding: 0.5rem;
+  font-family: sans-serif;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+</style>
+</head>
+
 <h1>Online Services by IK4LZH</h1>
 
 <form action="cqww.php" method="post" enctype="multipart/form-data"> 
