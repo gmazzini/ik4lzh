@@ -1,12 +1,13 @@
 <h1>Online Services by IK4LZH</h1>
 
 <form action="cqww.php" method="post" enctype="multipart/form-data"> 
-CQWW Score from cabrillo <input type="file" name="cbrfile">
+1. CQWW Score from cabrillo <input type="file" name="cbrfile">
 <input type="submit" name="submit" value="Upload">
 </form>
 
 <form action="cqwpx.php" method="post" enctype="multipart/form-data">
-<pre>CQWPX Score from cabrillo <input type="file" name="cbrfile"><input type="submit" name="submit" value="Upload"></pre>
+2. CQWPX Score from cabrillo <input type="file" name="cbrfile">
+<input type="submit" name="submit" value="Upload">
 </form>
 
 
