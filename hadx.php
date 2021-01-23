@@ -72,15 +72,5 @@ foreach($ea as $ee){
 }
 echo "TOTAL\t$z1\t$z2\t$z3\t$z4\n";
 echo "\n".$parts[5]." SCORE: ".array_sum($point)*array_sum($mult)."\n\n";
-
-$myd=array_unique(array_keys($aqso));
-sort($myd);
-$z1=$z2=$z3=0;
-foreach($myd as $dd){
-  $z1+=$aqso[$dd];
-  if(isset($apoint[$dd]))$z2+=$apoint[$dd];
-  if(isset($amult[$dd]))$z3+=$amult[$dd];
-  echo $dd.",".$z1.",".$z2.",".$z3."\n";
-}
-file_put_contents("/home/www/ik4lzh.mazzini.org/log.txt",date("Y-m-d H:i:s").",hadx,".$parts[5].",".$parts[3].",".$z1.",".$z2.",".$z3."\n", FILE_APPEND | LOCK_EX);
+mybreakdown("hadx",$parts[5],$parts[3],$aqso,$apoint,$amult);
 ?>
