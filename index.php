@@ -11,13 +11,13 @@ label {
 <h1>Online Services by IK4LZH</h1>
 
 <form action="cqww.php" method="post" enctype="multipart/form-data"> 
-<label>1. CQWW      Score from cabrillo</label>
+<label>1. CQWW       Score from cabrillo</label>
 <input type="file" name="cbrfile">
 <input type="submit" name="submit" value="Upload">
 </form>
 
 <form action="cqwpx.php" method="post" enctype="multipart/form-data">
-<label>2. CQWPX     Score from cabrillo</label>
+<label>2. CQWPX      Score from cabrillo</label>
 <input type="file" name="cbrfile">
 <input type="submit" name="submit" value="Upload">
 </form>
@@ -56,11 +56,13 @@ label {
 <hr>
 
 <form action="country.php" method="post" enctype="multipart/form-data">
-A. Country identificaton (callsign) <input type="text" name="call">
+<label>A. Country identificaton (callsign)</label>
+<input type="text" name="call">
 <input type="submit" name="submit" value="Submit">
 </form>
 
 <form action="password.php" method="post" enctype="multipart/form-data">
-B. Password Generator (len) <input type="text" name="passlen">
+<label>B. Password Generator (len)</label>
+<input type="text" name="passlen">
 <input type="submit" name="submit" value="Submit">
 </form>
