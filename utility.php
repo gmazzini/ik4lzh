@@ -1,6 +1,5 @@
 <?php
-
-// v4 by IK4LZH 20210120
+// v5 by IK4LZH 20210123
 
 $bb=array(1=>160,3=>80,5=>60,7=>40,10=>30,14=>20,18=>17,21=>15,24=>12,28=>10,29=>10);
 
@@ -32,6 +31,19 @@ function mysep($in,$vers){
       break;
   }
   return $out;
+}
+
+function mybreakdown($contest,$call,$datacontest,$aqso,$apoint,$amult){
+  $myd=array_unique(array_keys($aqso));
+  sort($myd);
+  $z1=$z2=$z3=0;
+  foreach($myd as $dd){
+    $z1+=$aqso[$dd];
+    if(isset($apoint[$dd]))$z2+=$apoint[$dd];
+    if(isset($amult[$dd]))$z3+=$amult[$dd];
+    echo $dd.",".$z1.",".$z2.",".$z3."\n";
+  }
+  file_put_contents("/home/www/ik4lzh.mazzini.org/log.txt",date("Y-m-d H:i:s").",".$contest.",".$call.",".$datacontest.",".$z1.",".$z2.",".$z3."\n", FILE_APPEND | LOCK_EX);
 }
 
 function mypar($str,$start,$len){
