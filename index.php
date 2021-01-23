@@ -1,7 +1,7 @@
 <head>
 <style type="text/css">
 label {
- font-family: monospace;
+ font-family: monospace, monospace;
  font-size: small;
 }
 </style>
