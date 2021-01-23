@@ -62,7 +62,7 @@ label {
 </form>
 
 <form action="password.php" method="post" enctype="multipart/form-data">
-<label>B. Password Generator (len)</label>
+<label>B. Password Generator (len)        </label>
 <input type="text" name="passlen">
 <input type="submit" name="submit" value="Submit">
 </form>
