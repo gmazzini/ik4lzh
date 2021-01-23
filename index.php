@@ -1,8 +1,9 @@
 <head>
 <style type="text/css">
 label {
- font-family: 'Courier New', monospace;
+ font-family: monospace, monospace;
  font-size: small;
+ white-space:pre;
 }
 </style>
 </head>
