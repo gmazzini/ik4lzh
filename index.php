@@ -11,13 +11,13 @@ label {
 <h1>Online Services by IK4LZH</h1>
 
 <form action="cqww.php" method="post" enctype="multipart/form-data"> 
-<label> 1. CQWW      Score from cabrillo</label>
+<label>1. CQWW      Score from cabrillo</label>
 <input type="file" name="cbrfile">
 <input type="submit" name="submit" value="Upload">
 </form>
 
 <form action="cqwpx.php" method="post" enctype="multipart/form-data">
-<label> 2. CQWPX     Score from cabrillo</label>
+<label>2. CQWPX     Score from cabrillo</label>
 <input type="file" name="cbrfile">
 <input type="submit" name="submit" value="Upload">
 </form>
