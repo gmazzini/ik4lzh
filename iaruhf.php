@@ -51,7 +51,7 @@ while(!feof($hh)){
     }
   }
   $myid=$band."-".$parts[2];
-  if(!isset($myrep[$myid]))$myrep[$bmyid]=1;
+  if(!isset($myrep[$myid]))$myrep[$myid]=1;
 }
 fclose($hh);
 
