@@ -60,7 +60,8 @@ function findcall($a){
   for($q=1;$q<=$lc;$q++){
     if(isset($myt[substr($call,0,$q)]))$s=$myt[substr($call,0,$q)];
   }
-  return $zz[$s];
+  if($s!=-1)return $zz[$s];
+  return 
 }
 
 $j=0;
