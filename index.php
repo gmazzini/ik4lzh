@@ -5,7 +5,6 @@
 1. CQWW Score from cabrillo <input type="file" name="cbrfile">
 <input type="submit" name="submit" value="Upload">
 </form>
-</p>
 
 <form action="cqwpx.php" method="post" enctype="multipart/form-data">
 2. CQWPX Score from cabrillo <input type="file" name="cbrfile">
@@ -16,6 +15,7 @@
 3. CQWWDIGI Score from cabrillo <input type="file" name="cbrfile">
 <input type="submit" name="submit" value="Upload">
 </form>
+</p>
 
 <form action="iaruhf.php" method="post" enctype="multipart/form-data">
 4. IARU HF Score from cabrillo <input type="file" name="cbrfile">
