@@ -1,39 +1,54 @@
+<head>
+<style type="text/css">
+label {
+ font-family: monospace;
+ font-size: xx-small;
+}
+</style>
+</head>
+
 <h1>Online Services by IK4LZH</h1>
 
-<p style="font-family: monospace; color: red; font-size:14pt; font-style:normal">
 <form action="cqww.php" method="post" enctype="multipart/form-data"> 
-1. CQWW  Score from cabrillo <input type="file" name="cbrfile">
+<label> 1. CQWW Score from cabrillo</label>
+<input type="file" name="cbrfile">
 <input type="submit" name="submit" value="Upload">
 </form>
 
 <form action="cqwpx.php" method="post" enctype="multipart/form-data">
-2. CQWPX Score from cabrillo <input type="file" name="cbrfile">
+<label> 2. CQWPX Score from cabrillo</label>
+<input type="file" name="cbrfile">
 <input type="submit" name="submit" value="Upload">
 </form>
 
 <form action="cqwwdigi.php" method="post" enctype="multipart/form-data">
-3. CQWWDIGI Score from cabrillo <input type="file" name="cbrfile">
+<label>3. CQWWDIGI Score from cabrillo</label>
+<input type="file" name="cbrfile">
 <input type="submit" name="submit" value="Upload">
 </form>
 </p>
 
 <form action="iaruhf.php" method="post" enctype="multipart/form-data">
-4. IARU HF Score from cabrillo <input type="file" name="cbrfile">
+<label>4. IARU HF Score from cabrillo</label>
+<input type="file" name="cbrfile">
 <input type="submit" name="submit" value="Upload">
 </form>
 
 <form action="hadx.php" method="post" enctype="multipart/form-data">
-5. HADX Score from cabrillo <input type="file" name="cbrfile">
+<label>5. HADX Score from cabrillo</label>
+<input type="file" name="cbrfile">
 <input type="submit" name="submit" value="Upload">
 </form>
 
 <form action="bandebasse.php" method="post" enctype="multipart/form-data">
-6. BANDEBASSE Score from cabrillo <input type="file" name="cbrfile">
+<label>6. BANDEBASSE Score from cabrillo</label>
+<input type="file" name="cbrfile">
 <input type="submit" name="submit" value="Upload">
 </form>
 
 <form action="4080.php" method="post" enctype="multipart/form-data">
-7. 4080 Score from cabrillo <input type="file" name="cbrfile">
+<label>7. 4080 Score from cabrillo</label>
+<input type="file" name="cbrfile">
 <input type="submit" name="submit" value="Upload">
 </form>
 
