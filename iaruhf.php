@@ -14,45 +14,52 @@ while(!feof($hh)){
     $mys=findcall($parts[5]);
     $mybase=$mys["base"];
     $mycont=$mys["cont"];
+    $myitu=$mys["ituzone"];
   }
+  
+
+8. Multipliers: The total number of ITU zones worked on each band (not mode), plus IARU member society HQ stations worked on each band (not mode). IARU officials represent a maximum of four multipliers per band (AC, R1, R2 and R3).
   
   $mytt=$parts[3].":".$parts[4];
   $band=$bb[floor($parts[1]/1000)];
   $mys=findcall($parts[8]);
-  $myid=$band."-".$parts[8];
+  $myid=$band."-".$parts[2]."-".$parts[8];
   if(!isset($qso[$myid])){
     $qso[$myid]=1;
     if(!isset($aqso[$mytt]))$aqso[$mytt]=1;
     else $aqso[$mytt]++;
   }
-  if($mys["cont"]!=$mycont)$pp=3;
-  else if($mys["cont"]=="NA" && $mycont=="NA" && $mys["base"]!=$mybase)$pp=2;
-  else if($mys["cont"]==$mycont && $mys["base"]!=$mybase)$pp=1;
-  else $pp=0;
+  if(!is_numeric(parts[10]))$pp=1;
+  else if($mys["ituzone"]==$myitu)$pp=1;
+  else if($mys["ituzone"]!=$myitu && $mys["cont"]==$mycont)$pp=3;
+  else $pp=5;
   if(!isset($point[$myid])){
     $point[$myid]=$pp;
     if(!isset($apoint[$mytt]))$apoint[$mytt]=$pp;
     else $apoint[$mytt]+=$pp;
   }
  
-  $myid=$band."-".$mys["base"];
+  $myid=$band."-".$mys["ituzone"];
   if(!isset($mult[$myid])){
     $mult[$myid]=1;
     if(!isset($amult[$mytt]))$amult[$mytt]=1;
     else $amult[$mytt]++;
   }
-  $myid=$band."!".(int)$parts[10];
-  if(!isset($mult[$myid])){
-    $mult[$myid]=1;
-    if(!isset($amult[$mytt]))$amult[$mytt]=1;
-    else $amult[$mytt]++;
+  if(!is_numeric(parts[10])){
+    $myid=$band."!".$parts[10];
+    if(!isset($mult[$myid])){
+      $mult[$myid]=1;
+      if(!isset($amult[$mytt]))$amult[$mytt]=1;
+      else $amult[$mytt]++;
+    }
   }
-  if(!isset($myrep[$band]))$myrep[$band]=1;
+  $myid=$band."-".$parts[2];
+  if(!isset($myrep[$myid]))$myrep[$bmyid=1;
 }
 fclose($hh);
 
 echo "<pre>\n";
-echo "BAND\tQSOs\tPOINTs\tM_CYs\tM_CQs\n";
+echo "BAND\tQSOs\tPOINTs\tM_ITUs\tM_HQs\n";
 $ea=array_keys($myrep);
 natsort($ea);
 $z1=$z2=$z3=$z4=0;
