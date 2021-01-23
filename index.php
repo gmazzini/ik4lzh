@@ -15,18 +15,23 @@
 <input type="submit" name="submit" value="Upload">
 </form>
 
+<form action="iruhf.php" method="post" enctype="multipart/form-data">
+4. IARU HF Score from cabrillo <input type="file" name="cbrfile">
+<input type="submit" name="submit" value="Upload">
+</form>
+
 <form action="hadx.php" method="post" enctype="multipart/form-data">
-4. HADX Score from cabrillo <input type="file" name="cbrfile">
+5. HADX Score from cabrillo <input type="file" name="cbrfile">
 <input type="submit" name="submit" value="Upload">
 </form>
 
 <form action="bandebasse.php" method="post" enctype="multipart/form-data">
-5. BANDEBASSE Score from cabrillo <input type="file" name="cbrfile">
+6. BANDEBASSE Score from cabrillo <input type="file" name="cbrfile">
 <input type="submit" name="submit" value="Upload">
 </form>
 
 <form action="4080.php" method="post" enctype="multipart/form-data">
-6. 4080 Score from cabrillo <input type="file" name="cbrfile">
+7. 4080 Score from cabrillo <input type="file" name="cbrfile">
 <input type="submit" name="submit" value="Upload">
 </form>
 
