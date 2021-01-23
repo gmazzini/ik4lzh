@@ -15,7 +15,7 @@
 <input type="submit" name="submit" value="Upload">
 </form>
 
-<form action="iruhf.php" method="post" enctype="multipart/form-data">
+<form action="iaruhf.php" method="post" enctype="multipart/form-data">
 4. IARU HF Score from cabrillo <input type="file" name="cbrfile">
 <input type="submit" name="submit" value="Upload">
 </form>
