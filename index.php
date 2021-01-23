@@ -22,20 +22,20 @@ label {
 </form>
 
 <form action="cqwwdigi.php" method="post" enctype="multipart/form-data">
-<label>3. CQWWDIGI  Score from cabrillo</label>
+<label>3. CQWWDIGI   Score from cabrillo</label>
 <input type="file" name="cbrfile">
 <input type="submit" name="submit" value="Upload">
 </form>
 </p>
 
 <form action="iaruhf.php" method="post" enctype="multipart/form-data">
-<label>4. IARU HF   Score from cabrillo</label>
+<label>4. IARU HF    Score from cabrillo</label>
 <input type="file" name="cbrfile">
 <input type="submit" name="submit" value="Upload">
 </form>
 
 <form action="hadx.php" method="post" enctype="multipart/form-data">
-<label>5. HADX      Score from cabrillo</label>
+<label>5. HADX       Score from cabrillo</label>
 <input type="file" name="cbrfile">
 <input type="submit" name="submit" value="Upload">
 </form>
@@ -47,7 +47,7 @@ label {
 </form>
 
 <form action="4080.php" method="post" enctype="multipart/form-data">
-<label>7. 4080      Score from cabrillo</label>
+<label>7. 4080       Score from cabrillo</label>
 <input type="file" name="cbrfile">
 <input type="submit" name="submit" value="Upload">
 </form>
