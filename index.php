@@ -1,9 +1,11 @@
 <h1>Online Services by IK4LZH</h1>
 
+<p style="font-family: monospace; font-size:14pt; font-style:normal">
 <form action="cqww.php" method="post" enctype="multipart/form-data"> 
 1. CQWW Score from cabrillo <input type="file" name="cbrfile">
 <input type="submit" name="submit" value="Upload">
 </form>
+</p>
 
 <form action="cqwpx.php" method="post" enctype="multipart/form-data">
 2. CQWPX Score from cabrillo <input type="file" name="cbrfile">
