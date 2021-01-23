@@ -17,9 +17,6 @@ while(!feof($hh)){
     $myitu=$mys["ituzone"];
   }
   
-
-8. Multipliers: The total number of ITU zones worked on each band (not mode), plus IARU member society HQ stations worked on each band (not mode). IARU officials represent a maximum of four multipliers per band (AC, R1, R2 and R3).
-  
   $mytt=$parts[3].":".$parts[4];
   $band=$bb[floor($parts[1]/1000)];
   $mys=findcall($parts[8]);
