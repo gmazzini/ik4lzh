@@ -51,14 +51,20 @@ for prostprocessing and analysis, by IK4LZH gianluca@mazzini.org
 <input type="submit" name="submit" value="Upload">
 </form>
 
+<form action="spdx.php" method="post" enctype="multipart/form-data">
+<label>07. UBADX      </label>
+<input type="file" name="cbrfile">
+<input type="submit" name="submit" value="Upload">
+</form>
+
 <form action="bandebasse.php" method="post" enctype="multipart/form-data">
-<label>07. BANDEBASSE </label>
+<label>08. BANDEBASSE </label>
 <input type="file" name="cbrfile">
 <input type="submit" name="submit" value="Upload">
 </form>
 
 <form action="4080.php" method="post" enctype="multipart/form-data">
-<label>08. 4080       </label>
+<label>09. 4080       </label>
 <input type="file" name="cbrfile">
 <input type="submit" name="submit" value="Upload">
 </form>
