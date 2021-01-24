@@ -59,6 +59,7 @@ while(!feof($hh)){
   } 
   else {
     if(in_array($mys["base"],$uba)){
+      $myid=$band."-".$mys["base"];
       if(!isset($mult[$myid])){
         $mult[$myid]=1;
         if(!isset($amult[$mytt]))$amult[$mytt]=1;
@@ -84,6 +85,8 @@ while(!feof($hh)){
   if(!isset($myrep[$band]))$myrep[$band]=1;
 }
 fclose($hh);
+
+print_r($mult);
 
 echo "<pre>\n";
 echo "BAND\tQSOs\tPOINTs\tM_CYs\tM_ONs\tM_PRs\n";
