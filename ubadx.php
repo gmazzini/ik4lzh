@@ -2,6 +2,10 @@
 // v1 by IK4LZH 20210124
 
 include("utility.php");
+
+$uba=array({"5B","9A","9H","CT","CT3","CU","DL","EA","EA6","EA8","EI","ES",
+            "F","FG","FM","FR","FY","HA","I","IS","LX","LY","LZ","OE","OH","OH0",
+            "OJ0","OK","OM","OZ","PA","S5","SM","SP","SV","SV5","SV9","TK","YL","YO"});
 $base=1;
 $mypars=0;
 if(isset($_FILES['cbrfile']['tmp_name']))$hh=fopen($_FILES['cbrfile']['tmp_name'],"r");
@@ -54,12 +58,7 @@ while(!feof($hh)){
     }
   } 
   else {
-    if(in_array($mys["base"],{"5B","9A","9H","CT","CT3","CU",
-                              "DL","EA","EA6","EA8","EI","ES",
-                              "F","FG","FM","FR","FY","HA","I",
-                              "IS","LX","LY","LZ","OE","OH","OH0",
-                              "OJ0","OK","OM","OZ","PA","S5","SM",
-                              "SP","SV","SV5","SV9","TK","YL","YO"})){
+    if(in_array($mys["base"],$uba)){
       if(!isset($mult[$myid])){
         $mult[$myid]=1;
         if(!isset($amult[$mytt]))$amult[$mytt]=1;
