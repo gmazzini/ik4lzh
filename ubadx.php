@@ -66,43 +66,40 @@ while(!feof($hh)){
         else $amult[$mytt]++;
       }
     }
-    if($mys["base"]=="ON){
-    
+    if($mys["base"]=="ON"){
+      for($i=strlen($parts[8])-1;$i>0;$i--)if(is_numeric($parts[8][$i]))break;
+      $myid=$band."@".substr($parts[8],0,$i+1);
+      if(!isset($mult[$myid])){
+        $mult[$myid]=1;
+        if(!isset($amult[$mytt]))$amult[$mytt]=1;
+        else $amult[$mytt]++;
+      }
+      $myid=$band."!".$parts[11];
+      if(!isset($mult[$myid])){
+        $mult[$myid]=1;
+        if(!isset($amult[$mytt]))$amult[$mytt]=1;
+        else $amult[$mytt]++;
+      }
     }
-        
-
-  }
-  
-  
-  $myid=$band."-".$mys["base"];
-  if(!isset($mult[$myid])){
-    $mult[$myid]=1;
-    if(!isset($amult[$mytt]))$amult[$mytt]=1;
-    else $amult[$mytt]++;
-  }
-  $myid=$band."!".(int)$parts[10];
-  if(!isset($mult[$myid])){
-    $mult[$myid]=1;
-    if(!isset($amult[$mytt]))$amult[$mytt]=1;
-    else $amult[$mytt]++;
   }
   if(!isset($myrep[$band]))$myrep[$band]=1;
 }
 fclose($hh);
 
 echo "<pre>\n";
-echo "BAND\tQSOs\tPOINTs\tM_CYs\tM_CQs\n";
+echo "BAND\tQSOs\tPOINTs\tM_CYs\tM_ONs\tM_PRs\n";
 $ea=array_keys($myrep);
 natsort($ea);
-$z1=$z2=$z3=$z4=0;
+$z1=$z2=$z3=$z4=$z5=0;
 foreach($ea as $ee){
   echo $ee."\t";
   $xx=mysum($qso,"-",$ee); $z1+=$xx; echo $xx."\t";
   $xx=mysum($point,"-",$ee); $z2+=$xx; echo $xx."\t";
   $xx=mysum($mult,"-",$ee); $z3+=$xx; echo $xx."\t";
+  $xx=mysum($mult,"@",$ee); $z4+=$xx; echo $xx."\t";
   $xx=mysum($mult,"!",$ee); $z4+=$xx; echo $xx."\n";
 }
-echo "TOTAL\t$z1\t$z2\t$z3\t$z4\n";
+echo "TOTAL\t$z1\t$z2\t$z3\t$z4\t$z5\n";
 echo "\n".$parts[5]." SCORE: ".array_sum($point)*array_sum($mult)."\n\n";
 mybreakdown("ubadx",$parts[5],$parts[3],$aqso,$apoint,$amult);
 ?>
