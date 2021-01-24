@@ -38,11 +38,13 @@ while(!feof($hh)){
     else $pp=3;
   }
   else {
-    if($mys["base"]=="ON")$pp=10;
+    if($mys["base"]=="ON"){
+      $pp=10;
+      if(!isset($onqso[$myid]))$onqso[$myid]=1;
+    }
     else if($mys["cont"]=="EU")$pp=3;
     else $pp=1;
   }
-  // manca il bonussss -----
   if(!isset($point[$myid])){
     $point[$myid]=$pp;
     if(!isset($apoint[$mytt]))$apoint[$mytt]=$pp;
@@ -102,6 +104,7 @@ foreach($ea as $ee){
   $xx=mysum($mult,"!",$ee); $z5+=$xx; echo $xx."\n";
 }
 echo "TOTAL\t$z1\t$z2\t$z3\t$z4\t$z5\n";
+echo "BONUS QSO".array_sum($onqso)."\n";
 echo "\n".$parts[5]." SCORE: ".array_sum($point)*array_sum($mult)."\n\n";
 mybreakdown("ubadx",$parts[5],$parts[3],$aqso,$apoint,$amult);
 ?>
