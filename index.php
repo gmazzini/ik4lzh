@@ -10,7 +10,8 @@ label {
 
 <h1>Online Services by IK4LZH</h1>
 <label>Score and breakdown contest computations from cabrillo file, 
-for prostprocessing and analysis, by IK4LZH gianluca@mazzini.org</label>
+for prostprocessing and analysis, by IK4LZH gianluca@mazzini.org
+</label>
 
 <form action="cqww.php" method="post" enctype="multipart/form-data"> 
 <label>01. CQWW       </label>
