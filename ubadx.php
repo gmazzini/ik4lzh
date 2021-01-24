@@ -88,8 +88,6 @@ while(!feof($hh)){
 }
 fclose($hh);
 
-print_r($mult);
-
 echo "<pre>\n";
 echo "BAND\tQSOs\tPOINTs\tM_CYs\tM_ONs\tM_PRs\n";
 $ea=array_keys($myrep);
