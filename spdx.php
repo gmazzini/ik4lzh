@@ -25,38 +25,41 @@ while(!feof($hh)){
     if(!isset($aqso[$mytt]))$aqso[$mytt]=1;
     else $aqso[$mytt]++;
   }
-  if($mybase=="SP"){
-  
+  if($mybase!="SP"){
+    if($mys["base"]=="SP")$pp=3;
+    else $pp=0;
   }
-  
-  
-  if($mys["base"]=="HA")$pp=10;
-  else if($mys["cont"]!=$mycont)$pp=5;
-  else $pp=2;
+  else {
+    if($mys["base"]=="SP")$pp=0;
+    else if($mys["cont"]=="EU")$pp=1;
+    else $pp=3;
+  }
   if(!isset($point[$myid])){
     $point[$myid]=$pp;
     if(!isset($apoint[$mytt]))$apoint[$mytt]=$pp;
     else $apoint[$mytt]+=$pp;
   }
    
-  if($mys["base"]!="HA"){
-    $myid=$band."-".$mys["base"];
+  if($mybase!="SP"){
+    $myid=$band."-".$parts[10];
     if(!isset($mult[$myid])){
       $mult[$myid]=1;
-      $myid=$band."-".$parts[2]."-".$mys["base"];
+      $myid=$band."-".$parts[2]."-".$parts[10];
       if(!isset($vmult[$myid]))$vmult[$myid]=1;
       if(!isset($amult[$mytt]))$amult[$mytt]=1;
       else $amult[$mytt]++;
     }
   }
   else {
-    $myid=$band."!".$parts[10];
-    if(!isset($mult[$myid])){
-      $mult[$myid]=1;
-      $myid=$band."-".$parts[2]."!".$parts[10];
-      if(!isset($vmult[$myid]))$vmult[$myid]=1;
-      if(!isset($amult[$mytt]))$amult[$mytt]=1;
-      else $amult[$mytt]++;
+    if($mys["base"]!="SP"){
+      $myid=$band."-".$mys["base"];
+      if(!isset($mult[$myid])){
+        $mult[$myid]=1;
+        $myid=$band."-".$parts[2]."-".$mys["base"];
+        if(!isset($vmult[$myid]))$vmult[$myid]=1;
+        if(!isset($amult[$mytt]))$amult[$mytt]=1;
+        else $amult[$mytt]++;
+      }
     }
   }
   $myid=$band."-".$parts[2];
@@ -65,18 +68,17 @@ while(!feof($hh)){
 fclose($hh);
 
 echo "<pre>\n";
-echo "BAND\tQSOs\tPOINTs\tM_CYs\tM_PRs\n";
+echo "BAND\tQSOs\tPOINTs\tMULTs\n";
 $ea=array_keys($myrep);
 natsort($ea);
-$z1=$z2=$z3=$z4=0;
+$z1=$z2=$z3=0;
 foreach($ea as $ee){
   echo $ee."\t";
   $xx=mysum($qso,"-",$ee); $z1+=$xx; echo $xx."\t";
   $xx=mysum($point,"-",$ee); $z2+=$xx; echo $xx."\t";
-  $xx=mysum($vmult,"-",$ee); $z3+=$xx; echo $xx."\t";
-  $xx=mysum($vmult,"!",$ee); $z4+=$xx; echo $xx."\n";
+  $xx=mysum($vmult,"-",$ee); $z3+=$xx; echo $xx."\n";
 }
-echo "TOTAL\t$z1\t$z2\t$z3\t$z4\n";
+echo "TOTAL\t$z1\t$z2\t$z3\n";
 echo "\n".$parts[5]." SCORE: ".array_sum($point)*array_sum($mult)."\n\n";
 mybreakdown("hadx",$parts[5],$parts[3],$aqso,$apoint,$amult);
 ?>
