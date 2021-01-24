@@ -102,7 +102,7 @@ foreach($ea as $ee){
   $xx=mysum($mult,"!",$ee); $z5+=$xx; echo $xx."\n";
 }
 echo "TOTAL\t$z1\t$z2\t$z3\t$z4\t$z5\n";
-$bonus=array_sum($onqso)/array_sum($qso)*array_sum($onqso)*10;
+$bonus=(int)(array_sum($onqso)/array_sum($qso)*array_sum($onqso)*10);
 echo "BONUS QSO: $bonus\n";
 echo "\n".$parts[5]." SCORE: ".array_sum($point)*array_sum($mult)."\n\n";
 mybreakdown("ubadx",$parts[5],$parts[3],$aqso,$apoint,$amult);
