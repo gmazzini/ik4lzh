@@ -41,13 +41,15 @@ while(!feof($hh)){
   }
    
   if($mybase!="SP"){
-    $myid=$band."-".$parts[10];
-    if(!isset($mult[$myid])){
-      $mult[$myid]=1;
-      $myid=$band."-".$parts[2]."-".$parts[10];
-      if(!isset($vmult[$myid]))$vmult[$myid]=1;
-      if(!isset($amult[$mytt]))$amult[$mytt]=1;
-      else $amult[$mytt]++;
+    if($mys["base"]=="SP"){
+      $myid=$band."-".$parts[10];
+      if(!isset($mult[$myid])){
+        $mult[$myid]=1;
+        $myid=$band."-".$parts[2]."-".$parts[10];
+        if(!isset($vmult[$myid]))$vmult[$myid]=1;
+        if(!isset($amult[$mytt]))$amult[$mytt]=1;
+        else $amult[$mytt]++;
+      }
     }
   }
   else {
