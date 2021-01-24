@@ -22,7 +22,6 @@ while(!feof($hh)){
   $band=$bb[floor($parts[1]/1000)];
   $mys=findcall($parts[8+$mypars]);
   
-  ---
   $myid=$band."-".$parts[8+$mypars];
   if(!isset($qso[$myid])){
     $qso[$myid]=1;
@@ -31,23 +30,25 @@ while(!feof($hh)){
   }
   if($mypars){
     if($mys["base"]=="ON")$pp=1;
-    else if($mys["cont"]=="EU)$pp=2;
+    else if($mys["cont"]=="EU")$pp=2;
     else $pp=3;
   }
   else {
-  if($mys["base"]=="ON")$pp=10;
+    if($mys["base"]=="ON")$pp=10;
+    else if($mys["cont"]=="EU")$pp=3;
+    else $pp=1;
   }
-  
-  if($mys["cont"]!=$mycont)$pp=3;
-  else if($mys["cont"]=="NA" && $mycont=="NA" && $mys["base"]!=$mybase)$pp=2;
-  else if($mys["cont"]==$mycont && $mys["base"]!=$mybase)$pp=1;
-  else $pp=0;
+  // manca il bonussss -----
   if(!isset($point[$myid])){
     $point[$myid]=$pp;
     if(!isset($apoint[$mytt]))$apoint[$mytt]=$pp;
     else $apoint[$mytt]+=$pp;
   }
  
+  ---
+  
+  
+  
   $myid=$band."-".$mys["base"];
   if(!isset($mult[$myid])){
     $mult[$myid]=1;
