@@ -8,9 +8,10 @@ label {
 </style>
 </head>
 
-<h1>Online Services by IK4LZH</h1>
+<h2>Online Services by IK4LZH</h2>
 <label>Score and breakdown contest computations from cabrillo file, 
 for prostprocessing and analysis, by IK4LZH gianluca@mazzini.org
+
 </label>
 
 <form action="cqww.php" method="post" enctype="multipart/form-data"> 
