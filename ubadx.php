@@ -44,9 +44,34 @@ while(!feof($hh)){
     if(!isset($apoint[$mytt]))$apoint[$mytt]=$pp;
     else $apoint[$mytt]+=$pp;
   }
- 
-  ---
   
+  if($mypars){
+    $myid=$band."-".$mys["base"];
+    if(!isset($mult[$myid])){
+      $mult[$myid]=1;
+      if(!isset($amult[$mytt]))$amult[$mytt]=1;
+      else $amult[$mytt]++;
+    }
+  } 
+  else {
+    if(in_array($mys["base"],{"5B","9A","9H","CT","CT3","CU",
+                              "DL","EA","EA6","EA8","EI","ES",
+                              "F","FG","FM","FR","FY","HA","I",
+                              "IS","LX","LY","LZ","OE","OH","OH0",
+                              "OJ0","OK","OM","OZ","PA","S5","SM",
+                              "SP","SV","SV5","SV9","TK","YL","YO"})){
+      if(!isset($mult[$myid])){
+        $mult[$myid]=1;
+        if(!isset($amult[$mytt]))$amult[$mytt]=1;
+        else $amult[$mytt]++;
+      }
+    }
+    if($mys["base"]=="ON){
+    
+    }
+        
+
+  }
   
   
   $myid=$band."-".$mys["base"];
