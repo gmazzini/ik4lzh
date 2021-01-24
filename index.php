@@ -41,14 +41,20 @@ label {
 <input type="submit" name="submit" value="Upload">
 </form>
 
+<form action="spdx.php" method="post" enctype="multipart/form-data">
+<label>6. SPDX       Score from cabrillo</label>
+<input type="file" name="cbrfile">
+<input type="submit" name="submit" value="Upload">
+</form>
+
 <form action="bandebasse.php" method="post" enctype="multipart/form-data">
-<label>6. BANDEBASSE Score from cabrillo</label>
+<label>7. BANDEBASSE Score from cabrillo</label>
 <input type="file" name="cbrfile">
 <input type="submit" name="submit" value="Upload">
 </form>
 
 <form action="4080.php" method="post" enctype="multipart/form-data">
-<label>7. 4080       Score from cabrillo</label>
+<label>8. 4080       Score from cabrillo</label>
 <input type="file" name="cbrfile">
 <input type="submit" name="submit" value="Upload">
 </form>
