@@ -3,6 +3,7 @@
 
 include("utility.php");
 $base=1;
+$mypars=0;
 if(isset($_FILES['cbrfile']['tmp_name']))$hh=fopen($_FILES['cbrfile']['tmp_name'],"r");
 else $hh=fopen("php://stdin","r");
 while(!feof($hh)){
@@ -14,17 +15,29 @@ while(!feof($hh)){
     $mys=findcall($parts[5]);
     $mybase=$mys["base"];
     $mycont=$mys["cont"];
+    if($mybase=="ON")$mypars=1;
   }
   
   $mytt=$parts[3].":".$parts[4];
   $band=$bb[floor($parts[1]/1000)];
-  $mys=findcall($parts[8]);
-  $myid=$band."-".$parts[8];
+  $mys=findcall($parts[8+$mypars]);
+  
+  ---
+  $myid=$band."-".$parts[8+$mypars];
   if(!isset($qso[$myid])){
     $qso[$myid]=1;
     if(!isset($aqso[$mytt]))$aqso[$mytt]=1;
     else $aqso[$mytt]++;
   }
+  if($mypars){
+    if($mys["base"]=="ON")$pp=1;
+    else if($mys["cont"]=="EU)$pp=2;
+    else $pp=3;
+  }
+  else {
+  if($mys["base"]=="ON")$pp=10;
+  }
+  
   if($mys["cont"]!=$mycont)$pp=3;
   else if($mys["cont"]=="NA" && $mycont=="NA" && $mys["base"]!=$mybase)$pp=2;
   else if($mys["cont"]==$mycont && $mys["base"]!=$mybase)$pp=1;
