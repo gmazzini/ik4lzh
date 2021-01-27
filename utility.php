@@ -37,8 +37,8 @@ function mybreakdown($contest,$call,$datacontest,$aqso,$apoint,$amult){
   $myd=array_unique(array_keys($aqso));
   sort($myd);
   $name=$contest."_".$call."_".$datacontest."_".md5($contest.$call.$datacontest.rand());
-  $fp=fopen("home/www/ik4lzh.mazzini.org/breakdown/$name.csv","w");
-  echo "<a href='https://ik4lzh.mazzini.org/breakdown/$name.csv' download>Download breakdown</a>";
+  $fp=fopen("/home/www/ik4lzh.mazzini.org/breakdown/$name.csv","w");
+  echo "<a href='https://ik4lzh.mazzini.org/breakdown/$name.csv' download>Download breakdown</a><br>";
   $z1=$z2=$z3=0;
   foreach($myd as $dd){
     $z1+=$aqso[$dd];
