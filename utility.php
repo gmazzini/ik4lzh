@@ -1,5 +1,5 @@
 <?php
-// v5 by IK4LZH 20210123
+// v6 by IK4LZH 20210127
 
 $bb=array(1=>160,3=>80,5=>60,7=>40,10=>30,14=>20,18=>17,21=>15,24=>12,28=>10,29=>10);
 
@@ -36,7 +36,7 @@ function mysep($in,$vers){
 function mybreakdown($contest,$call,$datacontest,$aqso,$apoint,$amult){
   $myd=array_unique(array_keys($aqso));
   sort($myd);
-  $name=md5($contest.$call.$datacontest.rand());
+  $name=$contest."_".$call."_".$datacontest."_".md5($contest.$call.$datacontest.rand());
   $fp=fopen("home/www/ik4lzh.mazzini.org/breakdown/$name.csv","w");
   echo "<a href='https://ik4lzh.mazzini.org/breakdown/$name.csv' download>Download breakdown</a>";
   $z1=$z2=$z3=0;
