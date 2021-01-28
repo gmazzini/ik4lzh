@@ -1,3 +1,6 @@
 go to https://www.country-files.com/category/big-cty/
 look for first news and copy "downlink" link
-unzip the file
+downlink the file info cty.zip
+unzip the cty.zip
+remove cty.csv
+remove cty.zip
