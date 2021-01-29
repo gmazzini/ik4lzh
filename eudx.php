@@ -2,8 +2,7 @@
 // v1 by IK4LZH 20210129
 
 include("utility.php");
-$eu=array("OE","ON","LZ","OK","5B","9A","OZ","ES","OH","F","DL","SV","HA",
-           "EI","I","YL","LY","LX","9H","PA","SP","CT","YO","OM","S5","EA","SM");
+$eu=array("OE","ON","LZ","OK","5B","9A","OZ","ES","OH","F","DL","SV","HA","EI","I","YL","LY","LX","9H","PA","SP","CT","YO","OM","S5","EA","SM");
 $base=1;
 if(isset($_FILES['cbrfile']['tmp_name']))$hh=fopen($_FILES['cbrfile']['tmp_name'],"r");
 else $hh=fopen("php://stdin","r");
@@ -29,10 +28,23 @@ while(!feof($hh)){
     if(!isset($aqso[$mytt]))$aqso[$mytt]=1;
     else $aqso[$mytt]++;
   }
+  if($myeu){
+  
+              
+  }
+  else {
+  }
+           
+           
   
   
+//  QSO with your own country – 1 points,
+// QSO with another European Union country – 10 points,
+// QSO with a non-European Union country on your continent – 3 points,,
+// QSO with another continent – 5 points. 
   
-  
+
+   
   if($mys["base"]=="HA")$pp=10;
   else if($mys["cont"]!=$mycont)$pp=5;
   else $pp=2;
