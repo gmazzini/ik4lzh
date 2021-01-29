@@ -29,40 +29,30 @@ while(!feof($hh)){
     else $aqso[$mytt]++;
   }
   if($myeu){
-  
-              
+    if($mybase==$mys["base"])$pp=1;
+    else if(in_array($mys["base"],$eu))$pp=10;
+    else if($mycont==$mys["cont"])$pp=3;
+    else $pp=5;
   }
   else {
+    if(in_array($mys["base"],$eu))$pp=10;
+    else if($mybase==$mys["base"])$pp=1;
+    else if($mycont==$mys["cont"])$pp=3;
+    else $pp=5;
   }
-           
-           
-  
-  
-//  QSO with your own country – 1 points,
-// QSO with another European Union country – 10 points,
-// QSO with a non-European Union country on your continent – 3 points,,
-// QSO with another continent – 5 points. 
-  
-
-   
-  if($mys["base"]=="HA")$pp=10;
-  else if($mys["cont"]!=$mycont)$pp=5;
-  else $pp=2;
   if(!isset($point[$myid])){
     $point[$myid]=$pp;
     if(!isset($apoint[$mytt]))$apoint[$mytt]=$pp;
     else $apoint[$mytt]+=$pp;
   }
    
-  if($mys["base"]!="HA"){
-    $myid=$band."-".$mys["base"];
-    if(!isset($mult[$myid])){
-      $mult[$myid]=1;
-      $myid=$band."-".$parts[2]."-".$mys["base"];
-      if(!isset($vmult[$myid]))$vmult[$myid]=1;
-      if(!isset($amult[$mytt]))$amult[$mytt]=1;
-      else $amult[$mytt]++;
-    }
+  $myid=$band."-".$mys["base"];
+  if(!isset($mult[$myid])){
+    $mult[$myid]=1;
+    $myid=$band."-".$parts[2]."-".$mys["base"];
+    if(!isset($vmult[$myid]))$vmult[$myid]=1;
+    if(!isset($amult[$mytt]))$amult[$mytt]=1;
+    else $amult[$mytt]++;
   }
   else {
     $myid=$band."!".$parts[10];
