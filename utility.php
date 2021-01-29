@@ -59,7 +59,7 @@ function findcall($a){
   if($to1!==false){
     $lc=strlen($call);
     if($to1<$lc-$to1-1)$call=substr($call,0,$to1);
-    else $call=substr($call,$to1+1)
+    else $call=substr($call,$to1+1);
   }
   $lc=strlen($call);
   $s=-1;
