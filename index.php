@@ -57,14 +57,20 @@ for postprocessing and analysis, by IK4LZH gianluca@mazzini.org
 <input type="submit" name="submit" value="Upload">
 </form>
 
+<form action="eudx.php" method="post" enctype="multipart/form-data">
+<label>08. EUDX       </label>
+<input type="file" name="cbrfile">
+<input type="submit" name="submit" value="Upload">
+</form>
+
 <form action="bandebasse.php" method="post" enctype="multipart/form-data">
-<label>08. BANDEBASSE </label>
+<label>09. BANDEBASSE </label>
 <input type="file" name="cbrfile">
 <input type="submit" name="submit" value="Upload">
 </form>
 
 <form action="4080.php" method="post" enctype="multipart/form-data">
-<label>09. 4080       </label>
+<label>10. 4080       </label>
 <input type="file" name="cbrfile">
 <input type="submit" name="submit" value="Upload">
 </form>
