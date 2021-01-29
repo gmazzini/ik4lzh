@@ -1,5 +1,5 @@
 <?php
-// v4 by IK4LZH 20210122
+// v5 by IK4LZH 20210129
 
 include("utility.php");
 if(isset($_FILES['cbrfile']['tmp_name']))$hh=fopen($_FILES['cbrfile']['tmp_name'],"r");
@@ -19,7 +19,7 @@ while(!feof($hh)){
   }
   $mygrid=substr($parts[6],0,2);
   $yourgrid=substr($parts[8],0,2);
-  $pp=1+floor($dist[$mygrid.$yourgrid]);
+  $pp=1+floor(dist2x2($mygrid,$yourgrid));
   if(!isset($point[$myid])){
     $point[$myid]=$pp;
     if(!isset($apoint[$mytt]))$apoint[$mytt]=$pp;
