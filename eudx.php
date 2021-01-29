@@ -2,7 +2,9 @@
 // v1 by IK4LZH 20210129
 
 include("utility.php");
-$eu=array("OE","ON","LZ","OK","5B","9A","OZ","ES","OH","F","DL","SV","HA","EI","I","YL","LY","LX","9H","PA","SP","CT","YO","OM","S5","EA","SM");
+$uba=array("5B","9A","9H","CT","CT3","CU","DL","EA","EA6","EA8","EI","ES","F",
+           "FG","FM","FR","FY","HA","I","IS","LX","LY","LZ","OE","OH","OH0","OJ0",
+           "OK","OM","OZ","PA","S5","SM","SP","SV","SV5","SV9","TK","YL","YO");
 $base=1;
 if(isset($_FILES['cbrfile']['tmp_name']))$hh=fopen($_FILES['cbrfile']['tmp_name'],"r");
 else $hh=fopen("php://stdin","r");
