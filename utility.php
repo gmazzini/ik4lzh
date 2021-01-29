@@ -1,5 +1,5 @@
 <?php
-// v8 by IK4LZH 20210129
+// v9 by IK4LZH 20210129
 
 $bb=array(1=>160,3=>80,5=>60,7=>40,10=>30,14=>20,18=>17,21=>15,24=>12,28=>10,29=>10);
 
@@ -48,7 +48,7 @@ function mybreakdown($contest,$call,$datacontest,$aqso,$apoint,$amult){
     echo $dd.",".$z1.",".$z2.",".$z3."\n";
   }
   file_put_contents("/home/www/ik4lzh.mazzini.org/log.txt",date("Y-m-d H:i:s").",".$contest.",".$call.",".$datacontest.",".$z1.",".$z2.",".$z3."\n", FILE_APPEND | LOCK_EX);
-  fclose(fp);
+  fclose($fp);
 }
 
 function findcall($a){
