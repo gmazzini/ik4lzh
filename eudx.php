@@ -56,7 +56,7 @@ while(!feof($hh)){
     if(!isset($amult[$mytt]))$amult[$mytt]=1;
     else $amult[$mytt]++;
   }
-  if(!is_numeric($parts[10]){
+  if(!is_numeric($parts[10])){
     $myid=$band."!".$parts[10];
     if(!isset($mult[$myid])){
       $mult[$myid]=1;
