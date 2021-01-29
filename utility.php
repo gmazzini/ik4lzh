@@ -53,7 +53,7 @@ function mybreakdown($contest,$call,$datacontest,$aqso,$apoint,$amult){
 
 function findcall($a){
   global $z1,$z2,$z3,$loadcty;
-  if(!isset($loadcty){
+  if(!isset($loadcty)){
     $loadcty=1;
     $j=0;
     $hh=fopen("cty.csv","r");
