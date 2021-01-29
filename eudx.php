@@ -16,6 +16,8 @@ while(!feof($hh)){
     $mys=findcall($parts[5]);
     $mycont=$mys["cont"];
     $mybase=$mys["base"];
+    if(in_array($mybase,$eu))$myeu=1;
+    else $myeu=0;
   }
   
   $mytt=$parts[3].":".$parts[4];
@@ -79,5 +81,5 @@ foreach($ea as $ee){
 }
 echo "TOTAL\t$z1\t$z2\t$z3\t$z4\n";
 echo "\n".$parts[5]." SCORE: ".array_sum($point)*array_sum($mult)."\n\n";
-mybreakdown("hadx",$parts[5],$parts[3],$aqso,$apoint,$amult);
+mybreakdown("eudx",$parts[5],$parts[3],$aqso,$apoint,$amult);
 ?>
