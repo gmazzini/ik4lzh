@@ -1,6 +1,8 @@
-go to https://www.country-files.com/category/big-cty/
-look for first news and copy "downlink" link
-downlink the file info cty.zip
-unzip the cty.zip
-remove cty.csv
-remove cty.zip
+aa=`curl -sS http://www.country-files.com/category/big-cty/ | grep zip | head -n 1 | awk -F '"' '{print $2}'`
+mkdir tmpcty
+cd tmpcty
+curl -sS $aa > cty.zip
+unzip cty.zip
+cd ..
+cp tmpcty/cty.csv .
+rm -rf tmpcty
