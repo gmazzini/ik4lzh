@@ -45,7 +45,7 @@ while(!feof($hh)){
 fclose($hh);
 
 echo "<pre>\n";
-echo "BAND\tQSOs\tPOINTs\MULTs\n";
+echo "BAND\tQSOs\tPOINTs\tMULTs\n";
 $ea=array_keys($myrep);
 natsort($ea);
 $z1=$z2=$z3=0;
