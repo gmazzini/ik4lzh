@@ -9,7 +9,7 @@ while(!feof($hh)){
   if(substr($line,0,4)!="QSO:")continue;
   $parts=mysep($line,10);
   if(is_numeric($parts[8]))$qq=1;
-  $qq=0;
+  else $qq=0;
   
   $mytt=$parts[3].":".$parts[4];
   $band=$bb[floor($parts[1]/1000)];
