@@ -39,38 +39,44 @@ for postprocessing and analysis, by IK4LZH gianluca@mazzini.org
 <input type="submit" name="submit" value="Upload">
 </form>
 
+<form action="arrldx.php" method="post" enctype="multipart/form-data">
+<label>05. ARRL DX    </label>
+<input type="file" name="cbrfile">
+<input type="submit" name="submit" value="Upload">
+</form>
+
 <form action="hadx.php" method="post" enctype="multipart/form-data">
-<label>05. HADX       </label>
+<label>06. HADX       </label>
 <input type="file" name="cbrfile">
 <input type="submit" name="submit" value="Upload">
 </form>
 
 <form action="spdx.php" method="post" enctype="multipart/form-data">
-<label>06. SPDX       </label>
+<label>07. SPDX       </label>
 <input type="file" name="cbrfile">
 <input type="submit" name="submit" value="Upload">
 </form>
 
 <form action="ubadx.php" method="post" enctype="multipart/form-data">
-<label>07. UBADX      </label>
+<label>08. UBADX      </label>
 <input type="file" name="cbrfile">
 <input type="submit" name="submit" value="Upload">
 </form>
 
 <form action="eudx.php" method="post" enctype="multipart/form-data">
-<label>08. EUDX       </label>
+<label>09. EUDX       </label>
 <input type="file" name="cbrfile">
 <input type="submit" name="submit" value="Upload">
 </form>
 
 <form action="bandebasse.php" method="post" enctype="multipart/form-data">
-<label>09. BANDEBASSE </label>
+<label>10. BANDEBASSE </label>
 <input type="file" name="cbrfile">
 <input type="submit" name="submit" value="Upload">
 </form>
 
 <form action="4080.php" method="post" enctype="multipart/form-data">
-<label>10. 4080       </label>
+<label>11. 4080       </label>
 <input type="file" name="cbrfile">
 <input type="submit" name="submit" value="Upload">
 </form>
