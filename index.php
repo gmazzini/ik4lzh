@@ -63,20 +63,26 @@ for postprocessing and analysis, by IK4LZH gianluca@mazzini.org
 <input type="submit" name="submit" value="Upload">
 </form>
 
+<form action="aridx.php" method="post" enctype="multipart/form-data">
+<label>09. ARIDX      </label>
+<input type="file" name="cbrfile">
+<input type="submit" name="submit" value="Upload">
+</form>
+
 <form action="eudx.php" method="post" enctype="multipart/form-data">
-<label>09. EUDX       </label>
+<label>10. EUDX       </label>
 <input type="file" name="cbrfile">
 <input type="submit" name="submit" value="Upload">
 </form>
 
 <form action="bandebasse.php" method="post" enctype="multipart/form-data">
-<label>10. BANDEBASSE </label>
+<label>11. BANDEBASSE </label>
 <input type="file" name="cbrfile">
 <input type="submit" name="submit" value="Upload">
 </form>
 
 <form action="4080.php" method="post" enctype="multipart/form-data">
-<label>11. 4080       </label>
+<label>12. 4080       </label>
 <input type="file" name="cbrfile">
 <input type="submit" name="submit" value="Upload">
 </form>
