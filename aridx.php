@@ -1,6 +1,7 @@
 <?php
 // v1 by IK4LZH 20210130
 
+$it=array("I","IT9","IS0");
 include("utility.php");
 $base=1;
 if(isset($_FILES['cbrfile']['tmp_name']))$hh=fopen($_FILES['cbrfile']['tmp_name'],"r");
@@ -13,6 +14,9 @@ while(!feof($hh)){
     $base=0;
     $mys=findcall($parts[5]);
     $mycont=$mys["cont"];
+    $mybase=$mys["base"];
+    if(in_array($mybase,$it))$myit=1;
+    else $myit=0;
   }
   
   $mytt=$parts[3].":".$parts[4];
@@ -24,16 +28,24 @@ while(!feof($hh)){
     if(!isset($aqso[$mytt]))$aqso[$mytt]=1;
     else $aqso[$mytt]++;
   }
-  if($mys["base"]=="HA")$pp=10;
-  else if($mys["cont"]!=$mycont)$pp=5;
-  else $pp=2;
+  if($myit){
+    if(in_array($mys["base"],$it))$pp=0;
+    else if($mys["cont"]=="EU")$pp=1;
+    else $pp=3;
+  }
+  else {
+    if(in_array($mys["base"],$it))$pp=10;
+    else if($mys["base"]==$mybase)$pp=0;
+    else if($mys["cont"]==$mycont)$pp=1;
+    else $pp=3;  
+  }
   if(!isset($point[$myid])){
     $point[$myid]=$pp;
     if(!isset($apoint[$mytt]))$apoint[$mytt]=$pp;
     else $apoint[$mytt]+=$pp;
   }
-   
-  if($mys["base"]!="HA"){
+  
+  if(!in_array($mys["base"],$it)){
     $myid=$band."-".$mys["base"];
     if(!isset($mult[$myid])){
       $mult[$myid]=1;
@@ -43,7 +55,8 @@ while(!feof($hh)){
       else $amult[$mytt]++;
     }
   }
-  else {
+  
+  if(!$myit){
     $myid=$band."!".$parts[10];
     if(!isset($mult[$myid])){
       $mult[$myid]=1;
