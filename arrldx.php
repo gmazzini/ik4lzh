@@ -1,6 +1,7 @@
 <?php
 // v0 by IK4LZH 20210120
 
+$org=array("K","VE");
 include("utility.php");
 $base=1;
 if(isset($_FILES['cbrfile']['tmp_name']))$hh=fopen($_FILES['cbrfile']['tmp_name'],"r");
@@ -12,8 +13,8 @@ while(!feof($hh)){
   if($base){
     $base=0;
     $mys=findcall($parts[5]);
-    $mybase=$mys["base"];
-    $mycont=$mys["cont"];
+    if(in_array($mys["base"],$org))$myna=1;
+    else $myna=0
   }
   
   $mytt=$parts[3].":".$parts[4];
@@ -32,19 +33,8 @@ while(!feof($hh)){
     else $apoint[$mytt]+=$pp;
   }
   
-  Scoring: Each contact counts for three (3) QSO points. W/VE stations multiply total QSO points by the
-number of DXCC entities contacted. DX stations multiply total QSO points by the total of US States and
-Canadian Provinces and Territories plus the District of Columbia (DC) and Labrador (LB) contacted. Each
-multiplier counts once per band.
-  
- 
-  $myid=$band."-".$mys["base"];
-  if(!isset($mult[$myid])){
-    $mult[$myid]=1;
-    if(!isset($amult[$mytt]))$amult[$mytt]=1;
-    else $amult[$mytt]++;
-  }
-  $myid=$band."!".(int)$parts[10];
+  if($myna)$myid=$band."-".$mys["base"];
+  else $myid=$band."-".$parts[10];
   if(!isset($mult[$myid])){
     $mult[$myid]=1;
     if(!isset($amult[$mytt]))$amult[$mytt]=1;
@@ -55,18 +45,17 @@ multiplier counts once per band.
 fclose($hh);
 
 echo "<pre>\n";
-echo "BAND\tQSOs\tPOINTs\tM_CYs\tM_CQs\n";
+echo "BAND\tQSOs\tPOINTs\MULTs\n";
 $ea=array_keys($myrep);
 natsort($ea);
-$z1=$z2=$z3=$z4=0;
+$z1=$z2=$z3=0;
 foreach($ea as $ee){
   echo $ee."\t";
   $xx=mysum($qso,"-",$ee); $z1+=$xx; echo $xx."\t";
   $xx=mysum($point,"-",$ee); $z2+=$xx; echo $xx."\t";
-  $xx=mysum($mult,"-",$ee); $z3+=$xx; echo $xx."\t";
-  $xx=mysum($mult,"!",$ee); $z4+=$xx; echo $xx."\n";
+  $xx=mysum($mult,"-",$ee); $z3+=$xx; echo $xx."\n";
 }
-echo "TOTAL\t$z1\t$z2\t$z3\t$z4\n";
+echo "TOTAL\t$z1\t$z2\t$z3\n";
 echo "\n".$parts[5]." SCORE: ".array_sum($point)*array_sum($mult)."\n\n";
-mybreakdown("cqww",$parts[5],$parts[3],$aqso,$apoint,$amult);
+mybreakdown("arrldx",$parts[5],$parts[3],$aqso,$apoint,$amult);
 ?>
