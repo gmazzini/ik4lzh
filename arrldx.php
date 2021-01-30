@@ -25,15 +25,18 @@ while(!feof($hh)){
     if(!isset($aqso[$mytt]))$aqso[$mytt]=1;
     else $aqso[$mytt]++;
   }
-  if($mys["cont"]!=$mycont)$pp=3;
-  else if($mys["cont"]=="NA" && $mycont=="NA" && $mys["base"]!=$mybase)$pp=2;
-  else if($mys["cont"]==$mycont && $mys["base"]!=$mybase)$pp=1;
-  else $pp=0;
+  $pp=3;
   if(!isset($point[$myid])){
     $point[$myid]=$pp;
     if(!isset($apoint[$mytt]))$apoint[$mytt]=$pp;
     else $apoint[$mytt]+=$pp;
   }
+  
+  Scoring: Each contact counts for three (3) QSO points. W/VE stations multiply total QSO points by the
+number of DXCC entities contacted. DX stations multiply total QSO points by the total of US States and
+Canadian Provinces and Territories plus the District of Columbia (DC) and Labrador (LB) contacted. Each
+multiplier counts once per band.
+  
  
   $myid=$band."-".$mys["base"];
   if(!isset($mult[$myid])){
