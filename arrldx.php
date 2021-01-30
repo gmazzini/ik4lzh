@@ -1,5 +1,5 @@
 <?php
-// v0 by IK4LZH 20210120
+// v1 by IK4LZH 20210130
 
 $org=array("K","VE");
 include("utility.php");
