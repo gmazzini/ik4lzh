@@ -8,7 +8,7 @@ while(!feof($hh)){
   $line=fgets($hh);
   if(substr($line,0,4)!="QSO:")continue;
   $parts=mysep($line,10);
-  if(is_number($parts[8]))$qq=1;
+  if(is_numeric($parts[8]))$qq=1;
   $qq=0;
   
   $mytt=$parts[3].":".$parts[4];
