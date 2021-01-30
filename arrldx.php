@@ -14,7 +14,7 @@ while(!feof($hh)){
     $base=0;
     $mys=findcall($parts[5]);
     if(in_array($mys["base"],$org))$myna=1;
-    else $myna=0
+    else $myna=0;
   }
   
   $mytt=$parts[3].":".$parts[4];
