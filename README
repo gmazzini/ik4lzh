@@ -1,3 +1,6 @@
 IK4LZH repository
 all file can be tested and used directly on http://ik4lzh.mazzini.org
+feel free to download and modify for you use
 index.php reports the description of php files and of their functions
+all files starts with a version number with release data
+utility.php is the common utility funcions repository
