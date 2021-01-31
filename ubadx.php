@@ -1,13 +1,11 @@
 <?php
-// v1 by IK4LZH 20210124
+// v2 by IK4LZH 20210131
 
 include("utility.php");
-
 $uba=array("5B","9A","9H","CT","CT3","CU","DL","EA","EA6","EA8","EI","ES","F",
            "FG","FM","FR","FY","HA","I","IS","LX","LY","LZ","OE","OH","OH0","OJ0",
            "OK","OM","OZ","PA","S5","SM","SP","SV","SV5","SV9","TK","YL","YO");
 $base=1;
-$mypars=0;
 if(isset($_FILES['cbrfile']['tmp_name']))$hh=fopen($_FILES['cbrfile']['tmp_name'],"r");
 else $hh=fopen("php://stdin","r");
 while(!feof($hh)){
@@ -19,20 +17,21 @@ while(!feof($hh)){
     $mys=findcall($parts[5]);
     $mybase=$mys["base"];
     $mycont=$mys["cont"];
-    if($mybase=="ON")$mypars=1;
+    if($mybase=="ON")$myuba=1;
+    else $myuba=0;
   }
   
   $mytt=$parts[3].":".$parts[4];
   $band=$bb[floor($parts[1]/1000)];
-  $mys=findcall($parts[8+$mypars]);
+  $mys=findcall($parts[8+$myuba]);
   
-  $myid=$band."-".$parts[8+$mypars];
+  $myid=$band."-".$parts[8+$myuba];
   if(!isset($qso[$myid])){
     $qso[$myid]=1;
     if(!isset($aqso[$mytt]))$aqso[$mytt]=1;
     else $aqso[$mytt]++;
   }
-  if($mypars){
+  if($myuba){
     if($mys["base"]=="ON")$pp=1;
     else if($mys["cont"]=="EU")$pp=2;
     else $pp=3;
@@ -51,7 +50,7 @@ while(!feof($hh)){
     else $apoint[$mytt]+=$pp;
   }
   
-  if($mypars){
+  if($myuba){
     $myid=$band."-".$mys["base"];
     if(!isset($mult[$myid])){
       $mult[$myid]=1;
@@ -102,7 +101,8 @@ foreach($ea as $ee){
   $xx=mysum($mult,"!",$ee); $z5+=$xx; echo $xx."\n";
 }
 echo "TOTAL\t$z1\t$z2\t$z3\t$z4\t$z5\n";
-$bonus=(int)(array_sum($onqso)/array_sum($qso)*array_sum($onqso)*10);
+if(isset($onqso))$bonus=(int)(array_sum($onqso)/array_sum($qso)*array_sum($onqso)*10);
+else $bonus=0;
 echo "BONUS: $bonus\n";
 echo "\n".$parts[5]." SCORE: ".(array_sum($point)+$bonus)*array_sum($mult)."\n\n";
 mybreakdown("ubadx",$parts[5],$parts[3],$aqso,$apoint,$amult);
