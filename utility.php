@@ -1,5 +1,5 @@
 <?php
-// v9 by IK4LZH 20210129
+// v10 by IK4LZH 20210131
 
 $bb=array(1=>160,3=>80,5=>60,7=>40,10=>30,14=>20,18=>17,21=>15,24=>12,28=>10,29=>10);
 
@@ -34,6 +34,8 @@ function mysep($in,$vers){
 }
 
 function mybreakdown($contest,$call,$datacontest,$aqso,$apoint,$amult){
+  global $argv;
+  if(isset($argv[1]))return;
   $myd=array_unique(array_keys($aqso));
   sort($myd);
   $name=$contest."_".$call."_".$datacontest."_".md5($contest.$call.$datacontest.rand());
