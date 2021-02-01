@@ -1,5 +1,5 @@
 <?php
-// v10 by IK4LZH 20210131
+// v11 by IK4LZH 20210201
 
 $bb=array(1=>160,3=>80,5=>60,7=>40,10=>30,14=>20,18=>17,21=>15,24=>12,28=>10,29=>10);
 
@@ -58,7 +58,7 @@ function findcall($a){
   if(!isset($loadcty)){
     $loadcty=1;
     $j=0;
-    $hh=fopen("cty.csv","r");
+    $hh=fopen(dirname(__FILE__)."/cty.csv","r");
     while(!feof($hh)){
       $dd=fgetcsv($hh,100000);
       if($dd===FALSE)continue;
