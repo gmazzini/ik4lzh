@@ -129,7 +129,7 @@ function findcall($a){
   if(isset($z2[$call]))return $z1[$z2[$call]];
   $to1=strrpos($call,"/");
   if($to1!==false){
-    if(in_array(substr($call,$to1+1),array("P","M","LH","MM","AM","A"))){
+    if(in_array(substr($call,$to1+1),array("P","M","LH","MM","AM","A","QRP","0","1","2","3","4","5","6","7","8","9"))){
       $call=substr($call,0,$to1);
       $to1=strrpos($call,"/");
     }
