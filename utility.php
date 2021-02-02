@@ -1,5 +1,5 @@
 <?php
-// v11 by IK4LZH 20210201
+// v12 by IK4LZH 20210202
 
 $bb=array(1=>160,3=>80,5=>60,7=>40,10=>30,14=>20,18=>17,21=>15,24=>12,28=>10,29=>10);
 
@@ -127,11 +127,17 @@ function findcall($a){
   
   $call=strtoupper($a);
   if(isset($z2[$call]))return $z1[$z2[$call]];
-  $to1=strpos($call,"/");
+  $to1=strrpos($call,"/");
   if($to1!==false){
-    $lc=strlen($call);
-    if($to1<$lc-$to1-1)$call=substr($call,0,$to1);
-    else $call=substr($call,$to1+1);
+    if(in_array(substr($call,$to1),array("P","M","LH","MM","AM","A"))){
+      $call=sybstr($call,0,$to1);
+      $to1=strrpos($call,"/");
+    }
+    if($to1!==false){
+      $lc=strlen($call);
+      if($to1<$lc-$to1-1)$call=substr($call,0,$to1);
+      else $call=substr($call,$to1+1);
+    }
   }
   $lc=strlen($call);
   $s=-1;
