@@ -130,7 +130,7 @@ function findcall($a){
   $to1=strrpos($call,"/");
   if($to1!==false){
     if(in_array(substr($call,$to1),array("P","M","LH","MM","AM","A"))){
-      $call=sybstr($call,0,$to1);
+      $call=substr($call,0,$to1);
       $to1=strrpos($call,"/");
     }
     if($to1!==false){
