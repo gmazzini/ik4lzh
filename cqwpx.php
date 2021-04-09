@@ -1,5 +1,5 @@
 <?php
-// v2 by IK4LZH 20210122
+// v3 by IK4LZH 20210409
 
 include("utility.php");
 $base=1;
@@ -29,7 +29,7 @@ while(!feof($hh)){
     if($band<=20)$pp=3;
     else $pp=6;
   }
-  else if($mys["cont"]=="NA" && $mycont=="NA"){
+  else if($mys["cont"]=="NA"){
     if($band<=20)$pp=2;
     else $pp=4;
   }
