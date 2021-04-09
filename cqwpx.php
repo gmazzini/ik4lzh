@@ -24,8 +24,11 @@ while(!feof($hh)){
     $qso[$myid]=1;
     if(!isset($aqso[$mytt]))$aqso[$mytt]=1;
     else $aqso[$mytt]++;
-  }  
-  if($mys["cont"]!=$mycont){
+  }
+  if($mys["base"]==$mybase){
+    $pp=1;
+  }
+  else if($mys["cont"]!=$mycont){
     if($band<=20)$pp=3;
     else $pp=6;
   }
@@ -33,11 +36,10 @@ while(!feof($hh)){
     if($band<=20)$pp=2;
     else $pp=4;
   }
-  else if($mys["base"]!=$mybase){
+  else
     if($band<=20)$pp=1;
     else $pp=2;
   }
-  else $pp=1;
   if(!isset($point[$myid])){
     $point[$myid]=$pp;
     if(!isset($apoint[$mytt]))$apoint[$mytt]=$pp;
