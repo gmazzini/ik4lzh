@@ -60,10 +60,6 @@ while(!feof($hh)){
 fclose($hh);
 
 echo "<pre>\n";
-
-print_r($point);
-
-
 echo "BAND\tQSOs\tPOINTs\tM_WPXs\n";
 $ea=array_keys($myrep);
 natsort($ea);
