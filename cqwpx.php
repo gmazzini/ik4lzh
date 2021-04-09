@@ -38,7 +38,6 @@ while(!feof($hh)){
     else $pp=2;
   }
   else $pp=1;
-  echo "<pre>".$parts[8]." ".$band." ".$pp."\n";
   if(!isset($point[$myid])){
     $point[$myid]=$pp;
     if(!isset($apoint[$mytt]))$apoint[$mytt]=$pp;
