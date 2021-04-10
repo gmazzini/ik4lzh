@@ -101,7 +101,7 @@ for postprocessing and analysis, by IK4LZH gianluca@mazzini.org
 </form>
 
 <form action="password.php" method="post" enctype="multipart/form-data">
-<label>C. Password Generator (len)          </label>
+<label>C. Password Generator (len)         </label>
 <input type="text" name="passlen">
 <input type="submit" name="submit" value="Submit">
 </form>
