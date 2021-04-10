@@ -95,7 +95,7 @@ for postprocessing and analysis, by IK4LZH gianluca@mazzini.org
 </form>
 
 <form action="country.php" method="post" enctype="multipart/form-data">
-<label>B. Country identificaton (callsign)</label>
+<label>B. Country identificaton (callsign) </label>
 <input type="text" name="call">
 <input type="submit" name="submit" value="Submit">
 </form>
