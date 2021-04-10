@@ -52,8 +52,8 @@ foreach($ea as $ee){
 $aux=0;
 echo "TOTAL\t";
 foreach($za as $ze){
-  echo $zont[$ze]."\t";
+  echo $zcont[$ze]."\t";
   $aux+=$zcont[$ze];
 }
-echo "aux\n";
+echo "$aux\n";
 ?>
