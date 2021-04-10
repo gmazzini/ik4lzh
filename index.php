@@ -31,7 +31,6 @@ for postprocessing and analysis, by IK4LZH gianluca@mazzini.org
 <input type="file" name="cbrfile">
 <input type="submit" name="submit" value="Upload">
 </form>
-</p>
 
 <form action="iaruhf.php" method="post" enctype="multipart/form-data">
 <label>04. IARU HF    </label>
