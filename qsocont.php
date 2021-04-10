@@ -32,9 +32,16 @@ natsort($ea);
 $za=array_keys($mycont);
 natsort($za);
 $z1=$z2=$z3=0;
+echo "\t";
+foreach($za as $ze){
+  echo $ze."\t";
+}
 foreach($ea as $ee){
+  echo $ee."\t";
   foreach($za as $ze){
-    echo $ee." ".$ze." ".$zqso[$ee."-".$ze]."\n";;
+    $aux=$zqso[$ee."-".$ze];
+    if(!isset($aux))$aux=0;
+    echo $aux."\t";
   }
 }
 echo "TOTAL\t$z1\t$z2\t$z3\n";
