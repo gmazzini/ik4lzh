@@ -29,12 +29,12 @@ echo "<pre>\n";
 echo "xxxxx\n";
 $ea=array_keys($myrep);
 natsort($ea);
-$za=array_keys($myrep);
+$za=array_keys($mycont);
 natsort($za);
 $z1=$z2=$z3=0;
 foreach($ea as $ee){
   foreach($za as $ze){
-    echo $ee." ".$ze." ".$zqso[$ee."-".$ze];
+    echo $ee." ".$ze." ".$zqso[$ee."-".$ze]."\n";;
   }
 }
 echo "TOTAL\t$z1\t$z2\t$z3\n";
