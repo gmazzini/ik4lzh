@@ -35,17 +35,25 @@ echo "\t";
 foreach($za as $ze){
   echo $ze."\t";
 }
-echo "\n";
+echo "TOTAL\n";
 foreach($ea as $ee){
   echo $ee."\t";
   $saux=0;
   foreach($za as $ze){
+    if(!isset($zcont[$ze]))$zcont[$ze]=0;
     $aux=$zqso[$ee."-".$ze];
     if(!isset($aux))$aux=0;
     $saux+=$aux;
+    $zcont[$ze]+=$aux;
     echo $aux."\t";
   }
   echo $saux."\n";
 }
-echo "TOTAL\t$z1\t$z2\t$z3\n";
+$aux=0;
+echo "TOTAL\t";
+foreach($za as $ze){
+  echo $zont[$ze]."\t";
+  $aux+=$zcont[$ze];
+}
+echo "aux\n";
 ?>
