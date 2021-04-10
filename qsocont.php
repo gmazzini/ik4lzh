@@ -1,6 +1,6 @@
 
 <?php
-// v0 by IK4LZH 20210410
+// v1 by IK4LZH 20210410
 
 include("utility.php");
 if(isset($_FILES['cbrfile']['tmp_name']))$hh=fopen($_FILES['cbrfile']['tmp_name'],"r");
@@ -38,12 +38,14 @@ foreach($za as $ze){
 echo "\n";
 foreach($ea as $ee){
   echo $ee."\t";
+  $saux=0;
   foreach($za as $ze){
     $aux=$zqso[$ee."-".$ze];
     if(!isset($aux))$aux=0;
+    $saux+=$aux;
     echo $aux."\t";
   }
-  echo "\n";
+  echo $saux."\n";
 }
 echo "TOTAL\t$z1\t$z2\t$z3\n";
 ?>
