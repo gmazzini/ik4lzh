@@ -89,14 +89,20 @@ for postprocessing and analysis, by IK4LZH gianluca@mazzini.org
 
 <hr>
 
+<form action="qsocont.php" method="post" enctype="multipart/form-data">
+<label>A. QSOs for Continent               </label>
+<input type="file" name="cbrfile">
+<input type="submit" name="submit" value="Upload">
+</form>
+
 <form action="country.php" method="post" enctype="multipart/form-data">
-<label>A. Country identificaton (callsign)</label>
+<label><B. Country identificaton (callsign)</label>
 <input type="text" name="call">
 <input type="submit" name="submit" value="Submit">
 </form>
 
 <form action="password.php" method="post" enctype="multipart/form-data">
-<label>B. Password Generator (len)        </label>
+<label>C. Password Generator (len)          </label>
 <input type="text" name="passlen">
 <input type="submit" name="submit" value="Submit">
 </form>
