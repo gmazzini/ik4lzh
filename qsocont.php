@@ -25,18 +25,17 @@ while(!feof($hh)){
 }
 fclose($hh);
 
-echo "<pre>"; print_r($zqso);
-
 echo "<pre>\n";
 echo "xxxxx\n";
 $ea=array_keys($myrep);
 natsort($ea);
+$za=array_keys($myrep);
+natsort($za);
 $z1=$z2=$z3=0;
 foreach($ea as $ee){
-  echo $ee."\t";
-  $xx=mysum($qso,"-",$ee); $z1+=$xx; echo $xx."\t";
-  $xx=mysum($point,"-",$ee); $z2+=$xx; echo $xx."\t";
-  $xx=mysum($vmult,"-",$ee); $z3+=$xx; echo $xx."\n";
+  foreach($za as $ze){
+    echo $ee." ".$ze." ".$zqso[$ee."-".$ze];
+  }
 }
 echo "TOTAL\t$z1\t$z2\t$z3\n";
 ?>
