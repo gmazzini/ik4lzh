@@ -12,6 +12,7 @@ while(!feof($hh)){
   $band=$bb[floor($parts[1]/1000)];
   $mys=findcall($parts[8]);
   $cont=$mys["cont"];
+  if(!isset($cont))continue;
   $myid=$band."-".$parts[8];
   if(!isset($qso[$myid])){
     $myzz=$band."-".$cont;
