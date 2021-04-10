@@ -26,7 +26,6 @@ while(!feof($hh)){
 fclose($hh);
 
 echo "<pre>\n";
-echo "xxxxx\n";
 $ea=array_keys($myrep);
 natsort($ea);
 $za=array_keys($mycont);
@@ -36,6 +35,7 @@ echo "\t";
 foreach($za as $ze){
   echo $ze."\t";
 }
+echo "\n";
 foreach($ea as $ee){
   echo $ee."\t";
   foreach($za as $ze){
@@ -43,6 +43,7 @@ foreach($ea as $ee){
     if(!isset($aux))$aux=0;
     echo $aux."\t";
   }
+  echo "\n";
 }
 echo "TOTAL\t$z1\t$z2\t$z3\n";
 ?>
