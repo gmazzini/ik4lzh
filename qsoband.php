@@ -38,7 +38,7 @@ foreach($myd as $dd){
   fwrite($fp,$dd);
   foreach($ea as $ee){
     $myyy=$dd."-".$ee;
-    if(isset($yqso[$myyy])$lcount[$ee]=$yqso[$myyy];
+    if(isset($yqso[$myyy]))$lcount[$ee]=$yqso[$myyy];
     echo ",".$lcount[$ee];
     fwrite($fp,",".$lcount[$ee]);
   }
