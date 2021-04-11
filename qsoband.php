@@ -29,6 +29,8 @@ $myd=array_keys($myact);
 sort($myd);
 $ea=array_keys($myrep);
 natsort($ea);
+echo "ciao\n";
+
 $name=uniqueid("qsoband_",true);
 $fp=fopen("/home/www/ik4lzh.mazzini.org/breakdown/$name.csv","w");
 echo "<a href='https://ik4lzh.mazzini.org/breakdown/$name.csv' download>Download breakdown</a><br>";
