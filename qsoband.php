@@ -25,8 +25,6 @@ while(!feof($hh)){
 fclose($hh);
 
 echo "<pre>\n";
-print_r($yqso);
-
 $myd=array_keys($myact);
 sort($myd);
 $ea=array_keys($myrep);
