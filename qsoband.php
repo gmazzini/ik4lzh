@@ -14,8 +14,9 @@ while(!feof($hh)){
   $myyy=$parts[3].":".$parts[4]."-".$band;
   if(!isset($qso[$myid])){
     $qso[$myid]=1;
-    if(!isset($yqso[$myyy]))$yqso[$myyy]=1;
-    else $yqso[$myyy]++;
+    if(!isset($lcount[$band]))$lcount[$band]=1;
+    else $lcount[$band]++;
+    $yqso[$myyy]=$lcount[$band];
   }
   if(!isset($myrep[$band]))$myrep[$band]=1;
 }
