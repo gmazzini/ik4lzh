@@ -94,6 +94,12 @@ for postprocessing and analysis, by IK4LZH gianluca@mazzini.org
 <input type="submit" name="submit" value="Upload">
 </form>
 
+<form action="qsoband.php" method="post" enctype="multipart/form-data">
+<label>A. QSOs for band                    </label>
+<input type="file" name="cbrfile">
+<input type="submit" name="submit" value="Upload">
+</form>
+
 <form action="country.php" method="post" enctype="multipart/form-data">
 <label>B. Country identificaton (callsign) </label>
 <input type="text" name="call">
