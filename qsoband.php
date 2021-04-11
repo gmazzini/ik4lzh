@@ -31,7 +31,7 @@ $ea=array_keys($myrep);
 natsort($ea);
 echo "ciao\n";
 
-$name=uniqueid("qsoband_",true);
+$name=uniqid("qsoband_",true);
 
 echo "$name\n";
 
