@@ -29,12 +29,8 @@ $myd=array_keys($myact);
 sort($myd);
 $ea=array_keys($myrep);
 natsort($ea);
-echo "ciao\n";
-
+foreach($ea as $ee)$lcount[$ee]=0;
 $name=uniqid("qsoband_",true);
-
-echo "$name\n";
-
 $fp=fopen("/home/www/ik4lzh.mazzini.org/breakdown/$name.csv","w");
 echo "<a href='https://ik4lzh.mazzini.org/breakdown/$name.csv' download>Download breakdown</a><br>";
 foreach($myd as $dd){
@@ -42,8 +38,9 @@ foreach($myd as $dd){
   fwrite($fp,$dd);
   foreach($ea as $ee){
     $myyy=$dd."-".$ee;
-    echo ",".$yqso[$myyy];
-    fwrite($fp,",".$yqso[$myyy]);
+    if(isset($yqso[$myyy])$lcount[$ee]=$yqso[$myyy];
+    echo ",".$lcount[$ee];
+    fwrite($fp,",".$lcount[$ee]);
   }
   echo "\n";
   fwrite($fp,"\n");
