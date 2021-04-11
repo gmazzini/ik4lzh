@@ -32,6 +32,9 @@ natsort($ea);
 echo "ciao\n";
 
 $name=uniqueid("qsoband_",true);
+
+echo "$name\n";
+
 $fp=fopen("/home/www/ik4lzh.mazzini.org/breakdown/$name.csv","w");
 echo "<a href='https://ik4lzh.mazzini.org/breakdown/$name.csv' download>Download breakdown</a><br>";
 foreach($myd as $dd){
