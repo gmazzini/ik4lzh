@@ -19,7 +19,7 @@ print_r($mytt);
 $pause=0;
 for($n=1;$n<$nqso;$n++){
   $mdel=$mytt[$n]-$mytt[$n-1];
-  if($mytt>=3600)$pause+=$mydel;
+  if($mydel>=3600)$pause+=$mydel;
 }
 $totp=$mytt[$nqso-1]-$mytt[0];
 echo "<pre>";
