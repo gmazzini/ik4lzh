@@ -22,8 +22,8 @@ for($n=1;$n<$nqso;$n++){
 $totp=$mytt[$nqso-1]-$mytt[0];
 $ontimes=$totp-$pause;
 echo "<pre>";
-echo "Total presence: $totp\n";
-echo "Total pause: $pause\n";
-echo "Total on times: $ontimes"." ".sprintf("%5.2f",$ontimes/3600)."\n";
+echo "Total presence [s h]: $totp"." ".sprintf("%5.2f",$totp/3600)."\n";
+echo "Total pause    [s h]: $pause"." ".sprintf("%5.2f",$pause/3600)."\n";
+echo "Total on times [s h]: $ontimes"." ".sprintf("%5.2f",$ontimes/3600)."\n";
 
 ?>
