@@ -22,9 +22,10 @@ for($n=1;$n<$nqso;$n++){
   if($mdel>=3600)$pause+=$mdel;
 }
 $totp=$mytt[$nqso-1]-$mytt[0];
+$ontimes=$totp-$pause;
 echo "<pre>";
 echo "Total presence: $totp\n";
 echo "Total pause: $pause\n";
-echo "Total on times: ".$totp-$pause."\n";
+echo "Total on times: $ontimes\n";
 
 ?>
