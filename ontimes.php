@@ -16,4 +16,7 @@ fclose($hh);
 sort($mytt);
 print_r($mytt);
 
+echo $nqso."\n";
+echo $mytt[$nqso-1]."\n";
+
 ?>
