@@ -16,7 +16,15 @@ fclose($hh);
 sort($mytt);
 print_r($mytt);
 
-echo $nqso."\n";
-echo $mytt[$nqso-1]-$mytt[0]."\n";
+$pause=0;
+for($n=1;$n<$nqso;$n++){
+  $mdel=$mytt[$n]-$mytt[$n-1];
+  if($mytt>=3600)$pause+=$mydel;
+}
+$totp=$mytt[$nqso-1]-$mytt[0];
+echo "<pre>";
+echo "Total presence: $totp\n";
+echo "Total pause: $pause\n";
+echo "Total on times: ".$totp-$pause."\n";
 
 ?>
