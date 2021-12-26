@@ -14,8 +14,6 @@ while(!feof($hh)){
 }
 fclose($hh);
 sort($mytt);
-print_r($mytt);
-
 $pause=0;
 for($n=1;$n<$nqso;$n++){
   $mdel=$mytt[$n]-$mytt[$n-1];
