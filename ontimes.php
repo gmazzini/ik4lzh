@@ -17,6 +17,6 @@ sort($mytt);
 print_r($mytt);
 
 echo $nqso."\n";
-echo $mytt[$nqso-1]."\n";
+echo $mytt[$nqso-1].$mytt[0]."\n";
 
 ?>
