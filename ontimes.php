@@ -11,8 +11,10 @@ while(!feof($hh)){
   $parts=mysep($line,10);
   
   $mytt=$parts[3].":".$parts[4];
+
+  echo $mytt;
   
-  
+}
 fclose($hh);
 
 
