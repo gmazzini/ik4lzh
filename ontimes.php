@@ -26,6 +26,6 @@ $ontimes=$totp-$pause;
 echo "<pre>";
 echo "Total presence: $totp\n";
 echo "Total pause: $pause\n";
-echo "Total on times: $ontimes\n";
+echo "Total on times: $ontimes"." ".sprintf("%4.1f",$ontimes/3600)."\n";
 
 ?>
