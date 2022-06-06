@@ -119,7 +119,7 @@ for postprocessing and analysis, by IK4LZH gianluca@mazzini.org
 </form>
 
 <form action="md5.php" method="post" enctype="multipart/form-data">
-<label>E. MD5 generator                    </label>
+<label>E. MD5 generator (text)             </label>
 <input type="text" name="tomd5">
 <input type="submit" name="submit" value="Submit">
 </form>
