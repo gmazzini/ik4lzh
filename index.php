@@ -117,3 +117,9 @@ for postprocessing and analysis, by IK4LZH gianluca@mazzini.org
 <input type="text" name="passlen">
 <input type="submit" name="submit" value="Submit">
 </form>
+
+<form action="md5.php" method="post" enctype="multipart/form-data">
+<label>E. MD5 generator                    </label>
+<input type="text" name="tomd5">
+<input type="submit" name="submit" value="Submit">
+</form>
