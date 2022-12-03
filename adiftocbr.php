@@ -2,7 +2,7 @@
 // v1 by IK4LZH 20221203
 
 function myextract($buf,$token){
-  $pos=stripos($buf,"<"&$token&":");
+  $pos=stripos($buf,"<" & $token & ":");
   if($pos){
     $pose=stripos($buf,">",$pos);
     $ltok=$strlen($token)+2;
