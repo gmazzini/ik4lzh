@@ -21,6 +21,7 @@ while(!feof($hh)){
   else $ff=1;
 
   extr($line,"ppp");
+  echo ">>> $line\n";
   
 }
  
