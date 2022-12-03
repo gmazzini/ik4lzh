@@ -2,8 +2,8 @@
 // v1 by IK4LZH 20221203
 
 function extr($buf,$token){
-  $pos=stripos($line,"<CALL:");
-  $pose=stripos($line,">",$pos);
+  $pos=stripos($buf,"<CALL:");
+  $pose=stripos($buf,">",$pos);
   echo "$pos $pose\n";
 }
 
