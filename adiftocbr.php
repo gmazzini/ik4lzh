@@ -5,6 +5,7 @@ function extr($buf,$token){
   $pos=stripos($buf,"<CALL:");
   $pose=stripos($buf,">",$pos);
   echo "$buf - $pos - $pose\n";
+  return;
 }
 
 // include("utility.php");
