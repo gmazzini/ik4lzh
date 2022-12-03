@@ -1,6 +1,9 @@
 <?php
 // v1 by IK4LZH 20221203
 
+// rm -rf ik4lzh; git clone https://github.com/gmazzini/ik4lzh; cp ik4lzh/adiftocbr.php .
+// cat lz22.adi | php adiftocbr.php | head -n 20
+
 function myextract($buf,$token){
   $pos=stripos($buf,"<" & $token & ":");
   if($pos){
