@@ -2,10 +2,12 @@
 // v1 by IK4LZH 20221203
 
 function myextract($buf,$token){
-  $pos=stripos($buf,"<CALL:");
+  $pos=stripos($buf,"<"&$token&":");
   if($pos!==false){
     $pose=stripos($buf,">",$pos);
-    echo "$buf - $pos - $pose\n";
+    $ltok=$strlen($token)+2;
+    echo ">>" & substr($buf,$pos+$ltok,$pose-$pos-$ltok);
+    echo "$ltok - $pos - $pose\n";
   }
   return;
 }
@@ -24,7 +26,7 @@ while(!feof($hh)){
     $myrun=1;
   }
 
-  myextract($line,"ppp");
+  myextract($line,"CALL");
 
   
 }
