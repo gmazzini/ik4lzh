@@ -8,18 +8,18 @@ function extr($buf,$token){
 }
 
 // include("utility.php");
-$ff=0;
+$mrun=0;
 if(isset($_FILES['cbrfile']['tmp_name']))$hh=fopen($_FILES['cbrfile']['tmp_name'],"r");
 else $hh=fopen("php://stdin","r");
 while(!feof($hh)){
   $line=fgets($hh);
-  echo ">>> $ff $line\n";
+  echo ">>> $mrun $line\n";
   
-  if($ff==0){
+  if($mrun==0){
     $pos=stripos($line,"<EOH>");
     if($pos===false)continue;
+    $mrun=1;
   }
-  else $ff=1;
 
   extr($line,"ppp");
 
