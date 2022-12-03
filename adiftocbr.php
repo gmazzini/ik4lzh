@@ -51,23 +51,24 @@ while(!feof($hh)){
   if($aux)$srx=$aux;
   $aux=myextract($line,"SRX_STRING");
   if($aux)$srxstring=$aux;
-
+  
   $pos=stripos($line,"<EOR>");
   if($pos!==false){
-    echo "QSO: ";
-    printf("%5d ",$freq*1000);
-    printf("%2s ",$mymode[$mode]);
-    printf("%04d-%02d-%02d ",substr($qsodate,0,4),substr($qsodate,4,2),substr($qsodate,6,2));
-    printf("%04d ",substr($qsotime,0,4));
-    printf("%-13s ",$operator);
-    printf("%3s ",$rstsent);
-    if($stxstring)printf("%-6s ",$stxstring);
-    else printf("%-6s ",$stx);
-    printf("%-13s ",$call);
-    printf("%3s ",$rstrcvd);
-    if($stxstring)printf("%-6s ",$srxstring);
-    else printf("%-6s ",$srx);
-    echo "0\n";
+    $out="QSO: ";
+    $out.=sprintf("%5d ",$freq*1000);
+    $out.=sprintf("%2s ",$mymode[$mode]);
+    $out.=sprintf("%04d-%02d-%02d ",substr($qsodate,0,4),substr($qsodate,4,2),substr($qsodate,6,2));
+    $out.=sprintf("%04d ",substr($qsotime,0,4));
+    $out.=sprintf("%-13s ",$operator);
+    $out.=sprintf("%3s ",$rstsent);
+    if($stxstring)$out.=sprintf("%-6s ",$stxstring);
+    else $out.=sprintf("%-6s ",$stx);
+    $out.=sprintf("%-13s ",$call);
+    $out.=sprintf("%3s ",$rstrcvd);
+    if($stxstring)$out.=sprintf("%-6s ",$srxstring);
+    else $out.=sprintf("%-6s ",$srx);
+    $out.="0";
+    $oo[$qsodate.$qsotime]=$out;
     $call="";
     $operator="";
     $mode="";
@@ -81,7 +82,30 @@ while(!feof($hh)){
     $srx="";
     $srxstring="";
   }
-
 }
+
+ksort($oo);
+
+echo "START-OF-LOG: 3.0\n";
+echo "CONTEST: xxxxxx\n";
+echo "CALLSIGN: xxxxxx\n";
+echo "CATEGORY-OPERATOR: SINGLE-OP\n";
+echo "CATEGORY-ASSISTED: ASSISTED\n";
+echo "CATEGORY-BAND: ALL\n";
+echo "CATEGORY-POWER: LOW\n";
+echo "CATEGORY-TRANSMITTER: ONE\n";
+echo "CREATED-BY: IK4LZH converter V1\n";
+echo "NAME: xxxxxxx xxxxxx\n";
+echo "ADDRESS: xxxxxx\n";
+echo "ADDRESS-CITY: xxxxx\n";
+echo "ADDRESS-POSTALCODE: xxxxxx\n";
+echo "ADDRESS-COUNTRY: xxxxxx\n";
+echo "OPERATORS: xxxxxx\n";
+
+foreach($oo as $key => $val){
+  echo "$val\n";
+}
+
+echo "END-OF-LOG:\n";
 
 ?>
