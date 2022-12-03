@@ -14,7 +14,7 @@ if(isset($_FILES['cbrfile']['tmp_name']))$hh=fopen($_FILES['cbrfile']['tmp_name'
 else $hh=fopen("php://stdin","r");
 while(!feof($hh)){
   $line=fgets($hh);
-  echo ">>> $mrun $line\n";
+  echo ">>> $myrun $line\n";
   
   if($myrun==0){
     $pos=stripos($line,"<EOH>");
