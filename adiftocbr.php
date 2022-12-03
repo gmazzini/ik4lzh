@@ -83,26 +83,30 @@ while(!feof($hh)){
 
 ksort($oo);
 
-echo "START-OF-LOG: 3.0\n";
-echo "CONTEST: xxxxxx\n";
-echo "CALLSIGN: xxxxxx\n";
-echo "CATEGORY-OPERATOR: SINGLE-OP\n";
-echo "CATEGORY-ASSISTED: ASSISTED\n";
-echo "CATEGORY-BAND: ALL\n";
-echo "CATEGORY-POWER: LOW\n";
-echo "CATEGORY-TRANSMITTER: ONE\n";
-echo "CREATED-BY: IK4LZH converter V1\n";
-echo "NAME: xxxxxxx xxxxxx\n";
-echo "ADDRESS: xxxxxx\n";
-echo "ADDRESS-CITY: xxxxx\n";
-echo "ADDRESS-POSTALCODE: xxxxxx\n";
-echo "ADDRESS-COUNTRY: xxxxxx\n";
-echo "OPERATORS: xxxxxx\n";
+$name=rand().rand().rand().rand()."cbr";
+$fp=fopen("/home/www/ik4lzh.mazzini.org/breakdown/$name.csv","w");
+fprintf($fp,"START-OF-LOG: 3.0\n");
+fprintf($fp,"CONTEST: xxxxxx\n");
+fprintf($fp,"CALLSIGN: xxxxxx\n");
+fprintf($fp,"CATEGORY-OPERATOR: SINGLE-OP\n");
+fprintf($fp,"CATEGORY-ASSISTED: ASSISTED\n");
+fprintf($fp,"CATEGORY-BAND: ALL\n");
+fprintf($fp,"CATEGORY-POWER: LOW\n");
+fprintf($fp,"CATEGORY-TRANSMITTER: ONE\n");
+fprintf($fp,"CREATED-BY: IK4LZH converter V1\n");
+fprintf($fp,"NAME: xxxxxxx xxxxxx\n");
+fprintf($fp,"ADDRESS: xxxxxx\n");
+fprintf($fp,"ADDRESS-CITY: xxxxx\n");
+fprintf($fp,"ADDRESS-POSTALCODE: xxxxxx\n");
+fprintf($fp,"ADDRESS-COUNTRY: xxxxxx\n");
+fprintf($fp,"OPERATORS: xxxxxx\n");
 
 foreach($oo as $key => $val){
-  echo "$val\n";
+  fprintf($fp,"$val\n");
 }
 
-echo "END-OF-LOG:\n";
+fprintf($fp,"END-OF-LOG:\n");
+fclose($fp);
+
 
 ?>
