@@ -83,7 +83,7 @@ while(!feof($hh)){
 
 ksort($oo);
 
-$name=rand().rand().rand().rand()."cbr";
+$name=rand().rand().rand().rand().".cbr";
 $fp=fopen("/home/www/ik4lzh.mazzini.org/breakdown/$name","w");
 fprintf($fp,"START-OF-LOG: 3.0\n");
 fprintf($fp,"CONTEST: xxxxxx\n");
