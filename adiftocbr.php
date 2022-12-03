@@ -3,8 +3,10 @@
 
 function myextract($buf,$token){
   $pos=stripos($buf,"<CALL:");
-  $pose=stripos($buf,">",$pos);
-  echo "$buf - $pos - $pose\n";
+  if($pos!==false){
+    $pose=stripos($buf,">",$pos);
+    echo "$buf - $pos - $pose\n";
+  }
   return;
 }
 
