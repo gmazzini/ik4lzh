@@ -13,6 +13,7 @@ if(isset($_FILES['cbrfile']['tmp_name']))$hh=fopen($_FILES['cbrfile']['tmp_name'
 else $hh=fopen("php://stdin","r");
 while(!feof($hh)){
   $line=fgets($hh);
+  echo ">>> $line\n";
   
   if($ff==0){
     $pos=stripos($line,"<EOH>");
@@ -21,7 +22,7 @@ while(!feof($hh)){
   else $ff=1;
 
   extr($line,"ppp");
-  echo ">>> $line\n";
+
   
 }
  
