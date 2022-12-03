@@ -1,9 +1,6 @@
 <?php
 // v1 by IK4LZH 20221203
 
-// rm -rf ik4lzh; git clone https://github.com/gmazzini/ik4lzh; cp ik4lzh/adiftocbr.php .
-// cat lz22.adi | php adiftocbr.php | head -n 20
-
 function myextract($buf,$token){
   $pos=stripos($buf,"<".$token.":");
   if($pos===false)return null;
@@ -16,7 +13,7 @@ function myextract($buf,$token){
 $mymode=array("SSB"=>"PH","CW"=>"CW");
 
 $myrun=0;
-if(isset($_FILES['cbrfile']['tmp_name']))$hh=fopen($_FILES['cbrfile']['tmp_name'],"r");
+if(isset($_FILES['adiffile']['tmp_name']))$hh=fopen($_FILES['adiffile']['tmp_name'],"r");
 else $hh=fopen("php://stdin","r");
 while(!feof($hh)){
   $line=fgets($hh);
