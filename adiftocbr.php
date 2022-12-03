@@ -22,7 +22,7 @@ while(!feof($hh)){
     $mrun=1;
   }
 
-  extr($line,"ppp");
+  // extr($line,"ppp");
 
   
 }
