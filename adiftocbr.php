@@ -1,12 +1,29 @@
 <?php
 // v1 by IK4LZH 20221203
 
-include("utility.php");
-$base=0;
+// include("utility.php");
+$ff=0;
 if(isset($_FILES['cbrfile']['tmp_name']))$hh=fopen($_FILES['cbrfile']['tmp_name'],"r");
 else $hh=fopen("php://stdin","r");
 while(!feof($hh)){
   $line=fgets($hh);
+  
+  if($ff==0){
+    $pos=stripos($line,"<EOH>");
+    if($pos===false)continue;
+  }
+  else $ff=1;
+  $pos=stripos($line,"<CALL:");
+  $pose=stripos($line,">",$pos);
+  
+}
+  
+$pos2 = stripos($mystring2, $findme);
+
+// Nope, 'a' is certainly not in 'xyz'
+if ($pos1 === false) {
+    echo "The string '$findme' was not found in the string '$mystring1'";
+}
   
   
   if(substr($line,0,4)!="QSO:")continue;
