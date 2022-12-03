@@ -3,7 +3,7 @@
 
 function myextract($buf,$token){
   $pos=stripos($buf,"<"&$token&":");
-  if($pos!==false){
+  if($pos){
     $pose=stripos($buf,">",$pos);
     $ltok=$strlen($token)+2;
     echo ">>" & substr($buf,$pos+$ltok,$pose-$pos-$ltok);
