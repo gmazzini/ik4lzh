@@ -108,5 +108,6 @@ foreach($oo as $key => $val){
 fprintf($fp,"END-OF-LOG:\n");
 fclose($fp);
 
+echo "<pre><a href='https://ik4lzh.mazzini.org/breakdown/$name.cbr' download>Download Cabrillo</a><br>";
 
 ?>
