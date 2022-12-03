@@ -1,77 +1,22 @@
-Last login: Wed Nov 23 16:14:45 on ttys000
-gmazzini@Gianlucas-MacBook-Pro ~ % cd Downloads 
-gmazzini@Gianlucas-MacBook-Pro Downloads % nano adiftocbr.php
-gmazzini@Gianlucas-MacBook-Pro Downloads % nano -c adiftocbr.php
-gmazzini@Gianlucas-MacBook-Pro Downloads % nano -c adiftocbr.php
-gmazzini@Gianlucas-MacBook-Pro Downloads % nano -c adiftocbr.php
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  GNU nano 7.0                                       adiftocbr.php                                                 
+<?php
+// v1 by IK4LZH 20221203
+
+// rm -rf ik4lzh; git clone https://github.com/gmazzini/ik4lzh; cp ik4lzh/adiftocbr.php .
+// cat lz22.adi | php adiftocbr.php | head -n 20
+
+function myextract($buf,$token){
+  $pos=stripos($buf,"<".$token.":");
+  if($pos===false)return null;
+  $pose=stripos($buf,">",$pos);
+  $ltok=strlen($token)+2;
+  $ll=(int)substr($buf,$pos+$ltok,$pose-$pos-$ltok);
+  return substr($buf,$pose+1,$ll);
+}
+
+$mymode=array("SSB"=>"PH","CW"=>"CW");
+
+$myrun=0;
+if(isset($_FILES['cbrfile']['tmp_name']))$hh=fopen($_FILES['cbrfile']['tmp_name'],"r");
 else $hh=fopen("php://stdin","r");
 while(!feof($hh)){
   $line=fgets($hh);
