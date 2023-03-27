@@ -1,27 +1,16 @@
 <?php
-// v4 by IK4LZH first 20210409 last 20230327
+// v3 by IK4LZH 20210409
 
 include("utility.php");
-
+$base=1;
 if(isset($_FILES['cbrfile']['tmp_name']))$hh=fopen($_FILES['cbrfile']['tmp_name'],"r");
 else $hh=fopen("php://stdin","r");
-$nnqso=0;
 while(!feof($hh)){
   $line=fgets($hh);
   if(substr($line,0,4)!="QSO:")continue;
-  $qsobuf[$nnqso]=mysep($line,10);
-  $qsott[$nnqso]=$parts[$nnqso][3].":".$parts[$nnqso][4];
-  $nnqso++;
-}
-fclose($hh);
-
-
-
-
-for($nn=0;$nn<$nnqso;$nn++){
-  $parts=$qsobuf[$nn];
-  
-  if($nn==0){
+  $parts=mysep($line,10);
+  if($base){
+    $base=0;
     $mys=findcall($parts[5]);
     $mybase=$mys["base"];
     $mycont=$mys["cont"];
@@ -68,6 +57,7 @@ for($nn=0;$nn<$nnqso;$nn++){
   }
   if(!isset($myrep[$band]))$myrep[$band]=1;
 }
+fclose($hh);
 
 echo "<pre>\n";
 echo "BAND\tQSOs\tPOINTs\tM_WPXs\n";
@@ -84,3 +74,5 @@ echo "TOTAL\t$z1\t$z2\t$z3\n";
 echo "\n".$parts[5]." SCORE: ".array_sum($point)*array_sum($mult)."\n\n";
 mybreakdown("cqwpx",$parts[5],$parts[3],$aqso,$apoint,$amult);
 ?>
+
+
