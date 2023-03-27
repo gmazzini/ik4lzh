@@ -74,5 +74,3 @@ echo "TOTAL\t$z1\t$z2\t$z3\n";
 echo "\n".$parts[5]." SCORE: ".array_sum($point)*array_sum($mult)."\n\n";
 mybreakdown("cqwpx",$parts[5],$parts[3],$aqso,$apoint,$amult);
 ?>
-
-
