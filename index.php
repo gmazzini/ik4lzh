@@ -106,26 +106,32 @@ for postprocessing and analysis, by IK4LZH gianluca@mazzini.org
 <input type="submit" name="submit" value="Upload">
 </form>
 
+<form action="cbrtosort.php" method="post" enctype="multipart/form-data"> 
+<label>D. Sort Cabrillo by date            </label>
+<input type="file" name="cbrfile">
+<input type="submit" name="submit" value="Upload">
+</form>
+
 <form action="adiftocbr.php" method="post" enctype="multipart/form-data"> 
-<label>D. Adif to Cabrillo.                </label>
+<label>E. Adif to Cabrillo.                </label>
 <input type="file" name="adiffile">
 <input type="submit" name="submit" value="Upload">
 </form>
 
 <form action="country.php" method="post" enctype="multipart/form-data">
-<label>E. Country identificaton (callsign) </label>
+<label>F. Country identificaton (callsign) </label>
 <input type="text" name="call">
 <input type="submit" name="submit" value="Submit">
 </form>
 
 <form action="password.php" method="post" enctype="multipart/form-data">
-<label>F. Password Generator (len)         </label>
+<label>G. Password Generator (len)         </label>
 <input type="text" name="passlen">
 <input type="submit" name="submit" value="Submit">
 </form>
 
 <form action="md5.php" method="post" enctype="multipart/form-data">
-<label>G. MD5 generator (text)             </label>
+<label>H. MD5 generator (text)             </label>
 <input type="text" name="tomd5">
 <input type="submit" name="submit" value="Submit">
 </form>
