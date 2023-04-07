@@ -34,7 +34,7 @@ for($n=0;$n<$ntqso;$n++){
     if($myt[$w]>$myt[$n]+3600)break;
     else $q+=$mqt[$w];
   }
-  printf("%d %d\n",$mytt[$n],$q);
+  printf("%d %d\n",$myt[$n],$q);
 }
 
 ?>
