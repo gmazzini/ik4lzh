@@ -27,7 +27,7 @@ for($n=1;$n<$nqso;$n++){
   else $mqt[$ntqso-1]++;
 }
 
-echo "<pre>\n$nqso $ntqso\n";
+echo "<pre>";
 for($n=0;$n<$ntqso;$n++){
   $q=$mqt[$n];
   for($w=$n+1;$w<$ntqso;$w++){
@@ -35,7 +35,6 @@ for($n=0;$n<$ntqso;$n++){
     else $q+=$mqt[$w];
   }
   printf("%s %d\n",date("dmy H:i",$myt[$n]),$q);
-  
 }
 
 ?>
