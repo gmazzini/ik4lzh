@@ -16,7 +16,7 @@ fclose($hh);
 sort($mytt);
 $ntqso=1;
 $myt[0]=$mytt[0];
-for($n=1;$n<$ntqso;$n++){
+for($n=1;$n<$nqso;$n++){
   if($mytt[$n]>$myt[$ntqso-1]){
     $myt[$ntqso]=$mytt[$n];
     $ntqso++;
