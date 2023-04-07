@@ -29,10 +29,10 @@ for($n=1;$n<$nqso;$n++){
 
 echo "<pre>\n$nqso $ntqso\n";
 for($n=0;$n<$ntqso;$n++){
-  $q=$myq[$n];
+  $q=$mqt[$n];
   for($w=$n+1;$w<$ntqso;$w++){
     if($myt[$w]>$myt[$n]+3600)break;
-    else $q+=$myq[$w];
+    else $q+=$mqt[$w];
   }
   printf("%d %d\n",$mytt[$n],$q);
 }
