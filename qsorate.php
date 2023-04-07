@@ -17,19 +17,22 @@ sort($mytt);
 
 $ntqso=1;
 $myt[0]=$mytt[0];
+$mqt[0]=1;
 for($n=1;$n<$nqso;$n++){
   if($mytt[$n]>$myt[$ntqso-1]){
     $myt[$ntqso]=$mytt[$n];
+    $mqt[$ntqso]=1;
     $ntqso++;
   }
+  else $mqt[$ntqso-1]++;
 }
 
 echo "<pre>\n$nqso $ntqso\n";
 for($n=0;$n<$ntqso;$n++){
-  $q=0;
+  $q=myq[$n];
   for($w=$n+1;$w<$ntqso;$w++){
-    if($mytt[$w]>$mytt[$n]+3600)break;
-    else $q++;
+    if($myt[$w]>$myt[$n]+3600)break;
+    else $q+=$myq[$w];
   }
   printf("%d %d\n",$mytt[$n],$q);
 }
