@@ -18,7 +18,7 @@ while(!feof($hh)){
 fclose($hh);
 sort($mytt);
 
-echo "<pre>";
+echo "<pre>\n\n$ntqso\n";
 for($n=1;$n<$ntqso;$n++){
   $q=0;
   for($w=$n+1;$w<$ntqso;$w++){
