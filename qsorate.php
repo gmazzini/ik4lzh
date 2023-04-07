@@ -17,13 +17,12 @@ sort($mytt);
 
 echo "<pre>";
 for($n=1;$n<$nqso;$n++){
-  echo $mytt[$n];
   $q=0;
   for($w=$n+1;$w<$nqso;$w++){
     if($mytt[$w]>$mytt[$n]+3600)break;
     else $q++;
   }
-  printf("%5.2\n",$q/3600);
+  printf("%d %5.2f\n",$mytt[$n],$q/3600);
 }
 
 ?>
