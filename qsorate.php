@@ -9,7 +9,7 @@ while(!feof($hh)){
   $line=fgets($hh);
   if(substr($line,0,4)!="QSO:")continue;
   $parts=mysep($line,10);
-  $aux=strtotime($parts[3]." ".substr($parts[4],0,2).":".substr($parts[4],2,2).":00");
+  $mytt[$nqso]=strtotime($parts[3]." ".substr($parts[4],0,2).":".substr($parts[4],2,2).":00");
   $nqso++;
 }
 fclose($hh);
@@ -19,7 +19,6 @@ $ntqso=1;
 $myt[0]=$mytt[0];
 for($n=1;$n<$nqso;$n++){
   if($mytt[$n]>$myt[$ntqso-1]){
-    echo "..\n";
     $myt[$ntqso]=$mytt[$n];
     $ntqso++;
   }
