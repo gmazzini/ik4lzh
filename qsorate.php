@@ -23,8 +23,7 @@ for($n=1;$n<$nqso;$n++){
     if($mytt[$w]>$mytt[$n]+3600)break;
     else $q++;
   }
-  echo $q/3600;
-  echo "\n";
+  printf("%5.2\n",$q/3600);
 }
 
 ?>
