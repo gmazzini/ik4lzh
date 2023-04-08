@@ -2,6 +2,7 @@
 // v1 by IK4LZH 20230407
 
 include("utility.php");
+$myband="80";
 $nqso=0;
 if(isset($_FILES['cbrfile']['tmp_name']))$hh=fopen($_FILES['cbrfile']['tmp_name'],"r");
 else $hh=fopen("php://stdin","r");
@@ -9,8 +10,11 @@ while(!feof($hh)){
   $line=fgets($hh);
   if(substr($line,0,4)!="QSO:")continue;
   $parts=mysep($line,10);
-  $mytt[$nqso]=strtotime($parts[3]." ".substr($parts[4],0,2).":".substr($parts[4],2,2).":00");
-  $nqso++;
+  $band=$bb[floor($parts[1]/1000)];
+  if($myband==""||$myband==$band){
+    $mytt[$nqso]=strtotime($parts[3]." ".substr($parts[4],0,2).":".substr($parts[4],2,2).":00");
+    $nqso++;
+  }
 }
 fclose($hh);
 sort($mytt);
