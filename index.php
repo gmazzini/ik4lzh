@@ -109,7 +109,7 @@ for postprocessing and analysis, by IK4LZH gianluca@mazzini.org
 <form action="qsorate.php" method="post" enctype="multipart/form-data">
 <label>D. QSO rate                         </label>
 <input type="file" name="cbrfile">
-<input type="text" name="myband">
+<input type="text" name="myband" maxlength="3" size="3">
 <input type="submit" name="submit" value="Upload">
 </form>
 
