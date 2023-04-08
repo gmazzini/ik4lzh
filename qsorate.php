@@ -32,6 +32,10 @@ for($n=1;$n<$nqso;$n++){
   else $mqt[$ntqso-1]++;
 }
 
+
+$name=uniqid("qsoband_",true);
+echo "<a href='https://ik4lzh.mazzini.org/breakdown/$name.csv' download>Download breakdown</a><br>";
+$fp=fopen("/home/www/ik4lzh.mazzini.org/breakdown/$name.csv","w");
 echo "<pre>";
 for($n=0;$n<$ntqso;$n++){
   $q=$mqt[$n];
@@ -39,7 +43,9 @@ for($n=0;$n<$ntqso;$n++){
     if($myt[$w]>$myt[$n]+3600)break;
     else $q+=$mqt[$w];
   }
-  printf("%s %d\n",date("dmy H:i",$myt[$n]),$q);
+  printf("%s,%d\n",date("Y-m-d:Hi",$myt[$n]),$q);
+  fprintf($fp,"%s,%d\n",date("Y-m-d:Hi",$myt[$n]),$q);
 }
+fclose($fp);
 
 ?>
