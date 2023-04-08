@@ -2,7 +2,8 @@
 // v1 by IK4LZH 20230407
 
 include("utility.php");
-$myband="80";
+if(isset($_POST['myband']))$myband=$_POST['myband'];
+else $myband="";
 $nqso=0;
 if(isset($_FILES['cbrfile']['tmp_name']))$hh=fopen($_FILES['cbrfile']['tmp_name'],"r");
 else $hh=fopen("php://stdin","r");
