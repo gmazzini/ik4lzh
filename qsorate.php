@@ -33,7 +33,7 @@ for($n=1;$n<$nqso;$n++){
 }
 
 
-$name=uniqid("qsoband_",true);
+$name=uniqid("qsorate$myband_",true);
 echo "<a href='https://ik4lzh.mazzini.org/breakdown/$name.csv' download>Download breakdown</a><br>";
 $fp=fopen("/home/www/ik4lzh.mazzini.org/breakdown/$name.csv","w");
 echo "<pre>";
