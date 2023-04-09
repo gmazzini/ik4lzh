@@ -18,7 +18,7 @@ while(!feof($hh)){
 fclose($hh);
 sort($mytt);
 $mylb=array_keys($mylab);
-// sort($myld);
+sort($mylb);
 
 $ntqso=0;
 $myt[$ntqso]=$mytt[0];
