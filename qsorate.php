@@ -16,7 +16,7 @@ while(!feof($hh)){
   $nqso++;
 }
 fclose($hh);
-sort($mytt);
+array_multisort($mytt,$mybb);
 $mylb=array_keys($mylab);
 sort($mylb);
 
