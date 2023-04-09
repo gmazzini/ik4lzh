@@ -20,31 +20,29 @@ while(!feof($hh)){
 fclose($hh);
 sort($mytt);
 
-$ntqso=1;
-$myt[0]=$mytt[0];
-$mqt[0]=1;
-for($n=1;$n<$nqso;$n++){
-  if($mytt[$n]>$myt[$ntqso-1]){
-    $myt[$ntqso]=$mytt[$n];
-    $mqt[$ntqso]=1;
-    $ntqso++;
-  }
-  else $mqt[$ntqso-1]++;
+$ntqso=0;
+$myt[$ntqso]=$mytt[0];
+for(;;){
+  if($myt[$ntqso]>$mytt[$nqso-1])break;
+  $ntqso++;
+  $myt[$ntqso]=$myt[$ntqso-1]+300;
 }
+$ntqso++;
 
+for($m=0;$m<$ntqso;$m++){
+  $myq[$m]=0;
+  for($n=1;$n<$nqso;$n++){
+    if($mytt[$n]>=$myt[$m]&&$mytt[$n]<$myt[$m])$myq[$m]++;
+  }
+}
 
 $name=uniqid("qsorate".$myband."_",true);
 echo "<a href='https://ik4lzh.mazzini.org/breakdown/$name.csv' download>Download breakdown</a><br>";
 $fp=fopen("/home/www/ik4lzh.mazzini.org/breakdown/$name.csv","w");
 echo "<pre>";
 for($n=0;$n<$ntqso;$n++){
-  $q=$mqt[$n];
-  for($w=$n+1;$w<$ntqso;$w++){
-    if($myt[$w]>$myt[$n]+3600)break;
-    else $q+=$mqt[$w];
-  }
-  printf("%s,%d\n",date("Y-m-d:Hi",$myt[$n]),$q);
-  fprintf($fp,"%s,%d\n",date("Y-m-d:Hi",$myt[$n]),$q);
+  printf("%s,%d\n",date("Y-m-d:Hi",$myt[$n]),$myq[$n]);
+  fprintf($fp,"%s,%d\n",date("Y-m-d:Hi",$myt[$n]),$myq[$n]);
 }
 fclose($fp);
 
