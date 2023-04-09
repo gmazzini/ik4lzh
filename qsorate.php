@@ -2,8 +2,6 @@
 // v1 by IK4LZH 20230407
 
 include("utility.php");
-if(isset($_POST['myband']))$myband=$_POST['myband'];
-else $myband="";
 $nqso=0;
 if(isset($_FILES['cbrfile']['tmp_name']))$hh=fopen($_FILES['cbrfile']['tmp_name'],"r");
 else $hh=fopen("php://stdin","r");
@@ -12,13 +10,15 @@ while(!feof($hh)){
   if(substr($line,0,4)!="QSO:")continue;
   $parts=mysep($line,10);
   $band=$bb[floor($parts[1]/1000)];
-  if($myband==""||$myband==$band){
-    $mytt[$nqso]=strtotime($parts[3]." ".substr($parts[4],0,2).":".substr($parts[4],2,2).":00");
-    $nqso++;
-  }
+  $mybb[$nqso]=$band;
+  if(!isset($mylab[$band]))$mylab[$band]=1;
+  $mytt[$nqso]=strtotime($parts[3]." ".substr($parts[4],0,2).":".substr($parts[4],2,2).":00");
+  $nqso++;
 }
 fclose($hh);
 sort($mytt);
+$mylb=array_keys($mylab);
+sort($myld);
 
 $ntqso=0;
 $myt[$ntqso]=$mytt[0];
@@ -30,9 +30,15 @@ for(;;){
 $ntqso++;
 
 for($m=0;$m<$ntqso;$m++){
-  $myq[$m]=0;
+  $myq[$m][0]=0;
   for($n=1;$n<$nqso;$n++){
-    if($mytt[$n]>=$myt[$m]&&$mytt[$n]<$myt[$m]+3600)$myq[$m]++;
+    if($mytt[$n]>=$myt[$m]&&$mytt[$n]<$myt[$m]+3600)$myq[$m][0]++;
+  }
+  foreach($mylb as $bb){
+    $myq[$m][$bb]=0;
+    for($n=1;$n<$nqso;$n++){
+      if($mytt[$n]>=$myt[$m]&&$mytt[$n]<$myt[$m]+3600&&$mybb[$n]==$bb)$myq[$m][$bb]++;
+    }
   }
 }
 
