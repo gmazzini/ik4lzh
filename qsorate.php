@@ -32,7 +32,7 @@ $ntqso++;
 for($m=0;$m<$ntqso;$m++){
   $myq[$m]=0;
   for($n=1;$n<$nqso;$n++){
-    if($mytt[$n]>=$myt[$m]&&$mytt[$n]<$myt[$m])$myq[$m]++;
+    if($mytt[$n]>=$myt[$m]&&$mytt[$n]<$myt[$m]+3600)$myq[$m]++;
   }
 }
 
