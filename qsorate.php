@@ -42,7 +42,7 @@ for($m=0;$m<$ntqso;$m++){
   }
 }
 
-$name=uniqid("qsorate".$myband."_",true);
+$name=uniqid("qsorate_",true);
 echo "<a href='https://ik4lzh.mazzini.org/breakdown/$name.csv' download>Download breakdown</a><br>";
 $fp=fopen("/home/www/ik4lzh.mazzini.org/breakdown/$name.csv","w");
 
