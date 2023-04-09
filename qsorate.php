@@ -47,8 +47,8 @@ echo "<a href='https://ik4lzh.mazzini.org/breakdown/$name.csv' download>Download
 $fp=fopen("/home/www/ik4lzh.mazzini.org/breakdown/$name.csv","w");
 echo "<pre>";
 for($n=0;$n<$ntqso;$n++){
-  printf("%s,%d\n",date("Y-m-d:Hi",$myt[$n]),$myq[$n]);
-  fprintf($fp,"%s,%d\n",date("Y-m-d:Hi",$myt[$n]),$myq[$n]);
+  printf("%s,%d\n",date("Y-m-d:Hi",$myt[$n]),$myq[$n][0]);
+  fprintf($fp,"%s,%d\n",date("Y-m-d:Hi",$myt[$n]),$myq[$n][0]);
 }
 fclose($fp);
 
