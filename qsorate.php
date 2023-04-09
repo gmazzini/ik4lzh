@@ -45,7 +45,12 @@ for($m=0;$m<$ntqso;$m++){
 $name=uniqid("qsorate".$myband."_",true);
 echo "<a href='https://ik4lzh.mazzini.org/breakdown/$name.csv' download>Download breakdown</a><br>";
 $fp=fopen("/home/www/ik4lzh.mazzini.org/breakdown/$name.csv","w");
+
 echo "<pre>";
+echo "DATA:TIME,*,";
+foreach($mylb as $bb)echo ",".$bb;
+echo "\n";
+
 for($n=0;$n<$ntqso;$n++){
   printf("%s,%d\n",date("Y-m-d:Hi",$myt[$n]),$myq[$n][0]);
   fprintf($fp,"%s,%d\n",date("Y-m-d:Hi",$myt[$n]),$myq[$n][0]);
