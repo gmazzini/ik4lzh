@@ -2,7 +2,8 @@
 // v5 by IK4LZH 20210129
 
 include("utility.php");
-if(isset($_FILES['cbrfile']['tmp_name']))$hh=fopen($_FILES['cbrfile']['tmp_name'],"r");
+if(isset($_GET['fromlog']))$hh=fopen($_GET['fromlog'],"r");
+elseif(isset($_FILES['cbrfile']['tmp_name']))$hh=fopen($_FILES['cbrfile']['tmp_name'],"r");
 else $hh=fopen("php://stdin","r");
 while(!feof($hh)){
   $line=fgets($hh);
