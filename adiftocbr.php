@@ -62,8 +62,10 @@ while(!feof($hh)){
     else $out.=sprintf("%-6s ",$stx);
     $out.=sprintf("%-13s ",$call);
     $out.=sprintf("%3s ",$rstrcvd);
-    if($srxstring)$out.=sprintf("%-6s ",$srxstring);
-    else $out.=sprintf("%-6s ",$srx);
+    $aux=$srx;
+    if(strlen($srx)>0 && strlen($srxstring)>0)$out.=sprintf("%-6s ",$srx." ".$srxstring);
+    else if(strlen($srx)>0)$out.=sprintf("%-6s ",$srx);
+    else $out.=sprintf("%-6s ",$srxstring);
     $out.="0";
     $oo[$qsodate.$qsotime]=$out;
     $call="";
