@@ -26,7 +26,7 @@ fclose($hh);
 
 echo "<pre>\n";
 $name=uniqid("qsoband_",true);
-echo "<a href='https://ik4lzh.mazzini.org/breakdown/$name.csv' download>Download breakdown</a><br>";
+echo "<a href='https://ik4lzh/breakdown/$name.csv' download>Download breakdown</a><br>";
 $myd=array_keys($myact);
 sort($myd);
 $ea=array_keys($myrep);
@@ -35,7 +35,7 @@ foreach($ea as $ee)$lcount[$ee]=0;
 echo "DATA:TIME";
 foreach($ea as $ee)echo ",".$ee;
 echo "\n";
-$fp=fopen("/home/www/ik4lzh.mazzini.org/breakdown/$name.csv","w");
+$fp=fopen("/home/www/ik4lzh/breakdown/$name.csv","w");
 foreach($myd as $dd){
   echo $dd;
   fwrite($fp,$dd);
