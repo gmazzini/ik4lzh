@@ -86,7 +86,7 @@ while(!feof($hh)){
 ksort($oo);
 
 $name=rand().rand().rand().rand().".cbr";
-$fp=fopen("/home/www/ik4lzh.mazzini.org/breakdown/$name","w");
+$fp=fopen("/home/www/ik4lzh/breakdown/$name","w");
 fprintf($fp,"START-OF-LOG: 3.0\n");
 fprintf($fp,"CONTEST: xxxxxx\n");
 fprintf($fp,"CALLSIGN: xxxxxx\n");
@@ -110,6 +110,6 @@ foreach($oo as $key => $val){
 fprintf($fp,"END-OF-LOG:\n");
 fclose($fp);
 
-echo "<pre><a href='https://ik4lzh.mazzini.org/breakdown/$name' download>Download Cabrillo</a><br>";
+echo "<pre><a href='https://ik4lzh/breakdown/$name' download>Download Cabrillo</a><br>";
 
 ?>
