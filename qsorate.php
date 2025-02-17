@@ -43,8 +43,8 @@ for($m=0;$m<$ntqso;$m++){
 }
 
 $name=uniqid("qsorate_",true);
-echo "<a href='https://ik4lzh.mazzini.org/breakdown/$name.csv' download>Download breakdown</a><br>";
-$fp=fopen("/home/www/ik4lzh.mazzini.org/breakdown/$name.csv","w");
+echo "<a href='https://ik4lzh/breakdown/$name.csv' download>Download breakdown</a><br>";
+$fp=fopen("/home/www/ik4lzh/breakdown/$name.csv","w");
 
 echo "<pre>";
 printf("DATA:TIME,*");
