@@ -39,8 +39,8 @@ function mybreakdown($contest,$call,$datacontest,$aqso,$apoint,$amult){
   $myd=array_unique(array_keys($aqso));
   sort($myd);
   $name=$contest."_".$call."_".$datacontest."_".md5($contest.$call.$datacontest.rand());
-  $fp=fopen("/home/www/ik4lzh.mazzini.org/breakdown/$name.csv","w");
-  echo "<a href='https://ik4lzh.mazzini.org/breakdown/$name.csv' download>Download breakdown</a><br>";
+  $fp=fopen("/home/www/ik4lzh/breakdown/$name.csv","w");
+  echo "<a href='https://ik4lzh/breakdown/$name.csv' download>Download breakdown</a><br>";
   $z1=$z2=$z3=0;
   foreach($myd as $dd){
     $z1+=$aqso[$dd];
@@ -49,7 +49,7 @@ function mybreakdown($contest,$call,$datacontest,$aqso,$apoint,$amult){
     fwrite($fp,$dd.",".$z1.",".$z2.",".$z3."\n");
     echo $dd.",".$z1.",".$z2.",".$z3."\n";
   }
-  file_put_contents("/home/www/ik4lzh.mazzini.org/log.txt",date("Y-m-d H:i:s").",".$contest.",".$call.",".$datacontest.",".$z1.",".$z2.",".$z3."\n", FILE_APPEND | LOCK_EX);
+  file_put_contents("/home/www/ik4lzh/log.txt",date("Y-m-d H:i:s").",".$contest.",".$call.",".$datacontest.",".$z1.",".$z2.",".$z3."\n", FILE_APPEND | LOCK_EX);
   fclose($fp);
 }
 
